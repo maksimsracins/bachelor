@@ -1,0 +1,53 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication/obj/Debug/net8.0/scopedcss/projectbundle/BlazorWebAppAuthentication.bundle.scp.css",
+      "PackagePath": "staticwebassets/BlazorWebAppAuthentication.bundle.scp.css"
+    },
+    {
+      "Id": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication/wwwroot/app.css",
+      "PackagePath": "staticwebassets/app.css"
+    },
+    {
+      "Id": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication/wwwroot/bootstrap/bootstrap.min.css",
+      "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css"
+    },
+    {
+      "Id": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication/wwwroot/bootstrap/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css.map"
+    },
+    {
+      "Id": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication/wwwroot/favicon.png",
+      "PackagePath": "staticwebassets/favicon.png"
+    },
+    {
+      "Id": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication/wwwroot/images/login.png",
+      "PackagePath": "staticwebassets/images/login.png"
+    },
+    {
+      "Id": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication/wwwroot/images/logout.png",
+      "PackagePath": "staticwebassets/images/logout.png"
+    },
+    {
+      "Id": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication/wwwroot/images/register.png",
+      "PackagePath": "staticwebassets/images/register.png"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.BlazorWebAppAuthentication.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.BlazorWebAppAuthentication.props",
+      "PackagePath": "build\\BlazorWebAppAuthentication.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.BlazorWebAppAuthentication.props",
+      "PackagePath": "buildMultiTargeting\\BlazorWebAppAuthentication.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.BlazorWebAppAuthentication.props",
+      "PackagePath": "buildTransitive\\BlazorWebAppAuthentication.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

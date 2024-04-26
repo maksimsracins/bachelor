@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/BlazorWebAppAuthentication.Database.props" />
+</Project>

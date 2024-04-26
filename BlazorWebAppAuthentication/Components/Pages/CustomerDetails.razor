@@ -1,0 +1,26 @@
+@page "/customer-details/{CustomerId:int}"
+
+@using BlazorWebAppAuthentication.Database
+@inject ApplicationContext ApplicationContext
+
+<h3>Customer Details</h3>
+
+@if (Customer == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div>
+        <p><strong>First Name:</strong> @Customer.FirstName</p>
+        <p><strong>Last Name:</strong> @Customer.LastName</p>
+        <p><strong>Birth Date:</strong> @Customer.BirthDate.ToShortDateString()</p>
+        <p><strong>Street:</strong> @Customer.Street</p>
+        <p><strong>Zip:</strong> @Customer.Zip</p>
+        <p><strong>City:</strong> @Customer.City</p>
+        <p><strong>Country:</strong> @Customer.Country?.Name</p>
+        <p><strong>Phone Number:</strong> @Customer.PhoneNumber</p>
+        <p><strong>Marital Status:</strong> @Customer.MaritalStatus.ToString()</p>
+        <p><strong>Gender:</strong> @Customer.Gender.ToString()</p>
+    </div>
+}

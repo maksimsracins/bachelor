@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWebAppAuthentication", "BlazorWebAppAuthentication\BlazorWebAppAuthentication.csproj", "{70389D82-BF85-49A9-9FF1-0753DA7CC5E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWebAppAuthentication.Domain", "BlazorWebAppAuthentication.Domain\BlazorWebAppAuthentication.Domain.csproj", "{DAD03AA4-F6EE-43B9-B32E-0D9AA7762B52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWebAppAuthentication.Database", "BlazorWebAppAuthentication.Database\BlazorWebAppAuthentication.Database.csproj", "{A51FB267-7BFB-49ED-8053-9047651F7A0B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70389D82-BF85-49A9-9FF1-0753DA7CC5E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70389D82-BF85-49A9-9FF1-0753DA7CC5E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70389D82-BF85-49A9-9FF1-0753DA7CC5E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70389D82-BF85-49A9-9FF1-0753DA7CC5E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAD03AA4-F6EE-43B9-B32E-0D9AA7762B52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAD03AA4-F6EE-43B9-B32E-0D9AA7762B52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAD03AA4-F6EE-43B9-B32E-0D9AA7762B52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAD03AA4-F6EE-43B9-B32E-0D9AA7762B52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A51FB267-7BFB-49ED-8053-9047651F7A0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A51FB267-7BFB-49ED-8053-9047651F7A0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A51FB267-7BFB-49ED-8053-9047651F7A0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A51FB267-7BFB-49ED-8053-9047651F7A0B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

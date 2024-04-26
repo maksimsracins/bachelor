@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <OutputType>Library</OutputType>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\BlazorWebAppAuthentication.Domain\BlazorWebAppAuthentication.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Properties\launchSettings.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MySql.Data" Version="8.2.0" />
+      <PackageReference Include="MySql.EntityFrameworkCore" Version="7.0.10" />
+    </ItemGroup>
+
+</Project>

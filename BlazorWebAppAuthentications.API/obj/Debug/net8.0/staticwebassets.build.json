@@ -1,0 +1,108 @@
+{
+  "Version": 1,
+  "Hash": "Tu+1NMW9b/pvFPMV+G73SzzDU0V3pox71FMiDvvJLCY=",
+  "Source": "BlazorWebAppAuthentications.API",
+  "BasePath": "_content/BlazorWebAppAuthentications.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Domain/BlazorWebAppAuthentication.Domain.csproj",
+      "Version": 2,
+      "Source": "BlazorWebAppAuthentication.Domain",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
+    }
+  ],
+  "DiscoveryPatterns": [
+    {
+      "Name": "BlazorWebAppAuthentications.API/wwwroot",
+      "Source": "BlazorWebAppAuthentications.API",
+      "ContentRoot": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentications.API/wwwroot/",
+      "BasePath": "_content/BlazorWebAppAuthentications.API",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentications.API/wwwroot/app.css",
+      "SourceId": "BlazorWebAppAuthentications.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentications.API/wwwroot/",
+      "BasePath": "_content/BlazorWebAppAuthentications.API",
+      "RelativePath": "app.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/app.css"
+    },
+    {
+      "Identity": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentications.API/wwwroot/bootstrap/bootstrap.min.css",
+      "SourceId": "BlazorWebAppAuthentications.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentications.API/wwwroot/",
+      "BasePath": "_content/BlazorWebAppAuthentications.API",
+      "RelativePath": "bootstrap/bootstrap.min.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/bootstrap/bootstrap.min.css"
+    },
+    {
+      "Identity": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentications.API/wwwroot/bootstrap/bootstrap.min.css.map",
+      "SourceId": "BlazorWebAppAuthentications.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentications.API/wwwroot/",
+      "BasePath": "_content/BlazorWebAppAuthentications.API",
+      "RelativePath": "bootstrap/bootstrap.min.css.map",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/bootstrap/bootstrap.min.css.map"
+    },
+    {
+      "Identity": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentications.API/wwwroot/favicon.png",
+      "SourceId": "BlazorWebAppAuthentications.API",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentications.API/wwwroot/",
+      "BasePath": "_content/BlazorWebAppAuthentications.API",
+      "RelativePath": "favicon.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/favicon.png"
+    }
+  ]
+}

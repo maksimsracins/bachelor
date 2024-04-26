@@ -1,0 +1,67 @@
+@page "/login"
+
+@using BlazorWebAppAuthentication.Models.ViewModels
+@using System.Security.Claims
+@using BlazorWebAppAuthentication.Database
+@using Microsoft.AspNetCore.Authentication
+@using Microsoft.AspNetCore.Authentication.Cookies
+@inject ApplicationContext ApplicationContext
+@inject NavigationManager NavigationManager
+
+<div class="col-lg-4 offset-lg-4 pt-4 pb-4 border">
+    <EditForm Model="@Model" OnValidSubmit="Authenticate" FormName="LoginForm">
+        <DataAnnotationsValidator />
+        <div class="mb-3 text-center flex-column">
+            <img src="/images/login.png" style="max-height: 5rem;" />
+            <h3>LOGIN</h3>
+        </div>
+        <div class="mb-3">
+            <label>User Name</label>
+            <InputText @bind-Value="Model.Username" class="form-control" placeholder="Username" />
+            <ValidationMessage For="() => Model.Username" />
+        </div>
+        <div class="mb-3">
+            <label>Password</label>
+            <InputText @bind-Value="Model.Password" placeholder="Password" type="password" class="form-control"></InputText>
+            <ValidationMessage For="() => Model.Password" />
+        </div>
+        <div class="mb-3 text-center">
+            <span class="text-danger">@errorMessage</span>
+        </div>
+        <div class="mb-3 d-grid gap-2">
+            <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+    </EditForm>
+</div>
+
+
+@code {
+    
+    [CascadingParameter]
+    public HttpContext? HttpContext { get; set; }
+
+    [SupplyParameterFromForm]
+    public LoginViewModel Model { get; set; } = new();
+
+    private string? errorMessage;
+
+    private async Task Authenticate()
+    {
+        var userAccount = ApplicationContext.UserAccount.Where(u => u.Username == Model.Username).FirstOrDefault();
+        if (userAccount is null || userAccount.Password != Model.Password)
+        {
+            errorMessage = "Invalid user name or password";
+            return;
+        }
+        var claims = new List<Claim>
+        {
+            new Claim(ClaimTypes.Name, Model.Username),
+            new Claim(ClaimTypes.Role, userAccount.Role)
+        };
+        var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+        var principal = new ClaimsPrincipal(identity);
+        await HttpContext.SignInAsync(principal);
+        NavigationManager.NavigateTo("/");
+    }
+
+}

@@ -1,0 +1,78 @@
+@page "/register"
+
+@using BlazorWebAppAuthentication.Models.ViewModels
+@using BlazorWebAppAuthentication.Domain.Entities
+@using BlazorWebAppAuthentication.Database
+@inject ApplicationContext applicationContext
+@inject NavigationManager navigationManager
+
+<div class="col-lg-4 offset-lg-4 pt-4 pb-4 border">
+    <EditForm Model="@Model" OnValidSubmit="RegisterUser" FormName="RegisterForm">
+        <DataAnnotationsValidator />
+        <div class="mb-3 text-center flex-column">
+            <img src="/images/register.png" style="max-height: 5rem;" />
+            <h3>REGISTER</h3>
+        </div>
+        <div class="mb-3">
+            <label>User Name</label>
+            <InputText @bind-Value="Model.Username" class="form-control" placeholder="Username" />
+            <ValidationMessage For="() => Model.Username" />
+        </div>
+        <div class="mb-3">
+            <label>Email</label>
+            <InputText @bind-Value="Model.Email" type="email" placeholder="Email" class="form-control" />
+            <ValidationMessage For="() => Model.Email" />
+        </div>
+        <div class="mb-3">
+            <label>Password</label>
+            <InputText @bind-Value="Model.Password" type="password" placeholder="Password" class="form-control" />
+            <ValidationMessage For="() => Model.Password" />
+        </div>
+        <div class="mb-3">
+            <label>Confirm Password</label>
+            <InputText @bind-Value="Model.ConfirmPassword" type="password" placeholder="Confirm Password" class="form-control" />
+            <ValidationMessage For="() => Model.ConfirmPassword" />
+        </div>
+        <div class="mb-3 text-center">
+            <span class="text-danger">@errorMessage</span>
+        </div>
+        <div class="mb-3 d-grid gap-2">
+            <button type="submit" class="btn btn-primary">Register</button>
+        </div>
+    </EditForm>
+</div>
+
+@code {
+    [CascadingParameter]
+    public HttpContext? HttpContext { get; set; }
+
+    [SupplyParameterFromForm]
+    public RegisterViewModel Model { get; set; } = new();
+
+    private string? errorMessage;
+
+    private async Task RegisterUser()
+    {
+        if (Model.Password != Model.ConfirmPassword)
+        {
+            errorMessage = "Passwords do not match.";
+            return;
+        }
+
+        var userAccount = new UserAccount
+        {
+            Username = Model.Username,
+            Password = Model.Password, // Remember to hash the password in a real scenario
+            Role = "User",
+            Email = Model.Email
+        };
+
+        applicationContext.UserAccount.Add(userAccount);
+        await applicationContext.SaveChangesAsync();
+
+        // Optionally sign the user in or navigate to a confirmation page
+        navigationManager.NavigateTo("login");
+    }
+
+}
+

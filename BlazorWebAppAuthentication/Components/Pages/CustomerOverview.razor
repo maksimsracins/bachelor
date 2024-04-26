@@ -1,0 +1,55 @@
+@page "/customers-overview"
+
+@using BlazorWebAppAuthentication.Database
+@inject ApplicationContext ApplicationContext
+@inject NavigationManager NavigationManager
+
+
+<h1 class="page-title">Customer Overview</h1>
+
+@if (Customers == null)
+{
+    <p><em>Loading...</em></p>
+} else if (Customers.Count == 0)
+{
+    <p>No customers found.</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Customer ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>City</th>
+            <th>Details</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var customer in Customers)
+        {
+            <tr>
+                <td>@customer.CustomerId</td>
+                <td>@customer.FirstName</td>
+                <td>@customer.LastName</td>
+                <td>@customer.City</td>
+                <td>
+                    @*<button class="btn btn-primary" @onclick="() => ViewDetails(customer.CustomerId)">
+                        View Details
+                    </button>*@
+                    <a href="@($"customer-details/{customer.CustomerId}")" class="btn btn-primary table-btn">
+                        Details
+                    </a>
+                    <a href="@($"customer-update/{customer.CustomerId}")" class="btn btn-primary table-btn">
+                        Update
+                    </a>
+                    <a href="@($"customer-delete/{customer.CustomerId}")" class="btn btn-primary table-btn">
+                        Delete
+                    </a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}

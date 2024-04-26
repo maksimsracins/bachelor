@@ -1,0 +1,190 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Api/BlazorWebAppAuthentication.Api.csproj": {}
+  },
+  "projects": {
+    "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Api/BlazorWebAppAuthentication.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Api/BlazorWebAppAuthentication.Api.csproj",
+        "projectName": "BlazorWebAppAuthentication.Api",
+        "projectPath": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Api/BlazorWebAppAuthentication.Api.csproj",
+        "packagesPath": "/Users/maksimsracins/.nuget/packages/",
+        "outputPath": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Api/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/maksimsracins/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Domain/BlazorWebAppAuthentication.Domain.csproj": {
+                "projectPath": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Domain/BlazorWebAppAuthentication.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Components.Web": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.AspNetCore.Hosting": {
+              "target": "Package",
+              "version": "[2.2.7, )"
+            },
+            "Microsoft.AspNetCore.Mvc": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Core": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.12, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.12, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.12, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.12, )"
+            },
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Hosting.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.2.0, )"
+            },
+            "MySql.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.204/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Domain/BlazorWebAppAuthentication.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Domain/BlazorWebAppAuthentication.Domain.csproj",
+        "projectName": "BlazorWebAppAuthentication.Domain",
+        "projectPath": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Domain/BlazorWebAppAuthentication.Domain.csproj",
+        "packagesPath": "/Users/maksimsracins/.nuget/packages/",
+        "outputPath": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/maksimsracins/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Components.Web": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.204/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
