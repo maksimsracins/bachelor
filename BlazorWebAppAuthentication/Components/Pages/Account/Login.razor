@@ -60,7 +60,7 @@
         };
         var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
         var principal = new ClaimsPrincipal(identity);
-        await HttpContext.SignInAsync(principal);
+          HttpContext.SignInAsync(principal);
         NavigationManager.NavigateTo("/");
     }
 

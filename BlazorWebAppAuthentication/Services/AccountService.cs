@@ -1,7 +1,8 @@
+using BlazorWebAppAuthentication.Database;
 using BlazorWebAppAuthentication.Database.Interfaces;
 using BlazorWebAppAuthentication.Domain.Entities;
 
-namespace BlazorWebAppAuthentication.Domain.Services
+namespace BlazorWebAppAuthentication.Services
 {
     public class AccountService : IAccountService
     {

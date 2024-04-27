@@ -1,19 +1,20 @@
 @page "/customers-overview"
-
-@using BlazorWebAppAuthentication.Database
-@inject ApplicationContext ApplicationContext
 @inject NavigationManager NavigationManager
+@using RenderMode = Microsoft.AspNetCore.Mvc.Rendering.RenderMode
+@RenderMode.Server
+
+@* @rendermode @(new InteractiveServerRenderMode(prerender:false)) *@
+
 
 
 <h1 class="page-title">Customer Overview</h1>
+<component type="typeof(App)" render-mode="Server" />
 
 @if (Customers == null)
 {
     <p><em>Loading...</em></p>
-} else if (Customers.Count == 0)
-{
-    <p>No customers found.</p>
-}
+    
+} 
 else
 {
     <table class="table table-striped">

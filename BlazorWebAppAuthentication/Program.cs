@@ -3,6 +3,7 @@ using BlazorWebAppAuthentication.Components;
 using BlazorWebAppAuthentication.Database;
 using BlazorWebAppAuthentication.Database.Interfaces;
 using BlazorWebAppAuthentication.Domain.Entities;
+using BlazorWebAppAuthentication.Domain.Services;
 using BlazorWebAppAuthentication.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
@@ -42,12 +43,8 @@ builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
 
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<ICountryService, CountryService>();
-
-
-
-builder.Services.AddDbContext<ApplicationContext>(
-    options => options.UseMySQL(
-        builder.Configuration.GetConnectionString("ApplicationContext") ?? string.Empty));
+builder.Services.AddScoped<ITransactionService, TransactionService>();
+builder.Services.AddScoped<IAccountService, AccountService>();
 
 var app = builder.Build();
 

@@ -18,7 +18,7 @@ public partial class TransferMoney
 
     protected override async Task OnInitializedAsync()
     { 
-        senderAccounts = await ApplicationContext.Accounts.Where(a => a.AccountId == 1).ToListAsync();
+        senderAccounts = ApplicationContext.Accounts.Where(a => a.AccountId == 1).ToList();
     }
     
     private async Task HandleTransfer()
@@ -54,7 +54,7 @@ public partial class TransferMoney
         };
 
         ApplicationContext.Transactions.Add(transaction);
-        await ApplicationContext.SaveChangesAsync();
+          ApplicationContext.SaveChangesAsync();
 
         transactionStatusMessage = "Transaction completed successfully.";
         //navigationManager.NavigateTo("/transactionhistory");

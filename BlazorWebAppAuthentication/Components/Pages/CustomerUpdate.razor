@@ -1,10 +1,6 @@
 @page "/customer-update"
 @page "/customer-update/{CustomerId}"
 @using BlazorWebAppAuthentication.Domain
-@using RenderMode = Microsoft.AspNetCore.Mvc.Rendering.RenderMode
-@implements IDisposable
-@inject PersistentComponentState ComponentState
-@RenderMode.ServerPrerendered
 
 @if (!Saved)
 {
@@ -108,10 +104,5 @@
     </section>
 } else{
 <div class="alert @StatusClass">@Message</div>
-
-}
-@code{
-
-    public void Dispose() => subscription.Dispose();
 
 }

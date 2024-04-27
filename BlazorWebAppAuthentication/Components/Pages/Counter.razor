@@ -31,9 +31,9 @@
 
     private async Task DisplayGreetingAlert()
     {
-        var authenticationState = await authenticationStateTask;
-        var message = $"Hello {authenticationState.User.Identity.Name}";
-        await js.InvokeVoidAsync("alert", message);
+        var authenticationState = authenticationStateTask;
+        var message = $"Hello {authenticationState.Result.User.Identity.Name}";
+          js.InvokeVoidAsync("alert", message);
         
     }
 

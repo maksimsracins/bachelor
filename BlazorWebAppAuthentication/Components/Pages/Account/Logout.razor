@@ -24,10 +24,10 @@
 
     protected override async Task OnInitializedAsync()
     {
-        await base.OnInitializedAsync();
+          base.OnInitializedAsync();
         if (HttpContext.User.Identity.IsAuthenticated)
         {
-            await HttpContext.SignOutAsync();
+              HttpContext.SignOutAsync();
             navigationManager.NavigateTo("/logout", true);
         }
     }

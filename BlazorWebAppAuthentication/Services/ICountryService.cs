@@ -1,3 +1,5 @@
+using BlazorWebAppAuthentication.Domain.Entities;
+
 namespace BlazorWebAppAuthentication.Domain.Services;
 
 public interface ICountryService

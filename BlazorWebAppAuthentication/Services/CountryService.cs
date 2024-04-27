@@ -1,4 +1,6 @@
 using BlazorWebAppAuthentication.Database;
+using BlazorWebAppAuthentication.Database.Interfaces;
+using BlazorWebAppAuthentication.Domain.Entities;
 
 namespace BlazorWebAppAuthentication.Domain.Services
 {

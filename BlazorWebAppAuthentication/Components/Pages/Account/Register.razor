@@ -68,7 +68,7 @@
         };
 
         applicationContext.UserAccount.Add(userAccount);
-        await applicationContext.SaveChangesAsync();
+          applicationContext.SaveChangesAsync();
 
         // Optionally sign the user in or navigate to a confirmation page
         navigationManager.NavigateTo("login");

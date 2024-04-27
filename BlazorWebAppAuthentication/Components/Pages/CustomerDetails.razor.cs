@@ -1,4 +1,5 @@
 using BlazorWebAppAuthentication.Database;
+using BlazorWebAppAuthentication.Database.Interfaces;
 using BlazorWebAppAuthentication.Domain;
 using BlazorWebAppAuthentication.Domain.Entities;
 using Microsoft.AspNetCore.Components;
@@ -16,10 +17,9 @@ public partial class CustomerDetails
     public ICustomerRepository CustomerRepository { get; set; }
     public Customer? Customer { get; set; } = new Customer();
     public List<Country>? Country { get; set; } = new List<Country>();
-
     protected override async Task OnInitializedAsync()
     {
-        Country = CountryRepository.GetAllCountries().ToList();
-        Customer = CustomerRepository.GetCustomerById(CustomerId);
+        Country = (List<Country>?)  CountryRepository.GetAllCountries();
+        Customer =   CustomerRepository.GetCustomerById(CustomerId);
     }
 }

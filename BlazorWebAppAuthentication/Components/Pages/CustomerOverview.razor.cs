@@ -1,15 +1,21 @@
 using BlazorWebAppAuthentication.Domain.Entities;
-using Microsoft.EntityFrameworkCore;
+using BlazorWebAppAuthentication.Domain.Services;
+using BlazorWebAppAuthentication.Services;
+using Microsoft.AspNetCore.Components;
 
 namespace BlazorWebAppAuthentication.Components.Pages;
 
 public partial class CustomerOverview
 {
-    private List<Customer>? Customers;
+    [Inject] 
+    public ICustomerService CustomerService { get; set; }
+    
+    public IEnumerable<Customer> Customers { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
-        Customers = await ApplicationContext.Customers.ToListAsync();
+        
+        Customers = (  CustomerService.GetAllCustomers()).ToList();
     }
 
     private async Task ViewDetails(int customerId)

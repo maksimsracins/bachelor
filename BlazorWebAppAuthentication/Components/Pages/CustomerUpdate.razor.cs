@@ -1,9 +1,9 @@
+using BlazorWebAppAuthentication.Domain;
 using BlazorWebAppAuthentication.Domain.Entities;
 using BlazorWebAppAuthentication.Domain.Services;
-using BlazorWebAppAuthentication.Services;
 using Microsoft.AspNetCore.Components;
 
-namespace BlazorWebAppAuthentication.Domain;
+namespace BlazorWebAppAuthentication.Components.Pages;
 
 public partial class CustomerUpdate
 {
@@ -29,25 +29,7 @@ public partial class CustomerUpdate
 
     public Customer Customer { get; set; } = new();
 
-    public void OnInvalidSubmit()
-    {
-        Console.WriteLine("OnInvalidSubmit");
-        StatusClass = "alert-danger";
-        Message = "There are some validation errors. Please try again.";
-    }
-    protected async Task DeleteCustomer()
-    {
-          CustomerService.DeleteCustomer(Customer.CustomerId);
-
-        StatusClass = "alert-success";
-        Message = "Deleted successfully";
-
-        Saved = true;
-    }
-
-    private PersistingComponentStateSubscription subscription;
-
-    protected async Task OnInitializedAsync()
+    protected override async Task OnInitializedAsync()
     {
             Console.WriteLine("OnInitialized");
 
@@ -101,7 +83,21 @@ public partial class CustomerUpdate
             Saved = true;
         }
     }
-    
+    public void OnInvalidSubmit()
+    {
+        Console.WriteLine("OnInvalidSubmit");
+        StatusClass = "alert-danger";
+        Message = "There are some validation errors. Please try again.";
+    }
+    protected async Task DeleteCustomer()
+    {
+        CustomerService.DeleteCustomer(Customer.CustomerId);
+
+        StatusClass = "alert-success";
+        Message = "Deleted successfully";
+
+        Saved = true;
+    }
     public string GetMaritalStatusName(MaritalStatus status)
     {
         return Enum.GetName(typeof(MaritalStatus), status);
