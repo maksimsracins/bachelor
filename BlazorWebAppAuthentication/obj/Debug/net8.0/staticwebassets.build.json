@@ -1,31 +1,31 @@
 {
   "Version": 1,
-  "Hash": "besvvHmjDMZwCEVAb358nCT9AD7LJsev+Ym0C6OC/u8=",
+  "Hash": "HYgZK4cWW38NAcm/R37voUAlF3VNTpqY3ZbITcC6AYM=",
   "Source": "BlazorWebAppAuthentication",
   "BasePath": "_content/BlazorWebAppAuthentication",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Database/BlazorWebAppAuthentication.Database.csproj",
+      "Identity": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Database/BlazorWebAppAuthentication.Database.csproj",
       "Version": 2,
       "Source": "BlazorWebAppAuthentication.Database",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
-      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishProperties": "",
       "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
       "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
-      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildProperties": "",
       "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
     },
     {
-      "Identity": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Domain/BlazorWebAppAuthentication.Domain.csproj",
+      "Identity": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/BlazorWebAppAuthentication.Domain.csproj",
       "Version": 2,
       "Source": "BlazorWebAppAuthentication.Domain",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
-      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishProperties": "",
       "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
       "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
-      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildProperties": "",
       "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
     }
   ],
@@ -33,17 +33,17 @@
     {
       "Name": "BlazorWebAppAuthentication/wwwroot",
       "Source": "BlazorWebAppAuthentication",
-      "ContentRoot": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication/wwwroot/",
+      "ContentRoot": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/",
       "BasePath": "_content/BlazorWebAppAuthentication",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication/obj/Debug/net8.0/scopedcss/bundle/BlazorWebAppAuthentication.styles.css",
+      "Identity": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/obj/Debug/net8.0/scopedcss/bundle/BlazorWebAppAuthentication.styles.css",
       "SourceId": "BlazorWebAppAuthentication",
       "SourceType": "Computed",
-      "ContentRoot": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication/obj/Debug/net8.0/scopedcss/bundle/",
+      "ContentRoot": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/obj/Debug/net8.0/scopedcss/bundle/",
       "BasePath": "_content/BlazorWebAppAuthentication",
       "RelativePath": "BlazorWebAppAuthentication.styles.css",
       "AssetKind": "All",
@@ -56,13 +56,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication/obj/Debug/net8.0/scopedcss/bundle/BlazorWebAppAuthentication.styles.css"
+      "OriginalItemSpec": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/obj/Debug/net8.0/scopedcss/bundle/BlazorWebAppAuthentication.styles.css"
     },
     {
-      "Identity": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication/obj/Debug/net8.0/scopedcss/projectbundle/BlazorWebAppAuthentication.bundle.scp.css",
+      "Identity": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/obj/Debug/net8.0/scopedcss/projectbundle/BlazorWebAppAuthentication.bundle.scp.css",
       "SourceId": "BlazorWebAppAuthentication",
       "SourceType": "Computed",
-      "ContentRoot": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication/obj/Debug/net8.0/scopedcss/projectbundle/",
+      "ContentRoot": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/obj/Debug/net8.0/scopedcss/projectbundle/",
       "BasePath": "_content/BlazorWebAppAuthentication",
       "RelativePath": "BlazorWebAppAuthentication.bundle.scp.css",
       "AssetKind": "All",
@@ -75,13 +75,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication/obj/Debug/net8.0/scopedcss/projectbundle/BlazorWebAppAuthentication.bundle.scp.css"
+      "OriginalItemSpec": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/obj/Debug/net8.0/scopedcss/projectbundle/BlazorWebAppAuthentication.bundle.scp.css"
     },
     {
-      "Identity": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication/wwwroot/app.css",
+      "Identity": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/app.css",
       "SourceId": "BlazorWebAppAuthentication",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication/wwwroot/",
+      "ContentRoot": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/",
       "BasePath": "_content/BlazorWebAppAuthentication",
       "RelativePath": "app.css",
       "AssetKind": "All",
@@ -97,10 +97,10 @@
       "OriginalItemSpec": "wwwroot/app.css"
     },
     {
-      "Identity": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication/wwwroot/bootstrap/bootstrap.min.css",
+      "Identity": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/bootstrap/bootstrap.min.css",
       "SourceId": "BlazorWebAppAuthentication",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication/wwwroot/",
+      "ContentRoot": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/",
       "BasePath": "_content/BlazorWebAppAuthentication",
       "RelativePath": "bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -116,10 +116,10 @@
       "OriginalItemSpec": "wwwroot/bootstrap/bootstrap.min.css"
     },
     {
-      "Identity": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication/wwwroot/bootstrap/bootstrap.min.css.map",
+      "Identity": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/bootstrap/bootstrap.min.css.map",
       "SourceId": "BlazorWebAppAuthentication",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication/wwwroot/",
+      "ContentRoot": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/",
       "BasePath": "_content/BlazorWebAppAuthentication",
       "RelativePath": "bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -135,10 +135,10 @@
       "OriginalItemSpec": "wwwroot/bootstrap/bootstrap.min.css.map"
     },
     {
-      "Identity": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication/wwwroot/favicon.png",
+      "Identity": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/favicon.png",
       "SourceId": "BlazorWebAppAuthentication",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication/wwwroot/",
+      "ContentRoot": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/",
       "BasePath": "_content/BlazorWebAppAuthentication",
       "RelativePath": "favicon.png",
       "AssetKind": "All",
@@ -154,10 +154,10 @@
       "OriginalItemSpec": "wwwroot/favicon.png"
     },
     {
-      "Identity": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication/wwwroot/images/login.png",
+      "Identity": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/images/login.png",
       "SourceId": "BlazorWebAppAuthentication",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication/wwwroot/",
+      "ContentRoot": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/",
       "BasePath": "_content/BlazorWebAppAuthentication",
       "RelativePath": "images/login.png",
       "AssetKind": "All",
@@ -173,10 +173,10 @@
       "OriginalItemSpec": "wwwroot/images/login.png"
     },
     {
-      "Identity": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication/wwwroot/images/logout.png",
+      "Identity": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/images/logout.png",
       "SourceId": "BlazorWebAppAuthentication",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication/wwwroot/",
+      "ContentRoot": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/",
       "BasePath": "_content/BlazorWebAppAuthentication",
       "RelativePath": "images/logout.png",
       "AssetKind": "All",
@@ -192,10 +192,10 @@
       "OriginalItemSpec": "wwwroot/images/logout.png"
     },
     {
-      "Identity": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication/wwwroot/images/register.png",
+      "Identity": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/images/register.png",
       "SourceId": "BlazorWebAppAuthentication",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication/wwwroot/",
+      "ContentRoot": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/",
       "BasePath": "_content/BlazorWebAppAuthentication",
       "RelativePath": "images/register.png",
       "AssetKind": "All",

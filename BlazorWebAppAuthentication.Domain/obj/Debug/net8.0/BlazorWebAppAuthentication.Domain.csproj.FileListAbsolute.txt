@@ -18,3 +18,24 @@
 /Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Domain/obj/Debug/net8.0/refint/BlazorWebAppAuthentication.Domain.dll
 /Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Domain/obj/Debug/net8.0/BlazorWebAppAuthentication.Domain.pdb
 /Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Domain/obj/Debug/net8.0/ref/BlazorWebAppAuthentication.Domain.dll
+/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/bin/Debug/net8.0/BlazorWebAppAuthentication.Domain.deps.json
+/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/bin/Debug/net8.0/BlazorWebAppAuthentication.Domain.dll
+/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/bin/Debug/net8.0/BlazorWebAppAuthentication.Domain.pdb
+/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/obj/Debug/net8.0/BlazorWebAppAuthentication.Domain.csproj.AssemblyReference.cache
+/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/obj/Debug/net8.0/BlazorWebAppAuthentication.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/obj/Debug/net8.0/BlazorWebAppAuthentication.Domain.AssemblyInfoInputs.cache
+/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/obj/Debug/net8.0/BlazorWebAppAuthentication.Domain.AssemblyInfo.cs
+/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/obj/Debug/net8.0/BlazorWebAppAuthentication.Domain.csproj.CoreCompileInputs.cache
+/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/obj/Debug/net8.0/BlazorWebAppAuthentication.Domain.sourcelink.json
+/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/obj/Debug/net8.0/staticwebassets.build.json
+/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/obj/Debug/net8.0/staticwebassets.development.json
+/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/obj/Debug/net8.0/staticwebassets/msbuild.BlazorWebAppAuthentication.Domain.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/obj/Debug/net8.0/staticwebassets/msbuild.build.BlazorWebAppAuthentication.Domain.props
+/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.BlazorWebAppAuthentication.Domain.props
+/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.BlazorWebAppAuthentication.Domain.props
+/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/obj/Debug/net8.0/staticwebassets.pack.json
+/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/obj/Debug/net8.0/scopedcss/bundle/BlazorWebAppAuthentication.Domain.styles.css
+/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/obj/Debug/net8.0/BlazorWebAppAuthentication.Domain.dll
+/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/obj/Debug/net8.0/refint/BlazorWebAppAuthentication.Domain.dll
+/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/obj/Debug/net8.0/BlazorWebAppAuthentication.Domain.pdb
+/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/obj/Debug/net8.0/ref/BlazorWebAppAuthentication.Domain.dll

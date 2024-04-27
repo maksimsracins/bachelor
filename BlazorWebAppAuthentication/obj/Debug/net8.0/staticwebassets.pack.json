@@ -1,35 +1,35 @@
 {
   "Files": [
     {
-      "Id": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication/obj/Debug/net8.0/scopedcss/projectbundle/BlazorWebAppAuthentication.bundle.scp.css",
+      "Id": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/obj/Debug/net8.0/scopedcss/projectbundle/BlazorWebAppAuthentication.bundle.scp.css",
       "PackagePath": "staticwebassets/BlazorWebAppAuthentication.bundle.scp.css"
     },
     {
-      "Id": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication/wwwroot/app.css",
+      "Id": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/app.css",
       "PackagePath": "staticwebassets/app.css"
     },
     {
-      "Id": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication/wwwroot/bootstrap/bootstrap.min.css",
+      "Id": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/bootstrap/bootstrap.min.css",
       "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css"
     },
     {
-      "Id": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication/wwwroot/bootstrap/bootstrap.min.css.map",
+      "Id": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/bootstrap/bootstrap.min.css.map",
       "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css.map"
     },
     {
-      "Id": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication/wwwroot/favicon.png",
+      "Id": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/favicon.png",
       "PackagePath": "staticwebassets/favicon.png"
     },
     {
-      "Id": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication/wwwroot/images/login.png",
+      "Id": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/images/login.png",
       "PackagePath": "staticwebassets/images/login.png"
     },
     {
-      "Id": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication/wwwroot/images/logout.png",
+      "Id": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/images/logout.png",
       "PackagePath": "staticwebassets/images/logout.png"
     },
     {
-      "Id": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication/wwwroot/images/register.png",
+      "Id": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/images/register.png",
       "PackagePath": "staticwebassets/images/register.png"
     },
     {

@@ -4,8 +4,8 @@ namespace BlazorWebAppAuthentication.Database;
 
 public interface ITransactionRepository
 {
-    void AddTransaction(Transaction transaction);
-    Transaction GetTransactionById(int transactionId);
-    void UpdateTransaction(Transaction transaction);
-    void DeleteTransaction(int transactionId);
+    Task AddTransaction(Transaction transaction);
+    Task<Transaction> GetTransactionById(int transactionId);
+    Task UpdateTransaction(Transaction transaction);
+    Task DeleteTransaction(int transactionId);
 }
