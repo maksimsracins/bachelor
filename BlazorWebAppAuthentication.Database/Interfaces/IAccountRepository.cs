@@ -1,11 +1,11 @@
 using BlazorWebAppAuthentication.Domain.Entities;
 
-namespace BlazorWebAppAuthentication.Database;
+namespace BlazorWebAppAuthentication.Database.Interfaces;
 
 public interface IAccountRepository
 {
-    void AddAccount(Account account);
+    Account AddAccount(Account account);
     Account GetAccountById(int accountId);
-    void UpdateAccount(Account account);
-    void DeleteAccount(int accountId);
+    Account UpdateAccount(Account account);
+    Account DeleteAccount(int accountId);
 }

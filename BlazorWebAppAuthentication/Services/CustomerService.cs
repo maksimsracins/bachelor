@@ -1,7 +1,7 @@
-using BlazorWebAppAuthentication.Database;
+using BlazorWebAppAuthentication.Database.Interfaces;
 using BlazorWebAppAuthentication.Domain.Entities;
 
-namespace BlazorWebAppAuthentication.Services
+namespace BlazorWebAppAuthentication.Domain.Services
 {
     public class CustomerService : ICustomerService
     {
@@ -12,14 +12,14 @@ namespace BlazorWebAppAuthentication.Services
             _customerRepository = customerRepository;
         }
 
-        public async Task<IEnumerable<Customer>> GetAllCustomers()
+        public IEnumerable<Customer> GetAllCustomers()
         {
-            return _customerRepository.GetAllCustomers();
+            return   _customerRepository.GetAllCustomers();
         }
 
-        public void AddCustomer(Customer customer)
+        public Customer AddCustomer(Customer? customer)
         {
-            _customerRepository.AddCustomer(customer);
+            return _customerRepository.AddCustomer(customer);
         }
 
         public Customer GetCustomerById(int customerId)
@@ -27,14 +27,16 @@ namespace BlazorWebAppAuthentication.Services
             return _customerRepository.GetCustomerById(customerId);
         }
 
-        public void UpdateCustomer(Customer customer)
+        public Customer UpdateCustomer(Customer customer)
         {
-            _customerRepository.UpdateCustomer(customer);
+              var data=_customerRepository.UpdateCustomer(customer);
+              return data;
         }
 
-        public void DeleteCustomer(int customerId)
+        public Customer DeleteCustomer(int customerId)
         {
-            _customerRepository.DeleteCustomer(customerId);
+              var data =_customerRepository.DeleteCustomer(customerId);
+              return data;
         }
     }
 }

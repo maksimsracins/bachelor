@@ -1,55 +1,45 @@
 using BlazorWebAppAuthentication.Database;
-using BlazorWebAppAuthentication.Domain;
 
-namespace BlazorWebAppAuthentication.Services;
-
-public class CountryService : ICountryService
+namespace BlazorWebAppAuthentication.Domain.Services
 {
-    private readonly ICountryRepository _countryRepository;
-
-    public CountryService(ICountryRepository countryRepository)
+    public class CountryService : ICountryService
     {
-        _countryRepository = countryRepository;
-    }
+        private readonly ICountryRepository _countryRepository;
 
-    public IEnumerable<Country> GetAllCountries()
-    {
-        return _countryRepository.GetAllCountries();
-    }
-
-    public Country GetCountryById(int countryId)
-    {
-        return _countryRepository.GetCountryById(countryId);
-    }
-
-    public void AddCountry(Country country)
-    {
-        if (country == null)
+        public CountryService(ICountryRepository countryRepository)
         {
-            throw new ArgumentNullException(nameof(country), "Country object cannot be null.");
+            _countryRepository = countryRepository;
         }
-        _countryRepository.AddCountry(country);
-    }
 
-    public void UpdateCountry(Country country)
-    {
-        if (country == null)
+        public List<Country> GetAllCountries()
         {
-            throw new ArgumentNullException(nameof(country), "Country object cannot be null.");
+            return _countryRepository.GetAllCountries().ToList();
         }
-        _countryRepository.UpdateCountry(country);
-    }
 
-    public void DeleteCountry(int countryId)
-    {
-        var country = GetCountryById(countryId);
-        if (country != null)
+        public Country GetCountryById(int countryId)
         {
-            _countryRepository.DeleteCountry(countryId);
+            return _countryRepository.GetCountryById(countryId);
         }
-        else
+
+        public Country AddCountry(Country country)
         {
-            throw new ArgumentException($"Country with ID {countryId} not found.", nameof(countryId));
+              return _countryRepository.AddCountry(country);
+        }
+
+        public Country UpdateCountry(Country country)
+        {
+             return _countryRepository.UpdateCountry(country);
+        }
+
+        public Country DeleteCountry(int countryId)
+        {
+            var country = GetCountryById(countryId);
+            if (country != null)
+            {
+                  _countryRepository.DeleteCountry(countryId);
+            }
+
+            return country;
         }
     }
 }

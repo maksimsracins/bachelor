@@ -1,11 +1,11 @@
 using BlazorWebAppAuthentication.Domain.Entities;
 
-namespace BlazorWebAppAuthentication.Services;
+namespace BlazorWebAppAuthentication.Domain.Services;
 
 public interface ITransactionService
 {
-    Task AddTransactionAsync(Transaction transaction);
-    Task<Transaction> GetTransactionByIdAsync(int transactionId);
-    Task UpdateTransactionAsync(Transaction transaction);
-    Task DeleteTransactionAsync(int transactionId);
+    Transaction AddTransaction(Transaction transaction);
+    Transaction GetTransactionById(int transactionId);
+    Transaction UpdateTransaction(Transaction transaction);
+    Transaction DeleteTransaction(int transactionId);
 }

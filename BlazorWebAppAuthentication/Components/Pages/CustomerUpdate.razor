@@ -1,88 +1,117 @@
 @page "/customer-update"
-@page "/customer-update/{CustomerId:int}"
-@using BlazorWebAppAuthentication.Services
+@page "/customer-update/{CustomerId}"
 @using BlazorWebAppAuthentication.Domain
+@using RenderMode = Microsoft.AspNetCore.Mvc.Rendering.RenderMode
+@implements IDisposable
+@inject PersistentComponentState ComponentState
+@RenderMode.ServerPrerendered
 
-<section class="customer-edit">
-    <h1 class="page-title">Details for @Customer.FirstName @Customer.LastName</h1>
-    <EditForm Model="@Customer">
-        <div class="form-group row">
-            <label for="firstName" class="col-sm-3">First name: </label>
-            <InputText id="firstName" class="form-control col-sm-8"
-                       @bind-Value="@Customer.FirstName"
-                       placeholder="Enter first name">
-            </InputText>
-        </div>
-        
-        <div class="form-group row">
-            <label for="lastName" class="col-sm-3">Last name: </label>
-            <InputText id="lastName" class="form-control col-sm-8"
-                       @bind-Value="@Customer.LastName"
-                       placeholder="Enter last name">
-            </InputText>
-        </div>
-        
-        <div class="form-group row">
-            <label for="birthday" class="col-sm-3">Birthday: </label>
-            <InputDate id="birthday" class="form-control col-sm-8"
-                       @bind-Value="@Customer.BirthDate"
-                       placeholder="Enter birthday">
-            </InputDate>
-        </div>
-        
-        <div class="form-group row">
-            <label for="street" class="col-sm-3">Street: </label>
-            <InputText id="street" class="form-control col-sm-8"
-                       @bind-Value="@Customer.Street"
-                       placeholder="Enter street">
-            </InputText>
-        </div>
-        
-        <div class="form-group row">
-            <label for="zip" class="col-sm-3">Zip: </label>
-            <InputText id="zip" class="form-control col-sm-8"
-                       @bind-Value="@Customer.Zip"
-                       placeholder="Enter zip">
-            </InputText>
-        </div>
-        
-        <div class="form-group row">
-            <label for="phoneNumber" class="col-sm-3">Phone Number: </label>
-            <InputText id="phoneNumber" class="form-control col-sm-8"
-                       @bind-Value="@Customer.PhoneNumber"
-                       placeholder="Enter phone number">
-            </InputText>
-        </div>
-        
-        <div class="form-group row">
-            <label for="marital" class="col-sm-3">Marital status: </label>
-            <InputSelect id="marital" @bind-Value="Customer.MaritalStatus" class="form-control">
-                @foreach (var status in MaritalStatusList)
-                {
-                    <option value="@GetMaritalStatusName(status)">
-                        @GetMaritalStatusName(status)
-                    </option>
-                }
-            </InputSelect>
+@if (!Saved)
+{
+    <section class="CustomerUpdateForm">
+        <h1 class="page-title">Details for @Customer.FirstName @Customer.LastName</h1>
+        <EditForm Model="@Customer"
+                  OnInvalidSubmit="OnInvalidSubmit"
+                  OnValidSubmit="OnValidSubmit"
+                  FormName="CustomerUpdateForm">
+                    <component type="typeof(UsersComponent)" render-mode="Server" />
+            <div class="form-group row">
+                <label for="firstName" class="col-sm-3">First name: </label>
+                <InputText id="firstName" class="form-control col-sm-8"
+                           @bind-Value="@Customer.FirstName"
+                           placeholder="Enter first name">
+                </InputText>
             </div>
-        
-    </EditForm>
-</section>
 
-@*             <p><strong>Country:</strong> <InputText @bind-Value="Customer.Country.Name"/></p> *@
+            <div class="form-group row">
+                <label for="lastName" class="col-sm-3">Last name: </label>
+                <InputText id="lastName" class="form-control col-sm-8"
+                           @bind-Value="@Customer.LastName"
+                           placeholder="Enter last name">
+                </InputText>
+            </div>
 
-@*             <select @bind="SelectedMaritalStatus"> *@
-@*                 @foreach (MaritalStatus status in Enum.GetValues(typeof(MaritalStatus))) *@
-@*                 { *@
-@*                     <option value="@status">@status</option> *@
-@*                 } *@
-@*             </select> *@
-@*             <p><strong>Gender:</strong> @Customer.Gender.ToString()</p> *@
-@*             <button type="submit">Update</button> *@
-@*         </div> *@
-@*     </EditForm> *@
-@* } *@
-@* else *@
-@* { *@
-@*     <p>Loading...</p> *@
-@* } *@
+            <div class="form-group row">
+                <label for="birthday" class="col-sm-3">Birthday: </label>
+                <InputDate id="birthday" class="form-control col-sm-8"
+                           @bind-Value="@Customer.BirthDate"
+                           placeholder="Enter birthday">
+                </InputDate>
+            </div>
+
+            <div class="form-group row">
+                <label for="street" class="col-sm-3">Street: </label>
+                <InputText id="street" class="form-control col-sm-8"
+                           @bind-Value="@Customer.Street"
+                           placeholder="Enter street">
+                </InputText>
+            </div>
+
+            <div class="form-group row">
+                <label for="zip" class="col-sm-3">Zip: </label>
+                <InputText id="zip" class="form-control col-sm-8"
+                           @bind-Value="@Customer.Zip"
+                           placeholder="Enter zip">
+                </InputText>
+            </div>
+
+            <div class="form-group row">
+                <label for="phoneNumber" class="col-sm-3">Phone Number: </label>
+                <InputText id="phoneNumber" class="form-control col-sm-8"
+                           @bind-Value="@Customer.PhoneNumber"
+                           placeholder="Enter phone number">
+                </InputText>
+            </div>
+            <div class="form-group row">
+                <label for="gender" class="col-sm-3">Gender: </label>
+                <InputSelect id="gender" class="form-control col-sm-8"
+                             @bind-Value="@Customer.Gender"
+                             placeholder="Enter phone number">
+                    <option value="@(Gender.Male)">Male</option>
+                    <option value="@(Gender.Female)">Female</option>
+                    <option value="@(Gender.Potato)">Potato</option>
+                </InputSelect>
+            </div>
+
+            <div class="form-group row">
+                <label for="gender" class="col-sm-3">Gender: </label>
+                <InputSelect id="gender" class="form-control col-sm-8"
+                             @bind-Value="@Customer.Gender"
+                             placeholder="Enter phone number">
+                    @foreach (var country in Countries)
+                    {
+                        <option value="@country.CountryId">@country.Name</option>
+                    }
+                </InputSelect>
+            </div>
+
+            <div class="form-group row">
+                <label for="marital" class="col-sm-3">Marital status: </label>
+                <InputSelect id="marital" @bind-Value="Customer.MaritalStatus" class="form-control">
+                    <option value="@(MaritalStatus.Single)">Single</option>
+                    <option value="@(MaritalStatus.Married)">Married</option>
+                    <option value="@(MaritalStatus.Other)">Other</option>
+                </InputSelect>
+            </div>
+            <button type="submit" class="btn btn-primary">Save customer</button>
+
+            @if (Customer.CustomerId > 0)
+            {
+                <a class="btn btn-danger" @onclick="@DeleteCustomer">
+                    Delete
+                </a>
+            }
+
+            <a class="btn btn-outline-primary" @onclick="@NavigateToOverview">Back to overview</a>
+
+        </EditForm>
+    </section>
+} else{
+<div class="alert @StatusClass">@Message</div>
+
+}
+@code{
+
+    public void Dispose() => subscription.Dispose();
+
+}

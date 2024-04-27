@@ -1,12 +1,12 @@
 using BlazorWebAppAuthentication.Domain.Entities;
 
-namespace BlazorWebAppAuthentication.Services;
+namespace BlazorWebAppAuthentication.Domain.Services;
 
 public interface ICustomerService
 {
-    Task <IEnumerable<Customer>> GetAllCustomers();
-    void AddCustomer(Customer customer);
+    IEnumerable<Customer> GetAllCustomers();
+    Customer AddCustomer(Customer customer);
     Customer GetCustomerById(int customerId);
-    void UpdateCustomer(Customer customer);
-    void DeleteCustomer(int customerId);
+    Customer UpdateCustomer(Customer customer);
+    Customer DeleteCustomer(int customerId);
 }

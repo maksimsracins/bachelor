@@ -1,8 +1,7 @@
-using System.Threading.Tasks;
-using BlazorWebAppAuthentication.Domain.Entities;
 using BlazorWebAppAuthentication.Database;
+using BlazorWebAppAuthentication.Domain.Entities;
 
-namespace BlazorWebAppAuthentication.Services;
+namespace BlazorWebAppAuthentication.Domain.Services;
 
 public class TransactionService : ITransactionService
 {
@@ -13,22 +12,22 @@ public class TransactionService : ITransactionService
         _transactionRepository = transactionRepository;
     }
 
-    public Task AddTransactionAsync(Transaction transaction)
+    public Transaction AddTransaction(Transaction transaction)
     {
         return _transactionRepository.AddTransaction(transaction);
     }
 
-    public Task<Transaction> GetTransactionByIdAsync(int transactionId)
+    public Transaction GetTransactionById(int transactionId)
     {
         return _transactionRepository.GetTransactionById(transactionId);
     }
 
-    public Task UpdateTransactionAsync(Transaction transaction)
+    public Transaction UpdateTransaction(Transaction transaction)
     {
         return _transactionRepository.UpdateTransaction(transaction);
     }
 
-    public Task DeleteTransactionAsync(int transactionId)
+    public Transaction DeleteTransaction(int transactionId)
     {
         return _transactionRepository.DeleteTransaction(transactionId);
     }

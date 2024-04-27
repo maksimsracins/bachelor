@@ -1,12 +1,10 @@
-using BlazorWebAppAuthentication.Domain;
-
-namespace BlazorWebAppAuthentication.Services;
+namespace BlazorWebAppAuthentication.Domain.Services;
 
 public interface ICountryService
 {
-    IEnumerable<Country> GetAllCountries();
+    List<Country> GetAllCountries();
     Country GetCountryById(int countryId);
-    void AddCountry(Country country);
-    void UpdateCountry(Country country);
-    void DeleteCountry(int countryId);
+    Country AddCountry(Country country);
+    Country UpdateCountry(Country country);
+    Country DeleteCountry(int countryId);
 }

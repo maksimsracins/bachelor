@@ -1,12 +1,12 @@
 using BlazorWebAppAuthentication.Domain.Entities;
 
-namespace BlazorWebAppAuthentication.Database;
+namespace BlazorWebAppAuthentication.Database.Interfaces;
 
 public interface ICustomerRepository
 {
     IEnumerable<Customer> GetAllCustomers();
-    void AddCustomer(Customer customer);
+    Customer AddCustomer(Customer customer);
     Customer GetCustomerById(int customerId);
-    void UpdateCustomer(Customer customer);
-    void DeleteCustomer(int customerId);
+    Customer UpdateCustomer(Customer? customer);
+    Customer DeleteCustomer(int customerId);
 }
