@@ -1,6 +1,6 @@
+using BlazorWebAppAuthentication.Database.Interfaces;
 using BlazorWebAppAuthentication.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using System.Threading.Tasks;
 
 namespace BlazorWebAppAuthentication.Database;
 
@@ -13,32 +13,31 @@ public class TransactionRepository : ITransactionRepository
         _context = context;
     }
 
-    public async Task AddTransaction(Transaction transaction)
+    public Transaction AddTransaction(Transaction transaction)
     {
-        await _context.Transactions.AddAsync(transaction);
-        await _context.SaveChangesAsync();
+         var data = _context.Transactions.Add(transaction);
+         _context.SaveChanges();
+         return data.Entity;
     }
 
-    public async Task<Transaction> GetTransactionById(int transactionId)
+    public Transaction GetTransactionById(int transactionId)
     {
-        return await _context.Transactions
-            .AsNoTracking()
-            .FirstOrDefaultAsync(t => t.TransactionId == transactionId);
+        var data = _context.Transactions.FirstOrDefault(t => t.TransactionId == transactionId);
+        return data;
     }
 
-    public async Task UpdateTransaction(Transaction transaction)
+    public Transaction UpdateTransaction(Transaction transaction)
     {
-        _context.Transactions.Update(transaction);
-        await _context.SaveChangesAsync();
+        var data = _context.Transactions.Update(transaction);
+        _context.SaveChanges();
+        return data.Entity;
     }
 
-    public async Task DeleteTransaction(int transactionId)
+    public Transaction DeleteTransaction(int transactionId)
     {
-        var transaction = await _context.Transactions.FindAsync(transactionId);
-        if (transaction != null)
-        {
-            _context.Transactions.Remove(transaction);
-            await _context.SaveChangesAsync();
-        }
+        var transaction = _context.Transactions.Find(transactionId);
+            var data = _context.Transactions.Remove(transaction);
+            _context.SaveChanges();
+            return data.Entity;
     }
 }

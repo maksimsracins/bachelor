@@ -1,6 +1,6 @@
 using BlazorWebAppAuthentication.Domain.Entities;
 
-namespace BlazorWebAppAuthentication.Database;
+namespace BlazorWebAppAuthentication.Database.Interfaces;
 
 public interface ITransactionRepository
 {
