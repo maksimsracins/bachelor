@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="02978a0f-d076-4b04-9931-bb16aa9fc439" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Database/CustomerRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Database/CustomerRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Database/Interfaces/IUserAccountsRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Database/Interfaces/IUserAccountsRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Database/UserAccountRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Database/UserAccountRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Database/bin/Debug/net8.0/BlazorWebAppAuthentication.Database.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Database/bin/Debug/net8.0/BlazorWebAppAuthentication.Database.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Database/bin/Debug/net8.0/BlazorWebAppAuthentication.Database.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Database/bin/Debug/net8.0/BlazorWebAppAuthentication.Database.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Database/bin/Debug/net8.0/BlazorWebAppAuthentication.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Database/bin/Debug/net8.0/BlazorWebAppAuthentication.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Database/bin/Debug/net8.0/BlazorWebAppAuthentication.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Database/bin/Debug/net8.0/BlazorWebAppAuthentication.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Database/obj/Debug/net8.0/BlazorWebAppAuthentication.Database.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Database/obj/Debug/net8.0/BlazorWebAppAuthentication.Database.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Database/obj/Debug/net8.0/BlazorWebAppAuthentication.Database.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Database/obj/Debug/net8.0/BlazorWebAppAuthentication.Database.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Database/obj/Debug/net8.0/BlazorWebAppAuthentication.Database.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Database/obj/Debug/net8.0/BlazorWebAppAuthentication.Database.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Database/obj/Debug/net8.0/BlazorWebAppAuthentication.Database.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Database/obj/Debug/net8.0/BlazorWebAppAuthentication.Database.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Database/obj/Debug/net8.0/BlazorWebAppAuthentication.Database.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Database/obj/Debug/net8.0/BlazorWebAppAuthentication.Database.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Database/obj/Debug/net8.0/BlazorWebAppAuthentication.Database.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Database/obj/Debug/net8.0/BlazorWebAppAuthentication.Database.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Database/obj/Debug/net8.0/ref/BlazorWebAppAuthentication.Database.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Database/obj/Debug/net8.0/ref/BlazorWebAppAuthentication.Database.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Database/obj/Debug/net8.0/refint/BlazorWebAppAuthentication.Database.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Database/obj/Debug/net8.0/refint/BlazorWebAppAuthentication.Database.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Domain/bin/Debug/net8.0/BlazorWebAppAuthentication.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Domain/bin/Debug/net8.0/BlazorWebAppAuthentication.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Domain/bin/Debug/net8.0/BlazorWebAppAuthentication.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Domain/bin/Debug/net8.0/BlazorWebAppAuthentication.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Domain/obj/Debug/net8.0/BlazorWebAppAuthentication.Domain.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Domain/obj/Debug/net8.0/BlazorWebAppAuthentication.Domain.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Domain/obj/Debug/net8.0/BlazorWebAppAuthentication.Domain.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Domain/obj/Debug/net8.0/BlazorWebAppAuthentication.Domain.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Domain/obj/Debug/net8.0/BlazorWebAppAuthentication.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Domain/obj/Debug/net8.0/BlazorWebAppAuthentication.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Domain/obj/Debug/net8.0/BlazorWebAppAuthentication.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Domain/obj/Debug/net8.0/BlazorWebAppAuthentication.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Domain/obj/Debug/net8.0/BlazorWebAppAuthentication.Domain.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Domain/obj/Debug/net8.0/BlazorWebAppAuthentication.Domain.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Domain/obj/Debug/net8.0/ref/BlazorWebAppAuthentication.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Domain/obj/Debug/net8.0/ref/BlazorWebAppAuthentication.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Domain/obj/Debug/net8.0/refint/BlazorWebAppAuthentication.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../BlazorWebAppAuthentication.Domain/obj/Debug/net8.0/refint/BlazorWebAppAuthentication.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BlazorWebAppAuthentication.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BlazorWebAppAuthentication.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/Layout/MainLayout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Layout/MainLayout.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/Layout/NavMenu.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Layout/NavMenu.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/Pages/Account/Login.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Pages/Account/Login.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/Pages/Account/Register.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Pages/Account/Register.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/Pages/CustomerDetails.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Pages/CustomerDetails.razor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/Pages/CustomerUpdate.razor" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Pages/CustomerUpdate.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Components/Pages/CustomerUpdate.razor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Components/Pages/CustomerUpdate.razor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/BlazorWebAppAuthentication.Database.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/BlazorWebAppAuthentication.Database.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/BlazorWebAppAuthentication.Database.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/BlazorWebAppAuthentication.Database.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/BlazorWebAppAuthentication.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/BlazorWebAppAuthentication.Domain.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/BlazorWebAppAuthentication.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/BlazorWebAppAuthentication.Domain.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/BlazorWebAppAuthentication.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/BlazorWebAppAuthentication.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/BlazorWebAppAuthentication.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/BlazorWebAppAuthentication.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/BlazorWebAppAuthentication.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/BlazorWebAppAuthentication.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/BlazorWebAppAuthentication.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/BlazorWebAppAuthentication.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/BlazorWebAppAuthentication.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/BlazorWebAppAuthentication.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/BlazorWebAppAuthentication.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/BlazorWebAppAuthentication.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/BlazorWebAppAuthentication.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/BlazorWebAppAuthentication.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/BlazorWebAppAuthentication.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/BlazorWebAppAuthentication.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/BlazorWebAppAuthentication.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/BlazorWebAppAuthentication.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/BlazorWebAppAuthentication.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/BlazorWebAppAuthentication.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/BlazorWebAppAuthentication.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/BlazorWebAppAuthentication.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/BlazorWebAppAuthentication.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/BlazorWebAppAuthentication.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/BlazorWebAppAuthentication.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/BlazorWebAppAuthentication.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/ref/BlazorWebAppAuthentication.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/ref/BlazorWebAppAuthentication.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/refint/BlazorWebAppAuthentication.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/refint/BlazorWebAppAuthentication.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2fjhdmuX8vZjVwX2p554qKq00Xq" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="02978a0f-d076-4b04-9931-bb16aa9fc439" name="Changes" comment="" />
+      <created>1714320483314</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1714320483314</updated>
+      <workItem from="1714320484411" duration="2000" />
+      <workItem from="1714320654606" duration="2000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>

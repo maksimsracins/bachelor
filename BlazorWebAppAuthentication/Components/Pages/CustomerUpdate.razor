@@ -73,7 +73,7 @@
                         </div>
                         
                         <div class="form-group row">
-                            <label for="city" class="col-sm-3">Zip: </label>
+                            <label for="city" class="col-sm-3">City: </label>
                             <InputText id="city" class="form-control col-sm-8"
                                        @bind-Value="@Customer.City"
                                        placeholder="Enter zip">
@@ -123,6 +123,8 @@
         </EditForm>
     </section>
 } else{
-<div class="alert @StatusClass">@Message</div>
+    <div class="alert @StatusClass">
+        <span>@Message</span>
+    </div>
 
 }

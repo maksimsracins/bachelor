@@ -12,15 +12,23 @@ public class UserAccountRepository : IUserAccountRepository
         _context = context;
     }
 
-    public void AddUserAccount(UserAccount userAccount)
+    public UserAccount AddUserAccount(UserAccount userAccount)
     {
-        _context.UserAccount.Add(userAccount);
+        var data = _context.UserAccount.Add(userAccount);
         _context.SaveChanges();
+        return data.Entity;
+    }
+
+    public List<UserAccount> GetAllUserAccounts()
+    {
+        return _context.UserAccount.ToList();
     }
 
     public UserAccount GetLastUserAccount()
     {
-        return _context.UserAccount.Last();
+        return _context.UserAccount
+            .OrderByDescending(ua => ua.UserAccountId)
+            .FirstOrDefault();
     }
 
     public UserAccount GetUserAccountById(int userAccountId)

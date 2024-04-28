@@ -5,8 +5,9 @@
 @using BlazorWebAppAuthentication.Database
 @using Microsoft.AspNetCore.Authentication
 @using Microsoft.AspNetCore.Authentication.Cookies
+@using Microsoft.AspNetCore.Http
 @inject ApplicationContext ApplicationContext
-@inject NavigationManager NavigationManager
+@inject NavigationManager NavigationManager;
 
 <div class="col-lg-4 offset-lg-4 pt-4 pb-4 border">
     <EditForm Model="@Model" OnValidSubmit="Authenticate" FormName="LoginForm">
@@ -45,12 +46,19 @@
 @code {
     
     [CascadingParameter]
-    public HttpContext? HttpContext { get; set; }
+    public HttpContext HttpContext { get; set; }
 
     [SupplyParameterFromForm]
     public LoginViewModel Model { get; set; } = new();
 
     private string? errorMessage;
+    private string? render_mode;
+
+    protected override void OnInitialized()
+    {
+        render_mode = "prerender";
+        base.OnInitialized();
+    }
 
     private async Task Authenticate()
     {

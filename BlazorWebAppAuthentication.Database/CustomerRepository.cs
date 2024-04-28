@@ -22,7 +22,7 @@ namespace BlazorWebAppAuthentication.Database
         public Customer AddCustomer(Customer customer)
         {
             var data = _context.Customers.Add(customer);
-            _context.SaveChangesAsync();
+            _context.SaveChanges();
             return data.Entity;
         }
 

@@ -2,7 +2,6 @@ using BlazorWebAppAuthentication;
 using BlazorWebAppAuthentication.Components;
 using BlazorWebAppAuthentication.Database;
 using BlazorWebAppAuthentication.Database.Interfaces;
-using BlazorWebAppAuthentication.Domain.Entities;
 using BlazorWebAppAuthentication.Domain.Services;
 using BlazorWebAppAuthentication.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -26,6 +25,7 @@ builder.Configuration.Bind("Project", new Config());
 
 builder.Services.AddAuthorization();
 builder.Services.AddCascadingAuthenticationState();
+builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddDbContext<ApplicationContext>(options =>
     options.UseMySQL(Config.ConnectionString));
@@ -41,7 +41,6 @@ builder.Services.AddScoped<IUserAccountRepository, UserAccountRepository>();
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
 builder.Services.AddScoped<UserAccountRepository, UserAccountRepository>();
-
 
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<ICountryService, CountryService>();

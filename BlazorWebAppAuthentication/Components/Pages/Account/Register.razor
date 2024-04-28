@@ -2,8 +2,8 @@
 
 @using BlazorWebAppAuthentication.Models.ViewModels
 @using BlazorWebAppAuthentication.Domain.Entities
-@using BlazorWebAppAuthentication.Database
-@inject ApplicationContext applicationContext
+@using BlazorWebAppAuthentication.Database.Interfaces
+@using BlazorWebAppAuthentication.Domain.Services
 @inject NavigationManager navigationManager
 
 <div class="col-lg-4 offset-lg-4 pt-4 pb-4 border">
@@ -48,6 +48,12 @@
 
     [SupplyParameterFromForm]
     public RegisterViewModel Model { get; set; } = new();
+    
+    [Inject]
+    public IUserAccountRepository UserAccountRepository { get; set; }
+
+    [Inject] 
+    public ICustomerService CustomerService { get; set; }
 
     private string? errorMessage;
 
@@ -58,17 +64,32 @@
             errorMessage = "Passwords do not match.";
             return;
         }
+        
+        var lastCustomerId = CustomerService.GetAllCustomers().MaxBy(c => c.CustomerId)!.CustomerId;
+        var lastUserAccountId = UserAccountRepository.GetAllUserAccounts()
+            .OrderByDescending(ua => ua.UserAccountId)
+            .FirstOrDefault()!.UserAccountId + 1;
 
         var userAccount = new UserAccount
         {
+            UserAccountId = lastUserAccountId,
             Username = Model.Username,
             Password = Model.Password, // Remember to hash the password in a real scenario
             Role = "User",
             Email = Model.Email
         };
 
-        applicationContext.UserAccount.Add(userAccount);
-          applicationContext.SaveChanges();
+        
+        Customer newCustomer = CreateDefaultCustomer();
+        newCustomer.CustomerId = lastCustomerId + 1;
+        newCustomer.UserAccountId = lastUserAccountId;
+        newCustomer.Email = Model.Email;
+        
+
+        CustomerService.AddCustomer(newCustomer);
+
+
+        UserAccountRepository.AddUserAccount(userAccount);
 
         // Optionally sign the user in or navigate to a confirmation page
         navigationManager.NavigateTo("login");

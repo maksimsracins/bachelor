@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BlazorWebAppAuthentication.Database")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5d9d60fa132dfefeb15db3deb33a20100a75349e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e9c2d4e33e5f290b02e2305861ea1d8dbf7fca28")]
 [assembly: System.Reflection.AssemblyProductAttribute("BlazorWebAppAuthentication.Database")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BlazorWebAppAuthentication.Database")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -2,7 +2,6 @@ using BlazorWebAppAuthentication.Database;
 using BlazorWebAppAuthentication.Domain;
 using BlazorWebAppAuthentication.Domain.Entities;
 using BlazorWebAppAuthentication.Domain.Services;
-using BlazorWebAppAuthentication.Models.ViewModels;
 using Microsoft.AspNetCore.Components;
 
 namespace BlazorWebAppAuthentication.Components.Pages;
@@ -48,7 +47,23 @@ public partial class CustomerUpdate
 
             if (customerId == 0)
             {
-                Customer = new Customer { CountryId = 1, BirthDate = DateTime.Now, JoinedDate = DateTime.Now };
+                Customer = new Customer
+                {
+                    CustomerId = 0,
+                    FirstName = "",
+                    LastName = "",
+                    Accounts = new List<Domain.Entities.Account>(),
+                    Email = "",
+                    City = "Empty",
+                    Country = Countries.FirstOrDefault(),
+                    PhoneNumber = "9999999",
+                    CountryId = 1, 
+                    BirthDate = DateTime.Now, 
+                    JoinedDate = DateTime.Now,
+                    Street = "Empty",
+                    Zip = "Empty",
+                    Role = Role.User.ToString()
+                };
             }
             else
             {
@@ -67,23 +82,31 @@ public partial class CustomerUpdate
 
         if (Customer.CustomerId == 0)
         {
-            var addedCustomer = CustomerService.AddCustomer(Customer);
-            if (addedCustomer != null)
+
+            if (Customer != null)
             {
-                StatusClass = "alert-success";
-                TempPassword = Guid.NewGuid();
-                Message = $"New employee added successfully. In your first login please use below password. PASSWORD: {TempPassword}";
-                Saved = true;
                 var lastUserAccount = UserAccountRepository.GetLastUserAccount();
+                var lastCustomerId = CustomerService.GetAllCustomers().MaxBy(c => c.CustomerId)!.CustomerId;
+                Customer.UserAccountId = lastUserAccount.UserAccountId + 1;
+                Customer.CustomerId = lastCustomerId + 1;
+                TempPassword = Guid.NewGuid();
                 var userAccount = new UserAccount()
                 {
                     Email = Customer.Email,
                     Password = TempPassword.ToString(),
                     UserAccountId = lastUserAccount.UserAccountId + 1,
                     Role = Customer.Role,
-                    Username = ""
+                    Username = $"{Customer.FirstName+'_'+Customer.LastName}"
                 };
-                UserAccountRepository.AddUserAccount(userAccount);
+                var addedUserAccount = UserAccountRepository.AddUserAccount(userAccount);
+                var addedCustomer = CustomerService.AddCustomer(Customer);
+                
+                StatusClass = "alert-success";
+
+                Message = $"New employee {addedCustomer.FirstName} added successfully. Email:{addedCustomer.Email} Username: {addedCustomer.FirstName+'_'+addedCustomer.LastName}Password: {TempPassword}";
+                
+                Saved = true;
+                
             }else
             {
                 StatusClass = "alert-danger";
