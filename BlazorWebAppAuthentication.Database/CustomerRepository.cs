@@ -22,7 +22,7 @@ namespace BlazorWebAppAuthentication.Database
         public Customer AddCustomer(Customer customer)
         {
             var data = _context.Customers.Add(customer);
-            _context.SaveChanges();
+            _context.SaveChangesAsync();
             return data.Entity;
         }
 
@@ -36,7 +36,7 @@ namespace BlazorWebAppAuthentication.Database
         public Customer UpdateCustomer(Customer? customer)
         {
             var data = _context.Customers.Update(customer);
-            _context.SaveChanges();
+            _context.SaveChangesAsync();
             return data.Entity;
         }
 
@@ -44,7 +44,7 @@ namespace BlazorWebAppAuthentication.Database
         {
             var data = _context.Customers.Find(customerId);
                 var result = _context.Customers.Remove(data);
-                _context.SaveChanges();
+                _context.SaveChangesAsync();
                 return result.Entity;
 
         }

@@ -8,7 +8,7 @@
 
 <div class="col-lg-4 offset-lg-4 pt-4 pb-4 border">
     <EditForm Model="@Model" OnValidSubmit="RegisterUser" FormName="RegisterForm">
-        <DataAnnotationsValidator @rendermode="@RenderMode.InteractiveServer"/>
+        <DataAnnotationsValidator/>
         <div class="mb-3 text-center flex-column">
             <img src="/images/register.png" style="max-height: 5rem;" />
             <h3>REGISTER</h3>
@@ -68,7 +68,7 @@
         };
 
         applicationContext.UserAccount.Add(userAccount);
-          applicationContext.SaveChangesAsync();
+          applicationContext.SaveChanges();
 
         // Optionally sign the user in or navigate to a confirmation page
         navigationManager.NavigateTo("login");

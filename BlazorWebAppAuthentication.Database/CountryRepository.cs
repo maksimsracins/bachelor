@@ -27,14 +27,14 @@ namespace BlazorWebAppAuthentication.Database
         public Country AddCountry(Country country)
         {
             var data = _context.Countries.Add(country);
-              _context.SaveChanges ();
+              _context.SaveChangesAsync();
               return data.Entity;
         }
 
         public Country UpdateCountry(Country country)
         {
             var data= _context.Countries.Update(country);
-              _context.SaveChanges ();
+              _context.SaveChangesAsync();
               return data.Entity;
         }
 
@@ -42,7 +42,7 @@ namespace BlazorWebAppAuthentication.Database
         {
             var data = GetCountryById(countryId); 
             var result =_context.Countries.Remove(data);
-            _context.SaveChanges();
+            _context.SaveChangesAsync();
             return result.Entity;
 
         }

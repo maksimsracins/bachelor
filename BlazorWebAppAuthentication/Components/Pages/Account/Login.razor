@@ -17,10 +17,16 @@
             <h3>LOGIN</h3>
         </div>
         <div class="mb-3">
-            <label>User Name</label>
+            <label>User Email</label>
+            <InputText @bind-Value="Model.Email" class="form-control" placeholder="Email" />
+            <ValidationMessage For="() => Model.Email" />
+        </div>
+        <div class="mb-3">
+            <label>Username</label>
             <InputText @bind-Value="Model.Username" class="form-control" placeholder="Username" />
             <ValidationMessage For="() => Model.Username" />
         </div>
+        
         <div class="mb-3">
             <label>Password</label>
             <InputText @bind-Value="Model.Password" placeholder="Password" type="password" class="form-control"></InputText>
@@ -48,7 +54,7 @@
 
     private async Task Authenticate()
     {
-        var userAccount = ApplicationContext.UserAccount.Where(u => u.Username == Model.Username).FirstOrDefault();
+        var userAccount = ApplicationContext.UserAccount.Where(u => u.Email == Model.Email && u.Username == Model.Username).FirstOrDefault();
         if (userAccount is null || userAccount.Password != Model.Password)
         {
             errorMessage = "Invalid user name or password";
@@ -56,6 +62,7 @@
         }
         var claims = new List<Claim>
         {
+            new Claim(ClaimTypes.Email, Model.Email),
             new Claim(ClaimTypes.Name, Model.Username),
             new Claim(ClaimTypes.Role, userAccount.Role)
         };

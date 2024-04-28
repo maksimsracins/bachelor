@@ -1,6 +1,8 @@
+using BlazorWebAppAuthentication.Database;
 using BlazorWebAppAuthentication.Domain;
 using BlazorWebAppAuthentication.Domain.Entities;
 using BlazorWebAppAuthentication.Domain.Services;
+using BlazorWebAppAuthentication.Models.ViewModels;
 using Microsoft.AspNetCore.Components;
 
 namespace BlazorWebAppAuthentication.Components.Pages;
@@ -9,6 +11,8 @@ public partial class CustomerUpdate
 {
     [Inject]
     public ICustomerService CustomerService { get; set; }
+    [Inject]
+    public UserAccountRepository UserAccountRepository { get; set; }
     [Inject]
     public ICountryService CountryService { get; set; }
     [Inject]
@@ -19,6 +23,7 @@ public partial class CustomerUpdate
     
     public List<Country> Countries = new List<Country>();
     public List<MaritalStatus> MaritalStatusList { get; set; } = new List<MaritalStatus>();
+    public List<Role> Roles { get; set; } = new List<Role>();
     
     protected string CountryId = string.Empty;
     
@@ -27,6 +32,7 @@ public partial class CustomerUpdate
     protected string Message = string.Empty;
     protected string StatusClass = string.Empty;
     protected bool Saved;
+    protected Guid TempPassword = Guid.Empty;
 
 
     public Customer Customer { get; set; } = new();
@@ -61,12 +67,23 @@ public partial class CustomerUpdate
 
         if (Customer.CustomerId == 0)
         {
-            var addedCustomer =   CustomerService.AddCustomer(Customer);
+            var addedCustomer = CustomerService.AddCustomer(Customer);
             if (addedCustomer != null)
             {
                 StatusClass = "alert-success";
-                Message = "New employee added successfully.";
+                TempPassword = Guid.NewGuid();
+                Message = $"New employee added successfully. In your first login please use below password. PASSWORD: {TempPassword}";
                 Saved = true;
+                var lastUserAccount = UserAccountRepository.GetLastUserAccount();
+                var userAccount = new UserAccount()
+                {
+                    Email = Customer.Email,
+                    Password = TempPassword.ToString(),
+                    UserAccountId = lastUserAccount.UserAccountId + 1,
+                    Role = Customer.Role,
+                    Username = ""
+                };
+                UserAccountRepository.AddUserAccount(userAccount);
             }else
             {
                 StatusClass = "alert-danger";

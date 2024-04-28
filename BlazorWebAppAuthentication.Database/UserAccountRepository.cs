@@ -18,6 +18,11 @@ public class UserAccountRepository : IUserAccountRepository
         _context.SaveChanges();
     }
 
+    public UserAccount GetLastUserAccount()
+    {
+        return _context.UserAccount.Last();
+    }
+
     public UserAccount GetUserAccountById(int userAccountId)
     {
         return _context.UserAccount.FirstOrDefault(ua => ua.UserAccountId == userAccountId);

@@ -4,7 +4,9 @@ namespace BlazorWebAppAuthentication.Models.ViewModels;
 
 public class LoginViewModel
 {
-    [Required(AllowEmptyStrings = false, ErrorMessage = "Please provide user name.")]
+    [Required(AllowEmptyStrings = false, ErrorMessage = "Please provide email name.")]
+    public string? Email { get; set; }
+    [Required(AllowEmptyStrings = false, ErrorMessage = "Please provide username.")]
     public string? Username { get; set; }
     [Required(AllowEmptyStrings = false, ErrorMessage = "Please provide password.")]
     public string? Password { get; set; }
