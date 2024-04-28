@@ -9,9 +9,14 @@ public partial class TransferMoney
 {
     [CascadingParameter]
     public HttpContext? HttpContext { get; set; }
-    
-    [SupplyParameterFromForm]
+
+    [SupplyParameterFromForm] 
     public TransferModel Model { get; set; } = new();
+
+    public decimal accountBalance = 0;
+    
+    private Domain.Entities.Account selectedSenderAccount;
+    private bool showTransferForm = true;
     
     private string? transactionStatusMessage;
     private List<Domain.Entities.Account> senderAccounts = new ();
@@ -25,9 +30,13 @@ public partial class TransferMoney
     {
         var senderAccount = ApplicationContext.Accounts
             .FirstOrDefault(a => a.AccountId == @Model.SenderAccountId);
-        var beneficiaryAccount = ApplicationContext.Accounts
-            .FirstOrDefault(a => a.AccountId == @Model.BeneficiaryAccountId);
+        Model.SenderAccountName = senderAccount.AccountName;
 
+        var beneficiaryAccount = ApplicationContext.Accounts
+            .FirstOrDefault(a => a.AccountName == Model.BeneficiaryAccountName);
+
+        Model.BeneficiaryAccountName = beneficiaryAccount.AccountName;
+        
         if (senderAccount == null || beneficiaryAccount == null)
         {
             transactionStatusMessage = "One or both account IDs are invalid.";
@@ -62,8 +71,11 @@ public partial class TransferMoney
 
     public class TransferModel
     {
+        public string TransactionType { get; set; }
         public int SenderAccountId { get; set; }
+        public string SenderAccountName { get; set; }
         public int BeneficiaryAccountId { get; set; }
+        public string BeneficiaryAccountName { get; set; }
         public int Amount { get; set; }
     }
 }

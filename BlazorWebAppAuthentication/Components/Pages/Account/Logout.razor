@@ -21,13 +21,16 @@
 
     [CascadingParameter]
     public HttpContext HttpContext { get; set; }
+    
+    [Inject]
+    public IHttpContextAccessor HttpContextAccessor { get; set; }
 
     protected override async Task OnInitializedAsync()
     {
-          base.OnInitializedAsync();
+          //base.OnInitializedAsync();
         if (HttpContext.User.Identity.IsAuthenticated)
         {
-              HttpContext.SignOutAsync();
+            HttpContext.SignOutAsync();
             navigationManager.NavigateTo("/logout", true);
         }
     }
