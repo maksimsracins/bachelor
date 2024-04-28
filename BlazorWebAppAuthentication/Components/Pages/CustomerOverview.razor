@@ -1,14 +1,9 @@
 @page "/customers-overview"
 @inject NavigationManager NavigationManager
-@using RenderMode = Microsoft.AspNetCore.Mvc.Rendering.RenderMode
-@RenderMode.Server
-
-@* @rendermode @(new InteractiveServerRenderMode(prerender:false)) *@
 
 
 
 <h1 class="page-title">Customer Overview</h1>
-<component type="typeof(App)" render-mode="Server" />
 
 @if (Customers == null)
 {
@@ -24,6 +19,7 @@ else
             <th>First Name</th>
             <th>Last Name</th>
             <th>City</th>
+            <th>Email</th>
             <th>Details</th>
         </tr>
         </thead>
@@ -35,6 +31,7 @@ else
                 <td>@customer.FirstName</td>
                 <td>@customer.LastName</td>
                 <td>@customer.City</td>
+                <td>@customer.Email</td>
                 <td>
                     @*<button class="btn btn-primary" @onclick="() => ViewDetails(customer.CustomerId)">
                         View Details
@@ -44,9 +41,6 @@ else
                     </a>
                     <a href="@($"customer-update/{customer.CustomerId}")" class="btn btn-primary table-btn">
                         Update
-                    </a>
-                    <a href="@($"customer-delete/{customer.CustomerId}")" class="btn btn-primary table-btn">
-                        Delete
                     </a>
                 </td>
             </tr>

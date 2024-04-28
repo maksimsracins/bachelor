@@ -13,34 +13,32 @@ public partial class CustomerUpdate
     public ICountryService CountryService { get; set; }
     [Inject]
     public NavigationManager NavigationManager { get; set; }
+        
+    [Parameter]
+    public string CustomerId { get; set; }
     
     public List<Country> Countries = new List<Country>();
     public List<MaritalStatus> MaritalStatusList { get; set; } = new List<MaritalStatus>();
     
     protected string CountryId = string.Empty;
     
+    
     //used to store state of screen
     protected string Message = string.Empty;
     protected string StatusClass = string.Empty;
     protected bool Saved;
-    
-    [Parameter]
-    public string CustomerId { get; set; }
+
 
     public Customer Customer { get; set; } = new();
 
     protected override async Task OnInitializedAsync()
     {
-            Console.WriteLine("OnInitialized");
-
-            string customerIdConverted = CustomerId.ToString();
-        
             Saved = false;
             Countries =   CountryService.GetAllCountries();
             //Customer =   CustomerService.GetCustomerById(CustomerId);
             MaritalStatusList = Enum.GetValues(typeof(MaritalStatus)).Cast<MaritalStatus>().ToList();
 
-            int.TryParse(customerIdConverted, out var customerId);
+            int.TryParse(CustomerId, out var customerId);
 
             if (customerId == 0)
             {
@@ -48,7 +46,7 @@ public partial class CustomerUpdate
             }
             else
             {
-                Customer =   CustomerService.GetCustomerById(int.Parse(customerIdConverted));
+                Customer =   CustomerService.GetCustomerById(int.Parse(CustomerId));
             }
 
             CountryId = Customer.CountryId.ToString();
@@ -104,7 +102,7 @@ public partial class CustomerUpdate
     }
     protected void NavigateToOverview()
     {
-        NavigationManager.NavigateTo("/customer-overview");
+        NavigationManager.NavigateTo("/customers-overview");
     }
     
 }
