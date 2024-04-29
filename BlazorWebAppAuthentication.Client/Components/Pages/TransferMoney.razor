@@ -1,0 +1,61 @@
+@page "/transfer-money"
+
+@using Microsoft.AspNetCore.Authorization
+@using BlazorWebAppAuthentication.Database
+
+@inject ApplicationContext ApplicationContext
+@attribute [Authorize(Roles = "User")]
+
+<h3>Transfer Money</h3>
+
+@if (showTransferForm){
+
+    <EditForm Model="@Model" OnValidSubmit="HandleTransfer" FormName="TransferMoneyForm">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div class="form-group">
+            <label for="senderAccountId">Sender Account:</label>
+            <select @bind="Model.SenderAccountId" class="form-control">
+                @foreach (var account in senderAccounts)
+                {
+                    <option value="@account.AccountId">@account.AccountName</option>
+                }
+            </select>
+            @if (selectedSenderAccount != null)
+                        {
+                            <div>Balance: @accountBalance</div>
+                        }
+        </div>
+    
+        <div class="form-group">
+            <label for="beneficiaryAccountId">Beneficiary Account:</label>
+            <InputText @bind-Value="@Model.BeneficiaryAccountName" class="form-control" />
+        </div>
+    
+        <div class="form-group">
+            <label for="paymentType">Payment Type:</label>
+            <select @bind="Model.TransactionType" class="form-control">
+                <option value="SWIFT">SWIFT</option>
+                <option value="ISO">ISO</option>
+            </select>
+        </div>
+    
+        <div class="form-group">
+            <label for="amount">Amount:</label>
+            <InputNumber @bind-Value="@Model.Amount" class="form-control" />
+        </div>
+        <div class="form-group m-3">
+            <label for="remittanceInfo">Comment:</label>
+            <InputText id="remittanceInfo" @bind-Value="Model.RemittenceInfo"></InputText>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Transfer</button>
+    </EditForm>
+}
+@if (transactionStatusMessage != null)
+{
+    <div class="alert alert-info mt-2">
+        @transactionStatusMessage
+    </div>
+}

@@ -1,0 +1,88 @@
+﻿@using BlazorWebAppAuthentication.Database.Interfaces
+@using BlazorWebAppAuthentication.Domain.Entities
+@using BlazorWebAppAuthentication.Domain.Services
+<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">BlazorWebAppAuthentication.Client</a>
+    </div>
+</div>
+
+<input type="checkbox" title="Navigation menu" class="navbar-toggler"/>
+
+<div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
+    <nav class="flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
+            </NavLink>
+        </div>
+        
+        <AuthorizeView Roles="User">
+            <Authorized>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="@($"customer-update/{GetCustomerId()}")">
+                        <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Update Profile
+                    </NavLink>
+                </div>
+            </Authorized>
+        </AuthorizeView>
+        
+        <AuthorizeView Roles="User">
+            <Authorized>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="transfer-money">
+                        <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span>Transfer Money
+                    </NavLink>
+                </div>
+            </Authorized>
+        </AuthorizeView>
+        
+        <AuthorizeView Roles="Administrator">
+            <Authorized>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="customers-overview">
+                        <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span>Customer Overview
+                    </NavLink>
+                </div>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="customer-update">
+                        <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span>Add customer
+                    </NavLink>
+                </div>
+            </Authorized>
+        </AuthorizeView>
+    </nav>
+</div>
+
+@code{
+
+    [Inject]
+    public IHttpContextAccessor HttpContextAccessor { get; set; }
+    
+    [Inject]
+    public IUserAccountRepository UserAccountRepository { get; set; }
+    
+    [Inject]
+    public ICustomerService CustomerService { get; set; }
+
+    public UserAccount GetUserAccount()
+    {
+        string? loggedUserEmail = HttpContextAccessor.HttpContext.User.Claims.FirstOrDefault().Value;
+
+        var userAccount = UserAccountRepository
+            .GetAllUserAccounts()
+            .FirstOrDefault(ua => ua.Email == loggedUserEmail);
+
+        return userAccount;
+    }
+
+    public int GetCustomerId()
+    {
+        var customerId = CustomerService.GetAllCustomers()
+            .FirstOrDefault(c => c.UserAccountId == GetUserAccount().UserAccountId)
+            .CustomerId;
+        return customerId;
+    }
+
+
+}
