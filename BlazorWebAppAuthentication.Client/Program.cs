@@ -1,10 +1,11 @@
 using BlazorWebAppAuthentication;
-using BlazorWebAppAuthentication.Components;
+using BlazorWebAppAuthentication.Client.Components;
+using BlazorWebAppAuthentication.Client.Components.Layout;
+using BlazorWebAppAuthentication.Client.Configurations;
+using BlazorWebAppAuthentication.Client.Payment;
+using BlazorWebAppAuthentication.Client.Services;
 using BlazorWebAppAuthentication.Database;
 using BlazorWebAppAuthentication.Database.Interfaces;
-using BlazorWebAppAuthentication.Domain.Services;
-using BlazorWebAppAuthentication.Payment;
-using BlazorWebAppAuthentication.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +14,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
@@ -53,6 +55,8 @@ builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<ICountryService, CountryService>();
 builder.Services.AddScoped<ITransactionService, TransactionService>();
 builder.Services.AddScoped<IAccountService, AccountService>();
+builder.Services.AddScoped<PaymentService>();
+builder.Services.AddScoped<NavMenu>();
 
 var app = builder.Build();
 

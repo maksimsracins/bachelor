@@ -1,0 +1,9 @@
+{
+  "MT103Settings": {
+    "SenderBankIdentifier": "F01BANKBEBBAXXX1234567890",
+    "ReceiverBankIdentifier": "BANKBEBBAXXX1234567890",
+    "BankOperationCode": "CRED",
+    "Charges": "SHA",
+    "DefaultMessageIdentifier": "MT103"
+  }
+}

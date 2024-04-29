@@ -1,4 +1,4 @@
-namespace BlazorWebAppAuthentication;
+namespace BlazorWebAppAuthentication.Client.Configurations;
 
 public class Config
 {

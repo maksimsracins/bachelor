@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XuwTsiiFhyDk+OlvMG6R20TYUHl7R1J5EYAL8fmSj0LzxpxGw9AzAYJIDOyc4fCo902Fzmwwaz8xko1KBXqFGQ==",
+  "dgSpecHash": "efRIJ38znZO3Lh3ICVa4Esy6CPhAoDBY2416zX45c61ol8s62AR3OVa/oczPoir5hmW1xA+KD5dIhIASqEYXVg==",
   "success": true,
-  "projectFilePath": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Domain/BlazorWebAppAuthentication.Domain.csproj",
+  "projectFilePath": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/BlazorWebAppAuthentication.Domain.csproj",
   "expectedPackageFiles": [
     "/Users/maksimsracins/.nuget/packages/microsoft.aspnetcore.authorization/8.0.4/microsoft.aspnetcore.authorization.8.0.4.nupkg.sha512",
     "/Users/maksimsracins/.nuget/packages/microsoft.aspnetcore.components/8.0.4/microsoft.aspnetcore.components.8.0.4.nupkg.sha512",

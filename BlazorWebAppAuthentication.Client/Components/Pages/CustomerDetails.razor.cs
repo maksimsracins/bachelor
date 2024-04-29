@@ -1,9 +1,8 @@
 using BlazorWebAppAuthentication.Database.Interfaces;
-using BlazorWebAppAuthentication.Domain;
 using BlazorWebAppAuthentication.Domain.Entities;
 using Microsoft.AspNetCore.Components;
 
-namespace BlazorWebAppAuthentication.Components.Pages;
+namespace BlazorWebAppAuthentication.Client.Components.Pages;
 
 public partial class CustomerDetails
 {

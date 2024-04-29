@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "l4hKM82uIBWDz6Poy/cRQ8xZ8COGXp7QwVZsosJYUJ4=",
+  "Hash": "HeUUXvmSzq5oEHfUbmxkKWGmtUT0SaEtqyjzCRphuCI=",
   "Source": "BlazorWebAppAuthentication.Database",
   "BasePath": "_content/BlazorWebAppAuthentication.Database",
   "Mode": "Default",
@@ -11,10 +11,10 @@
       "Version": 2,
       "Source": "BlazorWebAppAuthentication.Domain",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
-      "AdditionalPublishProperties": "",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
       "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
       "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
-      "AdditionalBuildProperties": "",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
       "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
     }
   ],

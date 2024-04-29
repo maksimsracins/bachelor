@@ -20,10 +20,10 @@
 @code{
 
     [CascadingParameter]
-    public HttpContext HttpContext { get; set; }
+    public required HttpContext HttpContext { get; set; }
     
     [Inject]
-    public IHttpContextAccessor HttpContextAccessor { get; set; }
+    public required IHttpContextAccessor HttpContextAccessor { get; set; }
 
     protected override async Task OnInitializedAsync()
     {

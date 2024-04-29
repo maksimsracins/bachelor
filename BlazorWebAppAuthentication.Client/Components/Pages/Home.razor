@@ -14,10 +14,17 @@
                         <span>You are not logged in. Please <a class="fw-bolder" href="/login">click here</a> to login.</span>
                     </NotAuthorized>
                     <Authorized>
-                        <span>Logged in as <b>@context.User.Identity.Name</b>. <a class="fw-bolder" href="/logout">Click here</a> to logout.</span>
+                        <span>Logged in as <b>@HttpContextAccessor.HttpContext.User.Identity.Name</b>. <a class="fw-bolder" href="/logout">Click here</a> to logout.</span>
                     </Authorized>
                 </AuthorizeView>
             </div>
         </div>
     </div>
 </div>
+
+@code{
+
+    [Inject]
+    public required IHttpContextAccessor HttpContextAccessor { get; set; }
+
+}

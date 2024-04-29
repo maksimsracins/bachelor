@@ -584,11 +584,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Domain/BlazorWebAppAuthentication.Domain.csproj",
+      "projectUniqueName": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/BlazorWebAppAuthentication.Domain.csproj",
       "projectName": "BlazorWebAppAuthentication.Domain",
-      "projectPath": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Domain/BlazorWebAppAuthentication.Domain.csproj",
+      "projectPath": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/BlazorWebAppAuthentication.Domain.csproj",
       "packagesPath": "/Users/maksimsracins/.nuget/packages/",
-      "outputPath": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Domain/obj/",
+      "outputPath": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/maksimsracins/.nuget/NuGet/NuGet.Config"

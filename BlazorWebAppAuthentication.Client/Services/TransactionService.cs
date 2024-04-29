@@ -1,9 +1,7 @@
-using BlazorWebAppAuthentication.Database;
 using BlazorWebAppAuthentication.Database.Interfaces;
 using BlazorWebAppAuthentication.Domain.Entities;
-using BlazorWebAppAuthentication.Services;
 
-namespace BlazorWebAppAuthentication.Domain.Services;
+namespace BlazorWebAppAuthentication.Client.Services;
 
 public class TransactionService : ITransactionService
 {

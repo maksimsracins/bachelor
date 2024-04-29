@@ -1,4 +1,4 @@
-namespace BlazorWebAppAuthentication.Domain;
+namespace BlazorWebAppAuthentication.Domain.Entities;
 
 public class Country
 {

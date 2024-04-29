@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vPa4RPXZeiZrZzptMQhGkD+zLhaj0Xtqn6UODPhUPrrO4M0wxVF8T2v+2UCHAFp8IZX5ij4fSz8YtY+ggNO59g==",
+  "dgSpecHash": "HzVoHuPKbJMNKyZ1agasfTe+44aqHfKo1EsuKy8kGIjqaN8pHOHgdJhSssYkXkWn4ieV8gvZeYhA7V7eU8k4zw==",
   "success": true,
-  "projectFilePath": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/BlazorWebAppAuthentication.csproj",
+  "projectFilePath": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/BlazorWebAppAuthentication.Client.csproj",
   "expectedPackageFiles": [
     "/Users/maksimsracins/.nuget/packages/bouncycastle.cryptography/2.2.1/bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "/Users/maksimsracins/.nuget/packages/google.protobuf/3.21.9/google.protobuf.3.21.9.nupkg.sha512",

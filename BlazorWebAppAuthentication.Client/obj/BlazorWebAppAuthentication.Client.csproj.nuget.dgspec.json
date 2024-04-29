@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Client/BlazorWebAppAuthentication.Client.csproj": {}
+    "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/BlazorWebAppAuthentication.Client.csproj": {}
   },
   "projects": {
-    "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Api/BlazorWebAppAuthentication.Api.csproj": {
+    "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/BlazorWebAppAuthentication.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Api/BlazorWebAppAuthentication.Api.csproj",
-        "projectName": "BlazorWebAppAuthentication.Api",
-        "projectPath": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Api/BlazorWebAppAuthentication.Api.csproj",
+        "projectUniqueName": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/BlazorWebAppAuthentication.Client.csproj",
+        "projectName": "BlazorWebAppAuthentication.Client",
+        "projectPath": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/BlazorWebAppAuthentication.Client.csproj",
         "packagesPath": "/Users/maksimsracins/.nuget/packages/",
-        "outputPath": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Api/obj/",
+        "outputPath": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/maksimsracins/.nuget/NuGet/NuGet.Config"
@@ -27,8 +27,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Domain/BlazorWebAppAuthentication.Domain.csproj": {
-                "projectPath": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Domain/BlazorWebAppAuthentication.Domain.csproj"
+              "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Database/BlazorWebAppAuthentication.Database.csproj": {
+                "projectPath": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Database/BlazorWebAppAuthentication.Database.csproj"
+              },
+              "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/BlazorWebAppAuthentication.Domain.csproj": {
+                "projectPath": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/BlazorWebAppAuthentication.Domain.csproj"
               }
             }
           }
@@ -48,37 +51,13 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Microsoft.AspNetCore.Components.Web": {
+            "Microsoft.AspNetCore.Http": {
               "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[2.2.2, )"
             },
-            "Microsoft.AspNetCore.Mvc": {
+            "Microsoft.Extensions.Http": {
               "target": "Package",
-              "version": "[2.2.0, )"
-            },
-            "Microsoft.AspNetCore.Mvc.Core": {
-              "target": "Package",
-              "version": "[2.2.5, )"
-            },
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[7.0.12, )"
-            },
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[7.0.12, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[7.0.12, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[7.0.12, )"
+              "version": "[8.0.0, )"
             },
             "MySql.Data": {
               "target": "Package",
@@ -87,78 +66,6 @@
             "MySql.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.10, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.204/PortableRuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Client/BlazorWebAppAuthentication.Client.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Client/BlazorWebAppAuthentication.Client.csproj",
-        "projectName": "BlazorWebAppAuthentication.Client",
-        "projectPath": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Client/BlazorWebAppAuthentication.Client.csproj",
-        "packagesPath": "/Users/maksimsracins/.nuget/packages/",
-        "outputPath": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Client/obj/",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "/Users/maksimsracins/.nuget/NuGet/NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "net8.0"
-        ],
-        "sources": {
-          "/usr/local/share/dotnet/library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
-            "projectReferences": {
-              "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Api/BlazorWebAppAuthentication.Api.csproj": {
-                "projectPath": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Api/BlazorWebAppAuthentication.Api.csproj"
-              },
-              "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Domain/BlazorWebAppAuthentication.Domain.csproj": {
-                "projectPath": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Domain/BlazorWebAppAuthentication.Domain.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        }
-      },
-      "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
-          "dependencies": {
-            "Microsoft.Extensions.Http": {
-              "target": "Package",
-              "version": "[8.0.0, )"
             }
           },
           "imports": [
@@ -184,14 +91,90 @@
         }
       }
     },
-    "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Domain/BlazorWebAppAuthentication.Domain.csproj": {
+    "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Database/BlazorWebAppAuthentication.Database.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Domain/BlazorWebAppAuthentication.Domain.csproj",
-        "projectName": "BlazorWebAppAuthentication.Domain",
-        "projectPath": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Domain/BlazorWebAppAuthentication.Domain.csproj",
+        "projectUniqueName": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Database/BlazorWebAppAuthentication.Database.csproj",
+        "projectName": "BlazorWebAppAuthentication.Database",
+        "projectPath": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Database/BlazorWebAppAuthentication.Database.csproj",
         "packagesPath": "/Users/maksimsracins/.nuget/packages/",
-        "outputPath": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Domain/obj/",
+        "outputPath": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Database/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/maksimsracins/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/BlazorWebAppAuthentication.Domain.csproj": {
+                "projectPath": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/BlazorWebAppAuthentication.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.2.0, )"
+            },
+            "MySql.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.204/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/BlazorWebAppAuthentication.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/BlazorWebAppAuthentication.Domain.csproj",
+        "projectName": "BlazorWebAppAuthentication.Domain",
+        "projectPath": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/BlazorWebAppAuthentication.Domain.csproj",
+        "packagesPath": "/Users/maksimsracins/.nuget/packages/",
+        "outputPath": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/maksimsracins/.nuget/NuGet/NuGet.Config"

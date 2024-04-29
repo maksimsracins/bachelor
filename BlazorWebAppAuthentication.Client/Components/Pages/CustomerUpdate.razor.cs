@@ -1,10 +1,10 @@
+using BlazorWebAppAuthentication.Client.Services;
 using BlazorWebAppAuthentication.Database;
 using BlazorWebAppAuthentication.Domain;
 using BlazorWebAppAuthentication.Domain.Entities;
-using BlazorWebAppAuthentication.Domain.Services;
 using Microsoft.AspNetCore.Components;
 
-namespace BlazorWebAppAuthentication.Components.Pages;
+namespace BlazorWebAppAuthentication.Client.Components.Pages;
 
 public partial class CustomerUpdate
 {

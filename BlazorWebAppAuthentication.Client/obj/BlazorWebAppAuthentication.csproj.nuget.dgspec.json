@@ -37,6 +37,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -104,6 +109,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -139,7 +149,7 @@
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/BlazorWebAppAuthentication.csproj",
-        "projectName": "BlazorWebAppAuthentication",
+        "projectName": "BlazorWebAppAuthentication.Client",
         "projectPath": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/BlazorWebAppAuthentication.csproj",
         "packagesPath": "/Users/maksimsracins/.nuget/packages/",
         "outputPath": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/obj/",
@@ -171,6 +181,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {

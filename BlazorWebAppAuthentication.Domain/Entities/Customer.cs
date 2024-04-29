@@ -1,5 +1,3 @@
-using System.ComponentModel.DataAnnotations.Schema;
-
 namespace BlazorWebAppAuthentication.Domain.Entities;
 
 public class Customer

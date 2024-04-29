@@ -10,4 +10,5 @@ public class Transaction
     public int Amount { get; set; }
     public TransactionStatus TransactionStatus { get; set; }
     public string TransactionType { get; set; }
+    public string RemittanceInfo { get; set; }
 }

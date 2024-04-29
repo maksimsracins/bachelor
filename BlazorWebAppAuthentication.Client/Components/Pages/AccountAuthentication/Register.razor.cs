@@ -1,9 +1,9 @@
+using BlazorWebAppAuthentication.Client.Services;
 using BlazorWebAppAuthentication.Domain;
 using BlazorWebAppAuthentication.Domain.Entities;
-using BlazorWebAppAuthentication.Domain.Services;
 using Microsoft.AspNetCore.Components;
 
-namespace BlazorWebAppAuthentication.Components.Pages.Account;
+namespace BlazorWebAppAuthentication.Client.Components.Pages.AccountAuthentication;
 
 public partial class Register
 {

@@ -7,8 +7,8 @@ build_property.InvariantGlobalization =
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
-build_property.RootNamespace = BlazorWebAppAuthentication
-build_property.RootNamespace = BlazorWebAppAuthentication
+build_property.RootNamespace = BlazorWebAppAuthentication.Client
+build_property.RootNamespace = BlazorWebAppAuthentication.Client
 build_property.ProjectDir = /Users/maksimsracins/bachelor/BlazorWebAppAuthentication/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
@@ -22,20 +22,20 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9BcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/Components/Pages/Account/AccessDenied.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9BY2NvdW50L0FjY2Vzc0RlbmllZC5yYXpvcg==
+[/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/Components/Pages/AccountAuthentication/AccessDenied.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9BY2NvdW50QXV0aGVudGljYXRpb24vQWNjZXNzRGVuaWVkLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/Components/Pages/Account/Login.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9BY2NvdW50L0xvZ2luLnJhem9y
+[/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/Components/Pages/AccountAuthentication/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9BY2NvdW50QXV0aGVudGljYXRpb24vTG9naW4ucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/Components/Pages/Account/Logout.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9BY2NvdW50L0xvZ291dC5yYXpvcg==
+[/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/Components/Pages/AccountAuthentication/Logout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9BY2NvdW50QXV0aGVudGljYXRpb24vTG9nb3V0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/Components/Pages/Account/Register.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9BY2NvdW50L1JlZ2lzdGVyLnJhem9y
+[/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/Components/Pages/AccountAuthentication/Register.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9BY2NvdW50QXV0aGVudGljYXRpb24vUmVnaXN0ZXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/Components/Pages/Counter.razor]
@@ -80,8 +80,8 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9MYXlvdXQvTWFpbkxheW91dC5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = b-n4ena16qjy
+build_metadata.AdditionalFiles.CssScope = b-0oq52eo30i
 
 [/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/Components/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9MYXlvdXQvTmF2TWVudS5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = b-0lphsal0hr
+build_metadata.AdditionalFiles.CssScope = b-137h2wnczy

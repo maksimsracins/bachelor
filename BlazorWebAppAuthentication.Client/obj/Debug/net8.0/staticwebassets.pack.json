@@ -1,52 +1,52 @@
 {
   "Files": [
     {
-      "Id": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/obj/Debug/net8.0/scopedcss/projectbundle/BlazorWebAppAuthentication.bundle.scp.css",
-      "PackagePath": "staticwebassets/BlazorWebAppAuthentication.bundle.scp.css"
+      "Id": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/obj/Debug/net8.0/scopedcss/projectbundle/BlazorWebAppAuthentication.Client.bundle.scp.css",
+      "PackagePath": "staticwebassets/BlazorWebAppAuthentication.Client.bundle.scp.css"
     },
     {
-      "Id": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/app.css",
+      "Id": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/wwwroot/app.css",
       "PackagePath": "staticwebassets/app.css"
     },
     {
-      "Id": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/bootstrap/bootstrap.min.css",
+      "Id": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/wwwroot/bootstrap/bootstrap.min.css",
       "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css"
     },
     {
-      "Id": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/bootstrap/bootstrap.min.css.map",
+      "Id": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/wwwroot/bootstrap/bootstrap.min.css.map",
       "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css.map"
     },
     {
-      "Id": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/favicon.png",
+      "Id": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/wwwroot/favicon.png",
       "PackagePath": "staticwebassets/favicon.png"
     },
     {
-      "Id": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/images/login.png",
+      "Id": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/wwwroot/images/login.png",
       "PackagePath": "staticwebassets/images/login.png"
     },
     {
-      "Id": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/images/logout.png",
+      "Id": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/wwwroot/images/logout.png",
       "PackagePath": "staticwebassets/images/logout.png"
     },
     {
-      "Id": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/images/register.png",
+      "Id": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/wwwroot/images/register.png",
       "PackagePath": "staticwebassets/images/register.png"
     },
     {
-      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.BlazorWebAppAuthentication.Microsoft.AspNetCore.StaticWebAssets.props",
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.BlazorWebAppAuthentication.Client.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
     {
-      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.BlazorWebAppAuthentication.props",
-      "PackagePath": "build\\BlazorWebAppAuthentication.props"
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.BlazorWebAppAuthentication.Client.props",
+      "PackagePath": "build\\BlazorWebAppAuthentication.Client.props"
     },
     {
-      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.BlazorWebAppAuthentication.props",
-      "PackagePath": "buildMultiTargeting\\BlazorWebAppAuthentication.props"
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.BlazorWebAppAuthentication.Client.props",
+      "PackagePath": "buildMultiTargeting\\BlazorWebAppAuthentication.Client.props"
     },
     {
-      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.BlazorWebAppAuthentication.props",
-      "PackagePath": "buildTransitive\\BlazorWebAppAuthentication.props"
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.BlazorWebAppAuthentication.Client.props",
+      "PackagePath": "buildTransitive\\BlazorWebAppAuthentication.Client.props"
     }
   ],
   "ElementsToRemove": []

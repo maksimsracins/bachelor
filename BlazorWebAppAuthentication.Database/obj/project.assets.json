@@ -2679,11 +2679,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Database/BlazorWebAppAuthentication.Database.csproj",
+      "projectUniqueName": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Database/BlazorWebAppAuthentication.Database.csproj",
       "projectName": "BlazorWebAppAuthentication.Database",
-      "projectPath": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Database/BlazorWebAppAuthentication.Database.csproj",
+      "projectPath": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Database/BlazorWebAppAuthentication.Database.csproj",
       "packagesPath": "/Users/maksimsracins/.nuget/packages/",
-      "outputPath": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Database/obj/",
+      "outputPath": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Database/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/maksimsracins/.nuget/NuGet/NuGet.Config"
@@ -2699,8 +2699,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Domain/BlazorWebAppAuthentication.Domain.csproj": {
-              "projectPath": "/Users/maksimsracins/Library/Mobile Documents/com~apple~CloudDocs/01_Repository/BlazorWebAppAuthentication/BlazorWebAppAuthentication.Domain/BlazorWebAppAuthentication.Domain.csproj"
+            "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/BlazorWebAppAuthentication.Domain.csproj": {
+              "projectPath": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/BlazorWebAppAuthentication.Domain.csproj"
             }
           }
         }

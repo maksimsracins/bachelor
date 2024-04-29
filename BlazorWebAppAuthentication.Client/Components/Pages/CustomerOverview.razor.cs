@@ -1,14 +1,15 @@
+using BlazorWebAppAuthentication.Client.Services;
 using BlazorWebAppAuthentication.Domain.Entities;
-using BlazorWebAppAuthentication.Domain.Services;
-using BlazorWebAppAuthentication.Services;
 using Microsoft.AspNetCore.Components;
 
-namespace BlazorWebAppAuthentication.Components.Pages;
+namespace BlazorWebAppAuthentication.Client.Components.Pages;
 
 public partial class CustomerOverview
 {
     [Inject] 
     public ICustomerService CustomerService { get; set; }
+    [Inject]
+    public NavigationManager NavigationManager { get; set; }
     
     public IEnumerable<Customer> Customers { get; set; }
 

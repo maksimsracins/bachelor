@@ -1,6 +1,6 @@
 using BlazorWebAppAuthentication.Domain.Entities;
 
-namespace BlazorWebAppAuthentication.Domain.Services;
+namespace BlazorWebAppAuthentication.Client.Services;
 
 public interface ICountryService
 {

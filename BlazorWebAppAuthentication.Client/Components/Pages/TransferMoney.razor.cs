@@ -1,12 +1,12 @@
-using BlazorWebAppAuthentication.Components.Layout;
+using BlazorWebAppAuthentication.Client.Components.Layout;
+using BlazorWebAppAuthentication.Client.Models.ViewModels;
+using BlazorWebAppAuthentication.Client.Payment;
+using BlazorWebAppAuthentication.Client.Services;
 using BlazorWebAppAuthentication.Domain;
 using BlazorWebAppAuthentication.Domain.Entities;
-using BlazorWebAppAuthentication.Domain.Services;
-using BlazorWebAppAuthentication.Models;
-using BlazorWebAppAuthentication.Payment;
 using Microsoft.AspNetCore.Components;
 
-namespace BlazorWebAppAuthentication.Components.Pages;
+namespace BlazorWebAppAuthentication.Client.Components.Pages;
 
 public partial class TransferMoney
 {
@@ -17,7 +17,7 @@ public partial class TransferMoney
     public TransferModel Model { get; set; } = new();
     
     [Inject]
-    public CustomerService CustomerService { get; set; }
+    public ICustomerService CustomerService { get; set; }
     
     [Inject]
     public NavMenu NavMenu { get; set; }
@@ -28,7 +28,7 @@ public partial class TransferMoney
 
     public decimal accountBalance = 0;
     
-    private Domain.Entities.Account selectedSenderAccount;
+    private Account selectedSenderAccount;
     private bool showTransferForm = true;
     
     private string? transactionStatusMessage;
@@ -89,8 +89,8 @@ public partial class TransferMoney
             RemittanceInfo = @Model.RemittenceInfo
         };
 
-        ApplicationContext.Transactions.Add(transaction);
-          ApplicationContext.SaveChangesAsync();
+        ApplicationContext.Add(transaction);
+        ApplicationContext.SaveChangesAsync();
 
         transactionStatusMessage = "Transaction completed successfully.";
         //navigationManager.NavigateTo("/transactionhistory");

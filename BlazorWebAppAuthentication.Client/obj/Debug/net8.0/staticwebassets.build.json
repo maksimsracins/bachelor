@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "HYgZK4cWW38NAcm/R37voUAlF3VNTpqY3ZbITcC6AYM=",
-  "Source": "BlazorWebAppAuthentication",
-  "BasePath": "_content/BlazorWebAppAuthentication",
+  "Hash": "JQ5V3vLRayWXBwfDjMWslZ6XmlBmagCB3yt24PTtLaY=",
+  "Source": "BlazorWebAppAuthentication.Client",
+  "BasePath": "_content/BlazorWebAppAuthentication.Client",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
@@ -11,10 +11,10 @@
       "Version": 2,
       "Source": "BlazorWebAppAuthentication.Database",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
-      "AdditionalPublishProperties": "",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
       "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
       "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
-      "AdditionalBuildProperties": "",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
       "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
     },
     {
@@ -22,30 +22,30 @@
       "Version": 2,
       "Source": "BlazorWebAppAuthentication.Domain",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
-      "AdditionalPublishProperties": "",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
       "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
       "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
-      "AdditionalBuildProperties": "",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
       "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
     }
   ],
   "DiscoveryPatterns": [
     {
-      "Name": "BlazorWebAppAuthentication/wwwroot",
-      "Source": "BlazorWebAppAuthentication",
-      "ContentRoot": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/",
-      "BasePath": "_content/BlazorWebAppAuthentication",
+      "Name": "BlazorWebAppAuthentication.Client/wwwroot",
+      "Source": "BlazorWebAppAuthentication.Client",
+      "ContentRoot": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/wwwroot/",
+      "BasePath": "_content/BlazorWebAppAuthentication.Client",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/obj/Debug/net8.0/scopedcss/bundle/BlazorWebAppAuthentication.styles.css",
-      "SourceId": "BlazorWebAppAuthentication",
+      "Identity": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/obj/Debug/net8.0/scopedcss/bundle/BlazorWebAppAuthentication.Client.styles.css",
+      "SourceId": "BlazorWebAppAuthentication.Client",
       "SourceType": "Computed",
-      "ContentRoot": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/obj/Debug/net8.0/scopedcss/bundle/",
-      "BasePath": "_content/BlazorWebAppAuthentication",
-      "RelativePath": "BlazorWebAppAuthentication.styles.css",
+      "ContentRoot": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/obj/Debug/net8.0/scopedcss/bundle/",
+      "BasePath": "_content/BlazorWebAppAuthentication.Client",
+      "RelativePath": "BlazorWebAppAuthentication.Client.styles.css",
       "AssetKind": "All",
       "AssetMode": "CurrentProject",
       "AssetRole": "Primary",
@@ -56,15 +56,15 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/obj/Debug/net8.0/scopedcss/bundle/BlazorWebAppAuthentication.styles.css"
+      "OriginalItemSpec": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/obj/Debug/net8.0/scopedcss/bundle/BlazorWebAppAuthentication.Client.styles.css"
     },
     {
-      "Identity": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/obj/Debug/net8.0/scopedcss/projectbundle/BlazorWebAppAuthentication.bundle.scp.css",
-      "SourceId": "BlazorWebAppAuthentication",
+      "Identity": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/obj/Debug/net8.0/scopedcss/projectbundle/BlazorWebAppAuthentication.Client.bundle.scp.css",
+      "SourceId": "BlazorWebAppAuthentication.Client",
       "SourceType": "Computed",
-      "ContentRoot": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/obj/Debug/net8.0/scopedcss/projectbundle/",
-      "BasePath": "_content/BlazorWebAppAuthentication",
-      "RelativePath": "BlazorWebAppAuthentication.bundle.scp.css",
+      "ContentRoot": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/obj/Debug/net8.0/scopedcss/projectbundle/",
+      "BasePath": "_content/BlazorWebAppAuthentication.Client",
+      "RelativePath": "BlazorWebAppAuthentication.Client.bundle.scp.css",
       "AssetKind": "All",
       "AssetMode": "Reference",
       "AssetRole": "Primary",
@@ -75,14 +75,14 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/obj/Debug/net8.0/scopedcss/projectbundle/BlazorWebAppAuthentication.bundle.scp.css"
+      "OriginalItemSpec": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/obj/Debug/net8.0/scopedcss/projectbundle/BlazorWebAppAuthentication.Client.bundle.scp.css"
     },
     {
-      "Identity": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/app.css",
-      "SourceId": "BlazorWebAppAuthentication",
+      "Identity": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/wwwroot/app.css",
+      "SourceId": "BlazorWebAppAuthentication.Client",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/",
-      "BasePath": "_content/BlazorWebAppAuthentication",
+      "ContentRoot": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/wwwroot/",
+      "BasePath": "_content/BlazorWebAppAuthentication.Client",
       "RelativePath": "app.css",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -97,11 +97,11 @@
       "OriginalItemSpec": "wwwroot/app.css"
     },
     {
-      "Identity": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/bootstrap/bootstrap.min.css",
-      "SourceId": "BlazorWebAppAuthentication",
+      "Identity": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/wwwroot/bootstrap/bootstrap.min.css",
+      "SourceId": "BlazorWebAppAuthentication.Client",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/",
-      "BasePath": "_content/BlazorWebAppAuthentication",
+      "ContentRoot": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/wwwroot/",
+      "BasePath": "_content/BlazorWebAppAuthentication.Client",
       "RelativePath": "bootstrap/bootstrap.min.css",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -116,11 +116,11 @@
       "OriginalItemSpec": "wwwroot/bootstrap/bootstrap.min.css"
     },
     {
-      "Identity": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/bootstrap/bootstrap.min.css.map",
-      "SourceId": "BlazorWebAppAuthentication",
+      "Identity": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/wwwroot/bootstrap/bootstrap.min.css.map",
+      "SourceId": "BlazorWebAppAuthentication.Client",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/",
-      "BasePath": "_content/BlazorWebAppAuthentication",
+      "ContentRoot": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/wwwroot/",
+      "BasePath": "_content/BlazorWebAppAuthentication.Client",
       "RelativePath": "bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -135,11 +135,11 @@
       "OriginalItemSpec": "wwwroot/bootstrap/bootstrap.min.css.map"
     },
     {
-      "Identity": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/favicon.png",
-      "SourceId": "BlazorWebAppAuthentication",
+      "Identity": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/wwwroot/favicon.png",
+      "SourceId": "BlazorWebAppAuthentication.Client",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/",
-      "BasePath": "_content/BlazorWebAppAuthentication",
+      "ContentRoot": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/wwwroot/",
+      "BasePath": "_content/BlazorWebAppAuthentication.Client",
       "RelativePath": "favicon.png",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -154,11 +154,11 @@
       "OriginalItemSpec": "wwwroot/favicon.png"
     },
     {
-      "Identity": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/images/login.png",
-      "SourceId": "BlazorWebAppAuthentication",
+      "Identity": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/wwwroot/images/login.png",
+      "SourceId": "BlazorWebAppAuthentication.Client",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/",
-      "BasePath": "_content/BlazorWebAppAuthentication",
+      "ContentRoot": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/wwwroot/",
+      "BasePath": "_content/BlazorWebAppAuthentication.Client",
       "RelativePath": "images/login.png",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -173,11 +173,11 @@
       "OriginalItemSpec": "wwwroot/images/login.png"
     },
     {
-      "Identity": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/images/logout.png",
-      "SourceId": "BlazorWebAppAuthentication",
+      "Identity": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/wwwroot/images/logout.png",
+      "SourceId": "BlazorWebAppAuthentication.Client",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/",
-      "BasePath": "_content/BlazorWebAppAuthentication",
+      "ContentRoot": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/wwwroot/",
+      "BasePath": "_content/BlazorWebAppAuthentication.Client",
       "RelativePath": "images/logout.png",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -192,11 +192,11 @@
       "OriginalItemSpec": "wwwroot/images/logout.png"
     },
     {
-      "Identity": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/images/register.png",
-      "SourceId": "BlazorWebAppAuthentication",
+      "Identity": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/wwwroot/images/register.png",
+      "SourceId": "BlazorWebAppAuthentication.Client",
       "SourceType": "Discovered",
-      "ContentRoot": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/wwwroot/",
-      "BasePath": "_content/BlazorWebAppAuthentication",
+      "ContentRoot": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/wwwroot/",
+      "BasePath": "_content/BlazorWebAppAuthentication.Client",
       "RelativePath": "images/register.png",
       "AssetKind": "All",
       "AssetMode": "All",

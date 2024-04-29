@@ -1,6 +1,6 @@
 using BlazorWebAppAuthentication.Domain.Entities;
 
-namespace BlazorWebAppAuthentication.Services
+namespace BlazorWebAppAuthentication.Client.Services
 {
     public interface IAccountService
     {

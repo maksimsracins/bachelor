@@ -3207,11 +3207,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/BlazorWebAppAuthentication.csproj",
-      "projectName": "BlazorWebAppAuthentication",
-      "projectPath": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/BlazorWebAppAuthentication.csproj",
+      "projectUniqueName": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/BlazorWebAppAuthentication.Client.csproj",
+      "projectName": "BlazorWebAppAuthentication.Client",
+      "projectPath": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/BlazorWebAppAuthentication.Client.csproj",
       "packagesPath": "/Users/maksimsracins/.nuget/packages/",
-      "outputPath": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication/obj/",
+      "outputPath": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/maksimsracins/.nuget/NuGet/NuGet.Config"
@@ -3240,6 +3240,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
