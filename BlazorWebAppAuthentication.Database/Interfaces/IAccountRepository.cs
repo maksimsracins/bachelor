@@ -8,4 +8,5 @@ public interface IAccountRepository
     Account GetAccountById(int accountId);
     Account UpdateAccount(Account account);
     Account DeleteAccount(int accountId);
+    List<Account> GetAllAccounts();
 }

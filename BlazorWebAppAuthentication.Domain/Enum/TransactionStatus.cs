@@ -1,4 +1,4 @@
-namespace BlazorWebAppAuthentication.Domain;
+namespace BlazorWebAppAuthentication.Domain.Enum;
 
 public enum TransactionStatus
 {

@@ -1,6 +1,5 @@
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/bin/Debug/net8.0/appsettings.Development.json
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/bin/Debug/net8.0/appsettings.json
-/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/bin/Debug/net8.0/Configurations/MT103Config.json
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/bin/Debug/net8.0/BlazorWebAppAuthentication.Client.staticwebassets.runtime.json
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/bin/Debug/net8.0/BlazorWebAppAuthentication.Client
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/bin/Debug/net8.0/BlazorWebAppAuthentication.Client.deps.json
@@ -71,3 +70,4 @@
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/obj/Debug/net8.0/BlazorWebAppAuthentication.Client.pdb
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/obj/Debug/net8.0/BlazorWebAppAuthentication.Client.genruntimeconfig.cache
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/obj/Debug/net8.0/ref/BlazorWebAppAuthentication.Client.dll
+/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/bin/Debug/net8.0/wwwroot/MT103Config.json

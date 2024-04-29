@@ -38,12 +38,6 @@ builder.Services.AddAntiforgery(options =>
     options.Cookie.Expiration = TimeSpan.Zero;
 });
 
-var configuration = new ConfigurationBuilder()
-    .SetBasePath(Directory.GetCurrentDirectory())
-    .AddJsonFile("Configurations/MT103Config.json")
-    .Build();
-builder.Services.Configure<MT103Settings>(configuration.GetSection("MT103Settings"));
-
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 builder.Services.AddScoped<ICountryRepository, CountryRepository>();
 builder.Services.AddScoped<IUserAccountRepository, UserAccountRepository>();
@@ -57,6 +51,12 @@ builder.Services.AddScoped<ITransactionService, TransactionService>();
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<PaymentService>();
 builder.Services.AddScoped<NavMenu>();
+
+var configuration = new ConfigurationBuilder()
+    .SetBasePath(Directory.GetCurrentDirectory())
+    .AddJsonFile("wwwroot/MT103Config.json", optional: false, reloadOnChange: true)
+    .Build();
+builder.Services.Configure<MT103Settings>(configuration.GetSection("MT103Settings"));
 
 var app = builder.Build();
 
@@ -78,8 +78,6 @@ app.UseAuthorization();
 app.MapRazorComponents<App>()
     .DisableAntiforgery()
     .AddInteractiveServerRenderMode();
-
-
 
 //DbInitializer.Seed(app);
 

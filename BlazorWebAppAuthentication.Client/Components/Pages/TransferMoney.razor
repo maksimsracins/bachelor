@@ -6,52 +6,57 @@
 @inject ApplicationContext ApplicationContext
 @attribute [Authorize(Roles = "User")]
 
-<h3>Transfer Money</h3>
-
 @if (showTransferForm){
+    <div class="col-lg-4 offset-lg-4 pt-4 pb-4 border mt-2">
+        <h3 class="text-center">Transfer Money</h3>
+        <EditForm Model="@Model" OnValidSubmit="HandleTransfer" FormName="TransferMoneyForm">
+            <DataAnnotationsValidator/>
+            <ValidationSummary/>
 
-    <EditForm Model="@Model" OnValidSubmit="HandleTransfer" FormName="TransferMoneyForm">
-        <DataAnnotationsValidator />
-        <ValidationSummary />
+            <div class="form-group m-3">
+                <label for="senderAccountName" class="form-label">Sender Account:</label>
+                <select @bind="Model.SenderAccountName" class="form-select">
+                    <option disabled selected value></option>
+                    @foreach (var account in senderAccounts)
+                    {
+                        <option value="@account.AccountName">@account.AccountName (Balance: @account.Balance )</option>
+                    }
+                </select>
+            </div>
 
-        <div class="form-group">
-            <label for="senderAccountId">Sender Account:</label>
-            <select @bind="Model.SenderAccountId" class="form-control">
-                @foreach (var account in senderAccounts)
-                {
-                    <option value="@account.AccountId">@account.AccountName</option>
-                }
-            </select>
-            @if (selectedSenderAccount != null)
-                        {
-                            <div>Balance: @accountBalance</div>
-                        }
-        </div>
-    
-        <div class="form-group">
-            <label for="beneficiaryAccountId">Beneficiary Account:</label>
-            <InputText @bind-Value="@Model.BeneficiaryAccountName" class="form-control" />
-        </div>
-    
-        <div class="form-group">
-            <label for="paymentType">Payment Type:</label>
-            <select @bind="Model.TransactionType" class="form-control">
-                <option value="SWIFT">SWIFT</option>
-                <option value="ISO">ISO</option>
-            </select>
-        </div>
-    
-        <div class="form-group">
-            <label for="amount">Amount:</label>
-            <InputNumber @bind-Value="@Model.Amount" class="form-control" />
-        </div>
-        <div class="form-group m-3">
-            <label for="remittanceInfo">Comment:</label>
-            <InputText id="remittanceInfo" @bind-Value="Model.RemittenceInfo"></InputText>
-        </div>
+            <div class="form-group m-3">
+                <label for="beneficiaryAccountName" class="form-label">Beneficiary Account:</label>
+                <InputText @bind-Value="@Model.BeneficiaryAccountName" class="form-control" id="beneficiaryAccountName"/>
+                </div>
 
-        <button type="submit" class="btn btn-primary">Transfer</button>
-    </EditForm>
+            <div class="form-group m-3">
+                <label for="paymentType" class="form-label">Payment Type:</label>
+                <select @bind="Model.TransactionType" class="form-select">
+                    <option value="SWIFT">SWIFT</option>
+                    <option value="ISO">ISO</option>
+                </select>
+            </div>
+
+            <div class="form-group m-3">
+                <label for="amount" class="form-label">Amount:</label>
+                <InputNumber @bind-Value="@Model.Amount" class="form-control" id="amount"/>
+            </div>
+
+            <div class="form-group m-3">
+                <label for="remittanceInfo" class="form-label">Comment:</label>
+                <InputText id="remittanceInfo" @bind-Value="Model.RemittenceInfo" class="form-control"></InputText>
+            </div>
+
+            <div class="form-check form-switch m-3">
+                <input class="form-check-input" type="checkbox" role="switch" id="receiveCopySwitch" @bind="@receiveCopy">
+                <label class="form-check-label" for="receiveCopySwitch">Receive a copy of the payment</label>
+            </div>
+            <div class="form-group m-3">
+                <button @onclick="ConfirmTransfer" type="submit" class="btn btn-primary">Transfer</button>
+            </div>
+        </EditForm>
+    </div>
+
 }
 @if (transactionStatusMessage != null)
 {

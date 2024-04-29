@@ -31,5 +31,10 @@ namespace BlazorWebAppAuthentication.Client.Services
         {
             return _accountRepository.DeleteAccount(accountId);
         }
+
+        public List<Account> GetAllAccounts()
+        {
+            return _accountRepository.GetAllAccounts();
+        }
     }
 }

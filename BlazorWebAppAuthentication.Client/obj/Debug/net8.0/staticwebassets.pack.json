@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets/BlazorWebAppAuthentication.Client.bundle.scp.css"
     },
     {
+      "Id": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/wwwroot/MT103Config.json",
+      "PackagePath": "staticwebassets/MT103Config.json"
+    },
+    {
       "Id": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/wwwroot/app.css",
       "PackagePath": "staticwebassets/app.css"
     },
@@ -31,6 +35,10 @@
     {
       "Id": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/wwwroot/images/register.png",
       "PackagePath": "staticwebassets/images/register.png"
+    },
+    {
+      "Id": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/wwwroot/js/downloadPayment.js",
+      "PackagePath": "staticwebassets/js/downloadPayment.js"
     },
     {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.BlazorWebAppAuthentication.Client.Microsoft.AspNetCore.StaticWebAssets.props",

@@ -1,3 +1,5 @@
+using BlazorWebAppAuthentication.Domain.Enum;
+
 namespace BlazorWebAppAuthentication.Domain.Entities;
 
 public class Transaction
@@ -6,8 +8,8 @@ public class Transaction
     public int SenderId { get; set; }
     public int SenderAccountId { get; set; }
     public int BeneficiaryId { get; set; }
-    public int BeneficiaryAccountId { get; set; }
-    public int Amount { get; set; }
+    public string BeneficiaryAccountId { get; set; }
+    public decimal Amount { get; set; }
     public TransactionStatus TransactionStatus { get; set; }
     public string TransactionType { get; set; }
     public string RemittanceInfo { get; set; }

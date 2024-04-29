@@ -24,4 +24,10 @@
       <PackageReference Include="MySql.EntityFrameworkCore" Version="7.0.10" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Update="wwwroot\MT103Config.json">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
 </Project>

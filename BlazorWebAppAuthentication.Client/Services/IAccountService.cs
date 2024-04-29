@@ -8,5 +8,6 @@ namespace BlazorWebAppAuthentication.Client.Services
         Account GetAccountById(int accountId);
         Account UpdateAccount(Account account);
         Account DeleteAccount(int accountId);
+        List<Account> GetAllAccounts();
     }
 }

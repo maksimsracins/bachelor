@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "JQ5V3vLRayWXBwfDjMWslZ6XmlBmagCB3yt24PTtLaY=",
+  "Hash": "Y5v6CeB0iNT6Vw+lIcHLivpAikUKrxY8txp0zdgS6fU=",
   "Source": "BlazorWebAppAuthentication.Client",
   "BasePath": "_content/BlazorWebAppAuthentication.Client",
   "Mode": "Default",
@@ -209,6 +209,44 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/register.png"
+    },
+    {
+      "Identity": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/wwwroot/js/downloadPayment.js",
+      "SourceId": "BlazorWebAppAuthentication.Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/wwwroot/",
+      "BasePath": "_content/BlazorWebAppAuthentication.Client",
+      "RelativePath": "js/downloadPayment.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/downloadPayment.js"
+    },
+    {
+      "Identity": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/wwwroot/MT103Config.json",
+      "SourceId": "BlazorWebAppAuthentication.Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/wwwroot/",
+      "BasePath": "_content/BlazorWebAppAuthentication.Client",
+      "RelativePath": "MT103Config.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/MT103Config.json"
     }
   ]
 }

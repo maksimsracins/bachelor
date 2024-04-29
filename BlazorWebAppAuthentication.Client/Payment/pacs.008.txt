@@ -1,0 +1,49 @@
+<Document xmlns="urn:iso:std:iso:20022:tech:xsd:pacs.008.001.02">
+    <FIToFICstmrCdtTrf>
+        <GrpHdr>
+            <MsgId>ABC12345</MsgId>
+            <CreDtTm>2024-04-29T12:00:00Z</CreDtTm>
+            <NbOfTxs>1</NbOfTxs>
+            <CtrlSum>10000</CtrlSum>
+            <InstgAgt>
+                <FinInstnId>
+                    <BICFI>AAAAUS31</BICFI>
+                </FinInstnId>
+            </InstgAgt>
+            <InstdAgt>
+                <FinInstnId>
+                    <BICFI>BBBBGB22</BICFI>
+                </FinInstnId>
+            </InstdAgt>
+        </GrpHdr>
+        <CdtTrfTxInf>
+            <PmtId>
+                <InstrId>Instruction1</InstrId>
+                <EndToEndId>E2E-IDENTIFIER</EndToEndId>
+            </PmtId>
+            <Amt>
+                <InstdAmt Ccy="USD">10000</InstdAmt>
+            </Amt>
+            <CdtrAgt>
+                <FinInstnId>
+                    <BICFI>CCCCGB22</BICFI>
+                </FinInstnId>
+            </CdtrAgt>
+            <Cdtr>
+                <Nm>John Doe</Nm>
+                <PstlAdr>
+                    <StrtNm>123 Any Street</StrtNm>
+                    <BldgNb>10</BldgNb>
+                    <PstCd>XY123</PstCd>
+                    <TwnNm>Anytown</TwnNm>
+                    <Ctry>GB</Ctry>
+                </PstlAdr>
+            </Cdtr>
+            <CdtrAcct>
+                <Id>
+                    <IBAN>GB29NWBK60161331926819</IBAN>
+                </Id>
+            </CdtrAcct>
+        </CdtTrfTxInf>
+    </FIToFICstmrCdtTrf>
+</Document>
