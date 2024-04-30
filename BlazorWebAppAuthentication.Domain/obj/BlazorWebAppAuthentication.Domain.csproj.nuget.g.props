@@ -12,4 +12,7 @@
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <SourceRoot Include="/Users/maksimsracins/.nuget/packages/" />
   </ItemGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)igniteui.blazor.trial/23.2.204/buildTransitive/IgniteUI.Blazor.Trial.props" Condition="Exists('$(NuGetPackageRoot)igniteui.blazor.trial/23.2.204/buildTransitive/IgniteUI.Blazor.Trial.props')" />
+  </ImportGroup>
 </Project>

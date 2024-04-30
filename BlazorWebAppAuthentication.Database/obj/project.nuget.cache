@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "0J6G3WI213SvlAEK99bRNnugUglElaK4/IMKnTJ9RtR9krjrbr4I7kdTu/tk4ZCN3g8LPE4GqUQSQHzECxpZcg==",
+  "dgSpecHash": "nHaspqJOjca+mW0DGaRlE/ouXyBsX/l4kA1CzCs8m1aeVFNqRpm4Tu6El6LIf0KZxOJToBxlV2DEj5T0+axTKA==",
   "success": true,
   "projectFilePath": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Database/BlazorWebAppAuthentication.Database.csproj",
   "expectedPackageFiles": [
     "/Users/maksimsracins/.nuget/packages/bouncycastle.cryptography/2.2.1/bouncycastle.cryptography.2.2.1.nupkg.sha512",
     "/Users/maksimsracins/.nuget/packages/google.protobuf/3.21.9/google.protobuf.3.21.9.nupkg.sha512",
+    "/Users/maksimsracins/.nuget/packages/igniteui.blazor.trial/23.2.204/igniteui.blazor.trial.23.2.204.nupkg.sha512",
     "/Users/maksimsracins/.nuget/packages/k4os.compression.lz4/1.3.5/k4os.compression.lz4.1.3.5.nupkg.sha512",
     "/Users/maksimsracins/.nuget/packages/k4os.compression.lz4.streams/1.3.5/k4os.compression.lz4.streams.1.3.5.nupkg.sha512",
     "/Users/maksimsracins/.nuget/packages/k4os.hash.xxhash/1.0.8/k4os.hash.xxhash.1.0.8.nupkg.sha512",

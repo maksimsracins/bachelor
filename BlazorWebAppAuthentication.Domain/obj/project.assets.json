@@ -2,6 +2,28 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "IgniteUI.Blazor.Trial/23.2.204": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "8.0.0"
+        },
+        "compile": {
+          "lib/net8.0/IgniteUI.Blazor.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/IgniteUI.Blazor.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/IgniteUI.Blazor.Trial.props": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/IgniteUI.Blazor.Trial.props": {}
+        }
+      },
       "Microsoft.AspNetCore.Authorization/8.0.4": {
         "type": "package",
         "dependencies": {
@@ -215,6 +237,99 @@
     }
   },
   "libraries": {
+    "IgniteUI.Blazor.Trial/23.2.204": {
+      "sha512": "rzSHMuvcht8xFQmfOek8e30mwiowHPx2+KlPJKZGRlTPZoEytW0VhBq2Ff+gaMJ4Vg29IIhjLAG2tiqCrKosvQ==",
+      "type": "package",
+      "path": "igniteui.blazor.trial/23.2.204",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "License.txt",
+        "README.md",
+        "build/IgniteUI.Blazor.Trial.props",
+        "build/Microsoft.AspNetCore.StaticWebAssets.props",
+        "buildMultiTargeting/IgniteUI.Blazor.Trial.props",
+        "buildTransitive/IgniteUI.Blazor.Trial.props",
+        "igniteui.blazor.trial.23.2.204.nupkg.sha512",
+        "igniteui.blazor.trial.nuspec",
+        "lib/net6.0/IgniteUI.Blazor.dll",
+        "lib/net6.0/IgniteUI.Blazor.xml",
+        "lib/net7.0/IgniteUI.Blazor.dll",
+        "lib/net7.0/IgniteUI.Blazor.xml",
+        "lib/net8.0/IgniteUI.Blazor.dll",
+        "lib/net8.0/IgniteUI.Blazor.xml",
+        "lib/netstandard2.0/IgniteUI.Blazor.dll",
+        "lib/netstandard2.0/IgniteUI.Blazor.xml",
+        "staticwebassets/267.00285f29441c9bc96042.bundle.js",
+        "staticwebassets/267.00285f29441c9bc96042.bundle.js.LICENSE.txt",
+        "staticwebassets/267.00285f29441c9bc96042.bundle.js.map",
+        "staticwebassets/309.facf7d11d0b5a5d9d591.bundle.js",
+        "staticwebassets/309.facf7d11d0b5a5d9d591.bundle.js.map",
+        "staticwebassets/436.a322828addd8d2a87374.bundle.js",
+        "staticwebassets/436.a322828addd8d2a87374.bundle.js.map",
+        "staticwebassets/482.195f375f4e4c01217035.bundle.js",
+        "staticwebassets/482.195f375f4e4c01217035.bundle.js.LICENSE.txt",
+        "staticwebassets/482.195f375f4e4c01217035.bundle.js.map",
+        "staticwebassets/547.2a8cf0919e6da451d273.bundle.js",
+        "staticwebassets/547.2a8cf0919e6da451d273.bundle.js.LICENSE.txt",
+        "staticwebassets/547.2a8cf0919e6da451d273.bundle.js.map",
+        "staticwebassets/793.00e41a95350acc39f172.bundle.js",
+        "staticwebassets/793.00e41a95350acc39f172.bundle.js.LICENSE.txt",
+        "staticwebassets/793.00e41a95350acc39f172.bundle.js.map",
+        "staticwebassets/IgniteUI.Blazor.Trial.lib.module.js",
+        "staticwebassets/IgniteUI.Blazor.lib.module.js",
+        "staticwebassets/IgniteUI.BlazorDebug.lib.module.js",
+        "staticwebassets/app.1864ec9c3c886be0bdfa.bundle.js",
+        "staticwebassets/app.1864ec9c3c886be0bdfa.bundle.js.LICENSE.txt",
+        "staticwebassets/app.1864ec9c3c886be0bdfa.bundle.js.map",
+        "staticwebassets/app.bootstrap.js",
+        "staticwebassets/app.bundle.js",
+        "staticwebassets/heatWorker.js",
+        "staticwebassets/heatWorker.js.LICENSE.txt",
+        "staticwebassets/heatWorker.js.map",
+        "staticwebassets/igniteui-angular-elements.cd567e91b7b353861fa9.bundle.js",
+        "staticwebassets/igniteui-angular-elements.cd567e91b7b353861fa9.bundle.js.map",
+        "staticwebassets/igniteui-dockmanager.6c47d16bd1b73ec22144.bundle.js",
+        "staticwebassets/igniteui-dockmanager.6c47d16bd1b73ec22144.bundle.js.LICENSE.txt",
+        "staticwebassets/igniteui-dockmanager.6c47d16bd1b73ec22144.bundle.js.map",
+        "staticwebassets/igniteui-webcomponents-charts.242fb4128ea6a1b6abb3.bundle.js",
+        "staticwebassets/igniteui-webcomponents-charts.242fb4128ea6a1b6abb3.bundle.js.map",
+        "staticwebassets/igniteui-webcomponents-core.37034224d5425c95db0c.bundle.js",
+        "staticwebassets/igniteui-webcomponents-core.37034224d5425c95db0c.bundle.js.map",
+        "staticwebassets/igniteui-webcomponents-gauges.674befb08a8d86e89641.bundle.js",
+        "staticwebassets/igniteui-webcomponents-gauges.674befb08a8d86e89641.bundle.js.map",
+        "staticwebassets/igniteui-webcomponents-grids.713e66007f0f564d10ca.bundle.js",
+        "staticwebassets/igniteui-webcomponents-grids.713e66007f0f564d10ca.bundle.js.map",
+        "staticwebassets/igniteui-webcomponents-inputs.af1e8df0fefe07a995fd.bundle.js",
+        "staticwebassets/igniteui-webcomponents-inputs.af1e8df0fefe07a995fd.bundle.js.map",
+        "staticwebassets/igniteui-webcomponents-layouts.fc0d44cb9ea6f3020b51.bundle.js",
+        "staticwebassets/igniteui-webcomponents-layouts.fc0d44cb9ea6f3020b51.bundle.js.map",
+        "staticwebassets/igniteui-webcomponents-maps.5f2c4b830b30d6dccb99.bundle.js",
+        "staticwebassets/igniteui-webcomponents-maps.5f2c4b830b30d6dccb99.bundle.js.map",
+        "staticwebassets/igniteui-webcomponents.7c3a11cf38d37dc7e2d9.bundle.js",
+        "staticwebassets/igniteui-webcomponents.7c3a11cf38d37dc7e2d9.bundle.js.map",
+        "staticwebassets/igniteui-webgrids.21c73af58d30267cc135.bundle.js",
+        "staticwebassets/igniteui-webgrids.21c73af58d30267cc135.bundle.js.map",
+        "staticwebassets/igniteui-webinputs.cb96a2ddd9e6f03efdd2.bundle.js",
+        "staticwebassets/igniteui-webinputs.cb96a2ddd9e6f03efdd2.bundle.js.map",
+        "staticwebassets/themes/dark/bootstrap.css",
+        "staticwebassets/themes/dark/fluent.css",
+        "staticwebassets/themes/dark/indigo.css",
+        "staticwebassets/themes/dark/material.css",
+        "staticwebassets/themes/grid/dark/bootstrap.css",
+        "staticwebassets/themes/grid/dark/fluent.css",
+        "staticwebassets/themes/grid/dark/indigo.css",
+        "staticwebassets/themes/grid/dark/material.css",
+        "staticwebassets/themes/grid/light/bootstrap.css",
+        "staticwebassets/themes/grid/light/fluent.css",
+        "staticwebassets/themes/grid/light/indigo.css",
+        "staticwebassets/themes/grid/light/material.css",
+        "staticwebassets/themes/light/bootstrap.css",
+        "staticwebassets/themes/light/fluent.css",
+        "staticwebassets/themes/light/indigo.css",
+        "staticwebassets/themes/light/material.css"
+      ]
+    },
     "Microsoft.AspNetCore.Authorization/8.0.4": {
       "sha512": "dzYUHvqyavBiYVd5BZNAgV5rT+DC4HyIWPnbeYgxQNBYOFomvvwzPfidQf1Ld/HhkXhEj3tlzqNb4gy2P2ukUg==",
       "type": "package",
@@ -575,6 +690,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "IgniteUI.Blazor.Trial >= 23.2.204",
       "Microsoft.AspNetCore.Components.Web >= 8.0.4"
     ]
   },
@@ -621,6 +737,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "IgniteUI.Blazor.Trial": {
+            "target": "Package",
+            "version": "[23.2.204, )"
+          },
           "Microsoft.AspNetCore.Components.Web": {
             "target": "Package",
             "version": "[8.0.4, )"

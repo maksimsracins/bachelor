@@ -44,6 +44,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "IgniteUI.Blazor.Trial": {
+              "target": "Package",
+              "version": "[23.2.204, )"
+            },
             "Microsoft.AspNetCore.Components.Web": {
               "target": "Package",
               "version": "[8.0.4, )"

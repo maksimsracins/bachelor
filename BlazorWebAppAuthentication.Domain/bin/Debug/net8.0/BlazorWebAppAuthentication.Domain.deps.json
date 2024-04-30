@@ -8,10 +8,22 @@
     ".NETCoreApp,Version=v8.0": {
       "BlazorWebAppAuthentication.Domain/1.0.0": {
         "dependencies": {
+          "IgniteUI.Blazor.Trial": "23.2.204",
           "Microsoft.AspNetCore.Components.Web": "8.0.4"
         },
         "runtime": {
           "BlazorWebAppAuthentication.Domain.dll": {}
+        }
+      },
+      "IgniteUI.Blazor.Trial/23.2.204": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "8.0.4"
+        },
+        "runtime": {
+          "lib/net8.0/IgniteUI.Blazor.dll": {
+            "assemblyVersion": "23.2.204.0",
+            "fileVersion": "23.2.204.0"
+          }
         }
       },
       "Microsoft.AspNetCore.Authorization/8.0.4": {
@@ -148,6 +160,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "IgniteUI.Blazor.Trial/23.2.204": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rzSHMuvcht8xFQmfOek8e30mwiowHPx2+KlPJKZGRlTPZoEytW0VhBq2Ff+gaMJ4Vg29IIhjLAG2tiqCrKosvQ==",
+      "path": "igniteui.blazor.trial/23.2.204",
+      "hashPath": "igniteui.blazor.trial.23.2.204.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authorization/8.0.4": {
       "type": "package",

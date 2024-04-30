@@ -1,4 +1,6 @@
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/bin/Debug/net8.0/wwwroot/MT103Config.json
+/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/bin/Debug/net8.0/BlazorWebAppAuthentication.Domain.staticwebassets.runtime.json
+/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/bin/Debug/net8.0/BlazorWebAppAuthentication.Database.staticwebassets.runtime.json
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/bin/Debug/net8.0/appsettings.Development.json
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/bin/Debug/net8.0/appsettings.json
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/bin/Debug/net8.0/BlazorWebAppAuthentication.Client.staticwebassets.runtime.json
@@ -9,6 +11,7 @@
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/bin/Debug/net8.0/BlazorWebAppAuthentication.Client.pdb
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/bin/Debug/net8.0/BouncyCastle.Cryptography.dll
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/bin/Debug/net8.0/Google.Protobuf.dll
+/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/bin/Debug/net8.0/IgniteUI.Blazor.dll
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/bin/Debug/net8.0/K4os.Compression.LZ4.dll
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/bin/Debug/net8.0/K4os.Compression.LZ4.Streams.dll
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/bin/Debug/net8.0/K4os.Hash.xxHash.dll
@@ -65,9 +68,11 @@
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/obj/Debug/net8.0/scopedcss/Components/Layout/NavMenu.razor.rz.scp.css
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/obj/Debug/net8.0/scopedcss/bundle/BlazorWebAppAuthentication.Client.styles.css
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/obj/Debug/net8.0/scopedcss/projectbundle/BlazorWebAppAuthentication.Client.bundle.scp.css
+/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/obj/Debug/net8.0/jsmodules/jsmodules.build.manifest.json
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/obj/Debug/net8.0/BlazorWe.AFDA317F.Up2Date
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/obj/Debug/net8.0/BlazorWebAppAuthentication.Client.dll
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/obj/Debug/net8.0/refint/BlazorWebAppAuthentication.Client.dll
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/obj/Debug/net8.0/BlazorWebAppAuthentication.Client.pdb
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/obj/Debug/net8.0/BlazorWebAppAuthentication.Client.genruntimeconfig.cache
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/obj/Debug/net8.0/ref/BlazorWebAppAuthentication.Client.dll
+/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/bin/Debug/net8.0/Newtonsoft.Json.dll

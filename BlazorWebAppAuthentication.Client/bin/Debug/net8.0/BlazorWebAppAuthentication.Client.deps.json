@@ -10,6 +10,7 @@
         "dependencies": {
           "BlazorWebAppAuthentication.Database": "1.0.0",
           "BlazorWebAppAuthentication.Domain": "1.0.0",
+          "IgniteUI": "23.2.50",
           "MySql.Data": "8.2.0",
           "MySql.EntityFrameworkCore": "7.0.10"
         },
@@ -31,6 +32,30 @@
             "assemblyVersion": "3.21.9.0",
             "fileVersion": "3.21.9.0"
           }
+        }
+      },
+      "IgniteUI/23.2.50": {
+        "dependencies": {
+          "Newtonsoft.Json": "4.5.8",
+          "jQuery": "3.0.0",
+          "jQuery.UI.Combined": "1.12.0"
+        }
+      },
+      "IgniteUI.Blazor.Trial/23.2.204": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Components.Web": "8.0.4"
+        },
+        "runtime": {
+          "lib/net8.0/IgniteUI.Blazor.dll": {
+            "assemblyVersion": "23.2.204.0",
+            "fileVersion": "23.2.204.0"
+          }
+        }
+      },
+      "jQuery/3.0.0": {},
+      "jQuery.UI.Combined/1.12.0": {
+        "dependencies": {
+          "jQuery": "3.0.0"
         }
       },
       "K4os.Compression.LZ4/1.3.5": {
@@ -315,6 +340,14 @@
           }
         }
       },
+      "Newtonsoft.Json/4.5.8": {
+        "runtime": {
+          "lib/net40/Newtonsoft.Json.dll": {
+            "assemblyVersion": "4.5.0.0",
+            "fileVersion": "4.5.8.15203"
+          }
+        }
+      },
       "System.Buffers/4.5.1": {},
       "System.Configuration.ConfigurationManager/4.4.1": {
         "dependencies": {
@@ -485,6 +518,7 @@
       "BlazorWebAppAuthentication.Database/1.0.0": {
         "dependencies": {
           "BlazorWebAppAuthentication.Domain": "1.0.0",
+          "IgniteUI.Blazor.Trial": "23.2.204",
           "MySql.Data": "8.2.0",
           "MySql.EntityFrameworkCore": "7.0.10"
         },
@@ -494,6 +528,7 @@
       },
       "BlazorWebAppAuthentication.Domain/1.0.0": {
         "dependencies": {
+          "IgniteUI.Blazor.Trial": "23.2.204",
           "Microsoft.AspNetCore.Components.Web": "8.0.4"
         },
         "runtime": {
@@ -521,6 +556,34 @@
       "sha512": "sha512-OTpFujTgkmqMLbg3KT7F/iuKi1rg6s5FCS2M9XcVLDn40zL8wgXm37CY/F6MeOEXKjdcnXGCN/h7oyMkVydVsg==",
       "path": "google.protobuf/3.21.9",
       "hashPath": "google.protobuf.3.21.9.nupkg.sha512"
+    },
+    "IgniteUI/23.2.50": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rP9j2lmqEXB9V9/nf84RjpYyJKM7Ckq+KY1s022ymaLxS3k/F9Hv2zKGIF9fqvdh6BS8+xPZzL/JzcD/4pUAjw==",
+      "path": "igniteui/23.2.50",
+      "hashPath": "igniteui.23.2.50.nupkg.sha512"
+    },
+    "IgniteUI.Blazor.Trial/23.2.204": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rzSHMuvcht8xFQmfOek8e30mwiowHPx2+KlPJKZGRlTPZoEytW0VhBq2Ff+gaMJ4Vg29IIhjLAG2tiqCrKosvQ==",
+      "path": "igniteui.blazor.trial/23.2.204",
+      "hashPath": "igniteui.blazor.trial.23.2.204.nupkg.sha512"
+    },
+    "jQuery/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xFfntV19HzCtKdJWOp/XT9PUY3SslokTDDLFJZdBug36j1XVhw1+vPQ/n7Gd5y+jdpesn5B1m1yn1qIUq57jlA==",
+      "path": "jquery/3.0.0",
+      "hashPath": "jquery.3.0.0.nupkg.sha512"
+    },
+    "jQuery.UI.Combined/1.12.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uqfPsbukqO8wSXOLhr6VDYJm8e42IBkA2ZXA032YAcTral63ohxETahAXkCauI0LOXSKXxDo+piDltfEIMydPA==",
+      "path": "jquery.ui.combined/1.12.0",
+      "hashPath": "jquery.ui.combined.1.12.0.nupkg.sha512"
     },
     "K4os.Compression.LZ4/1.3.5": {
       "type": "package",
@@ -717,6 +780,13 @@
       "sha512": "sha512-PuAFmYC8Fuf14TkOiw/8dydBN6rW5xj6ZFneSvJ3GzpuBbpoP09pN5/U5If9IjjirxIpJNT4LCCvZOKAqEa3qg==",
       "path": "mysql.entityframeworkcore/7.0.10",
       "hashPath": "mysql.entityframeworkcore.7.0.10.nupkg.sha512"
+    },
+    "Newtonsoft.Json/4.5.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-o5x2tEL+tvr+34l8U4iXMz0GDt68qarWMoAenvWQtrmfa/2IQyna46nXhcXhmLUGDEBTrsCcR8uP60Wqw40kBg==",
+      "path": "newtonsoft.json/4.5.8",
+      "hashPath": "newtonsoft.json.4.5.8.nupkg.sha512"
     },
     "System.Buffers/4.5.1": {
       "type": "package",

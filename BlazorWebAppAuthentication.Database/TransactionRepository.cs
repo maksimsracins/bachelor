@@ -40,4 +40,9 @@ public class TransactionRepository : ITransactionRepository
             _context.SaveChanges();
             return data.Entity;
     }
+
+    public List<Transaction> GetAllTransactions()
+    {
+        return _context.Transactions.ToList();
+    }
 }

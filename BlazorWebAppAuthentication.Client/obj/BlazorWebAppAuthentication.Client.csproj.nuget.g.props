@@ -14,5 +14,10 @@
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)microsoft.entityframeworkcore/7.0.10/buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props" Condition="Exists('$(NuGetPackageRoot)microsoft.entityframeworkcore/7.0.10/buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props')" />
+    <Import Project="$(NuGetPackageRoot)igniteui.blazor.trial/23.2.204/buildTransitive/IgniteUI.Blazor.Trial.props" Condition="Exists('$(NuGetPackageRoot)igniteui.blazor.trial/23.2.204/buildTransitive/IgniteUI.Blazor.Trial.props')" />
   </ImportGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgjQuery Condition=" '$(PkgjQuery)' == '' ">/Users/maksimsracins/.nuget/packages/jquery/3.0.0</PkgjQuery>
+    <PkgjQuery_UI_Combined Condition=" '$(PkgjQuery_UI_Combined)' == '' ">/Users/maksimsracins/.nuget/packages/jquery.ui.combined/1.12.0</PkgjQuery_UI_Combined>
+  </PropertyGroup>
 </Project>

@@ -1,0 +1,101 @@
+@page "/transactions-history"
+@using BlazorWebAppAuthentication.Domain.Entities
+@using BlazorWebAppAuthentication.Client.Services
+@using BlazorWebAppAuthentication.Database
+@inject ICustomerService CustomerService
+@inject IAccountService AccountService
+@inject IHttpContextAccessor HttpContextAccessor
+@inject UserAccountRepository UserAccountRepository
+@inject ITransactionService TransactionService
+
+<IgbDataGrid Height="800px"
+             Width="100%"
+    DataSource="_dataSource"
+    AutoGenerateColumns="true"
+    DefaultColumnMinWidth="100"
+    SummaryScope="SummaryScope.Root"
+    IsColumnOptionsEnabled="true"
+    IsGroupCollapsable="true"
+    GroupSummaryDisplayMode="GroupSummaryDisplayMode.RowBottom"
+    ColumnMovingMode="ColumnMovingMode.Deferred"
+    ColumnMovingAnimationMode="ColumnMovingAnimationMode.SlideOver"
+    ColumnMovingSeparatorWidth="1"
+    ColumnShowingAnimationMode="ColumnShowingAnimationMode.SlideFromRightAndFadeIn"
+    ColumnHidingAnimationMode="ColumnHidingAnimationMode.SlideToRightAndFadeOut"
+    SelectionMode="(DataGridSelectionMode)GridSelectionMode.Single"
+    CornerRadiusTopLeft="0"
+    CornerRadiusTopRight="0" />
+
+
+@code{
+    public List<Transaction> Transactions { get; set; }
+    public List<TransactionsInfo> _dataSource { get; set; } = new();
+    readonly Random _rand = new Random();
+
+    protected override void OnInitialized()
+    {
+        FillTheTable();
+    }
+
+    private UserAccount GetUserAccount()
+    {
+        string? loggedUserEmail = HttpContextAccessor.HttpContext.User.Claims.FirstOrDefault().Value;
+
+        var userAccount = UserAccountRepository
+            .GetAllUserAccounts()
+            .FirstOrDefault(ua => ua.Email == loggedUserEmail);
+
+        return userAccount;
+    }
+
+    public void FillTheTable()
+    {
+        var customer = CustomerService.GetAllCustomers()
+            .FirstOrDefault(c => c.UserAccountId == GetUserAccount().UserAccountId);
+
+        var Transactions = TransactionService.GetAllTransactions()
+            .Where(t => t.SenderId == customer.CustomerId || t.BeneficiaryId == customer.CustomerId)
+            .OrderByDescending(t => t.Amount);
+        
+        
+        foreach (var transaction in Transactions)
+        {
+            var senderAccount = AccountService.GetAccountById(transaction.SenderAccountId);
+            var beneficiaryAccount = AccountService.GetAccountById(Int32.Parse(transaction.BeneficiaryAccountId));
+            var sender = CustomerService.GetCustomerById(senderAccount.CustomerId);
+            var beneficiary = CustomerService.GetCustomerById(beneficiaryAccount.CustomerId);
+
+            var transactionInfo = new TransactionsInfo()
+            {
+                SenderName = sender.FirstName,
+                SenderAccountName = AccountService.GetAccountById(transaction.SenderAccountId).AccountName,
+                BeneficiaryAccountName = AccountService.GetAccountById(Int32.Parse(transaction.BeneficiaryAccountId))
+                    .AccountName,
+                BeneficiaryName = beneficiary.FirstName,
+                Amount = transaction.Amount,
+                Date = GetRandomDate()
+            };
+            _dataSource.Add(transactionInfo);
+        }
+    }
+    public class TransactionsInfo
+    {
+        public string SenderName { get; set; }
+        public string SenderAccountName { get; set; }
+        public string BeneficiaryName { get; set; }
+        public string BeneficiaryAccountName { get; set; }
+        public decimal Amount { get; set; }
+        public DateTime Date { get; set; }
+    }
+    public DateTime GetRandomDate() {
+        var today = new DateTime();
+        var year = today.Year;
+        var month = this.GetRandomNumber(1, 9);
+        var day = this.GetRandomNumber(10, 27);
+        return new DateTime(year, (int)month, (int)day);
+    }
+    public double GetRandomNumber(double min, double max)
+    {
+        return Math.Round(min + (_rand.NextDouble() * (max - min)));
+    }
+}

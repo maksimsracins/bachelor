@@ -31,4 +31,9 @@ public class TransactionService : ITransactionService
     {
         return _transactionRepository.DeleteTransaction(transactionId);
     }
+
+    public List<Transaction> GetAllTransactions()
+    {
+        return _transactionRepository.GetAllTransactions();
+    }
 }

@@ -45,3 +45,6 @@
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Database/obj/Debug/net8.0/refint/BlazorWebAppAuthentication.Database.dll
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Database/obj/Debug/net8.0/BlazorWebAppAuthentication.Database.pdb
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Database/obj/Debug/net8.0/ref/BlazorWebAppAuthentication.Database.dll
+/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Database/bin/Debug/net8.0/BlazorWebAppAuthentication.Domain.staticwebassets.runtime.json
+/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Database/bin/Debug/net8.0/BlazorWebAppAuthentication.Database.staticwebassets.runtime.json
+/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Database/obj/Debug/net8.0/jsmodules/jsmodules.build.manifest.json

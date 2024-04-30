@@ -14,5 +14,6 @@
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)microsoft.entityframeworkcore/7.0.10/buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props" Condition="Exists('$(NuGetPackageRoot)microsoft.entityframeworkcore/7.0.10/buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props')" />
+    <Import Project="$(NuGetPackageRoot)igniteui.blazor.trial/23.2.204/buildTransitive/IgniteUI.Blazor.Trial.props" Condition="Exists('$(NuGetPackageRoot)igniteui.blazor.trial/23.2.204/buildTransitive/IgniteUI.Blazor.Trial.props')" />
   </ImportGroup>
 </Project>

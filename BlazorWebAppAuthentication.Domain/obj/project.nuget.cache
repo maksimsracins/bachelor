@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "efRIJ38znZO3Lh3ICVa4Esy6CPhAoDBY2416zX45c61ol8s62AR3OVa/oczPoir5hmW1xA+KD5dIhIASqEYXVg==",
+  "dgSpecHash": "eovA123pDekF96pSR09QLT3P7TX8mECHZsDC4GR049bqaupG0Fmdg+l7ba0PMbHtWLPj5Pg1wjRh+jOLshIrYA==",
   "success": true,
   "projectFilePath": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/BlazorWebAppAuthentication.Domain.csproj",
   "expectedPackageFiles": [
+    "/Users/maksimsracins/.nuget/packages/igniteui.blazor.trial/23.2.204/igniteui.blazor.trial.23.2.204.nupkg.sha512",
     "/Users/maksimsracins/.nuget/packages/microsoft.aspnetcore.authorization/8.0.4/microsoft.aspnetcore.authorization.8.0.4.nupkg.sha512",
     "/Users/maksimsracins/.nuget/packages/microsoft.aspnetcore.components/8.0.4/microsoft.aspnetcore.components.8.0.4.nupkg.sha512",
     "/Users/maksimsracins/.nuget/packages/microsoft.aspnetcore.components.analyzers/8.0.4/microsoft.aspnetcore.components.analyzers.8.0.4.nupkg.sha512",

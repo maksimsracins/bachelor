@@ -3,6 +3,7 @@
 @using Microsoft.AspNetCore.Authorization
 @using BlazorWebAppAuthentication.Database
 @using BlazorWebAppAuthentication.Domain.Enum
+@using TransactionType = BlazorWebAppAuthentication.Domain.Enum.TransactionType
 
 @inject ApplicationContext ApplicationContext
 @attribute [Authorize(Roles = "User")]

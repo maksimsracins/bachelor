@@ -8,4 +8,5 @@ public interface ITransactionService
     Transaction GetTransactionById(int transactionId);
     Transaction UpdateTransaction(Transaction transaction);
     Transaction DeleteTransaction(int transactionId);
+    List<Transaction> GetAllTransactions();
 }

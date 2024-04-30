@@ -4,6 +4,7 @@ using BlazorWebAppAuthentication.Client.Payment;
 using BlazorWebAppAuthentication.Client.Services;
 using BlazorWebAppAuthentication.Database;
 using BlazorWebAppAuthentication.Database.Interfaces;
+using IgniteUI.Blazor.Controls;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,7 +24,6 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
     });
 
 builder.Configuration.Bind("Project", new Config());
-
 builder.Services.AddAuthorization();
 builder.Services.AddCascadingAuthenticationState();
 builder.Services.AddHttpContextAccessor();
@@ -48,6 +48,8 @@ builder.Services.AddScoped<ICountryService, CountryService>();
 builder.Services.AddScoped<ITransactionService, TransactionService>();
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<PaymentService>();
+
+builder.Services.AddIgniteUIBlazor();
 
 var configuration = new ConfigurationBuilder()
     .SetBasePath(Directory.GetCurrentDirectory())
