@@ -17,6 +17,66 @@ public class PaymentService
     
     public static readonly Random random = new Random();
 
+public string ConvertPacs008ToMT103(string xmlPacs008)
+{
+    XDocument xmlDoc;
+    try
+    {
+        xmlDoc = XDocument.Parse(xmlPacs008);
+        Console.WriteLine(xmlDoc.ToString());
+        var allElements = xmlDoc.Descendants().Select(x => x.Name.LocalName).ToList();
+        Console.WriteLine(string.Join(", ", allElements));
+    }
+    catch (Exception ex)
+    {
+        throw new ArgumentException("Invalid XML format.", ex);
+    }
+    
+    XNamespace ns = xmlDoc.Root.GetDefaultNamespace();
+    var grpHdr = xmlDoc.Descendants(ns + "GrpHdr").FirstOrDefault();
+    var cdtTrfTxInf = xmlDoc.Descendants(ns + "CdtTrfTxInf").FirstOrDefault();
+
+    if (grpHdr == null || cdtTrfTxInf == null)
+    {
+        // Handling missing critical elements by throwing an informative exception
+        throw new InvalidOperationException("Required XML elements GrpHdr or CdtTrfTxInf are missing.");
+    }
+
+    // Building the MT103 string
+    var mt103Content = new StringBuilder();
+    mt103Content.AppendLine($"{{1:F01{grpHdr.Element(ns + "InstgAgt").Element(ns + "FinInstnId").Element(ns + "BICFI").Value}XXXXX0000000000}}"); // Sender's BIC
+    mt103Content.AppendLine($"{{2:O103{DateTime.Now.ToString("yyMMdd")}{grpHdr.Element(ns + "InstdAgt").Element(ns + "FinInstnId").Element(ns + "BICFI").Value}XXXXX{DateTime.Now.ToString("HHmm")}N}}"); // Receiver's BIC
+    mt103Content.AppendLine($"{{3:{{108:{grpHdr.Element(ns + "MsgId").Value}}}}}");
+    mt103Content.AppendLine("{4:");
+    mt103Content.AppendLine($":20:{grpHdr.Element(ns + "MsgId").Value}");
+    mt103Content.AppendLine($":23B:CRED");
+    mt103Content.AppendLine($":32A:{DateTime.Parse(grpHdr.Element(ns + "CreDtTm").Value).ToString("yyMMdd")}EUR{cdtTrfTxInf.Element(ns + "Amt").Element(ns + "InstdAmt").Value}");
+    mt103Content.AppendLine($":50A:{cdtTrfTxInf.Element(ns + "CdtrAgt").Element(ns + "FinInstnId").Element(ns + "BICFI").Value}");
+    mt103Content.AppendLine($"{cdtTrfTxInf.Element(ns + "Cdtr").Element(ns + "Nm").Value}");
+    mt103Content.AppendLine($":59:/{cdtTrfTxInf.Element(ns + "CdtrAcct").Element(ns + "Id").Element(ns + "IBAN").Value}{cdtTrfTxInf.Element(ns + "Cdtr").Element(ns + "Nm").Value}");
+    mt103Content.AppendLine($":70:Payment for services");
+    mt103Content.AppendLine($":71A:SHA");
+    mt103Content.AppendLine("-}");
+
+    return mt103Content.ToString();
+}
+
+
+    public Pacs008Payment ConvertMT103ToPacs008(MT103Payment mt103Payment)
+    {
+      var pacs008 = new Pacs008Payment()
+        {
+            ControlSum = ParseMT103Amount(mt103Payment.ValueDateCurrencyAmount),
+            Currency = "EUR",
+            Amount = ParseMT103Amount(mt103Payment.ValueDateCurrencyAmount),
+            DebtorAgentBIC = mt103Payment.BankOperationCode,
+            CreditorAgentBIC = mt103Payment.BankOperationCode,
+            CreditorName = mt103Payment.BeneficiaryCustomer,
+            CreditorAddressLine = mt103Payment.BeneficiaryCustomer,
+            CreditorAccountIBAN = mt103Payment.BeneficiaryCustomerName,
+        };
+      return pacs008;
+    }
 
     public Pacs008Payment EnrichPacs008Payment(Customer sender, Customer beneficiary, TransferModel model)
     {
@@ -33,7 +93,6 @@ public class PaymentService
         };
         return pacs008;
     }
-    
     
     public string GeneratePacs008Xml(Pacs008Payment payment)
     {
@@ -100,12 +159,37 @@ public class PaymentService
             ValueDateCurrencyAmount = $"{DateTime.Now.ToString("yyMMdd")}EUR{model.Amount}",
             OrderingCustomer = $"{sender.FirstName}",
             OrderingCustomerName = $"{sender.LastName}/{model.SenderAccountName}",
-            BeneficiaryCustomer = $"{beneficiary.FirstName}",
-            BeneficiaryCustomerName = $"{beneficiary.LastName}/{model.BeneficiaryAccountName}",
+            BeneficiaryCustomer = $"{beneficiary.FirstName}{beneficiary.LastName}",
+            BeneficiaryCustomerName = $"{model.BeneficiaryAccountName}",
             RemittanceInformation = model.RemittenceInfo
         };
         return payment;
     }
+    public decimal ParseMT103Amount(string mt103Amount)
+    {
+        // The amount follows the 6-digit date and 3-letter currency code in the string
+        var amountString = mt103Amount.Substring(9);
+        if (decimal.TryParse(amountString, out decimal result))
+        {
+            return result;
+        }
+        throw new FormatException("Invalid MT103 amount format.");
+    }
+    public decimal ParseMT103AmountForEUR(string mt103Amount)
+    {
+        // Check for EUR in the expected position and proceed with parsing the numerical part
+        if (mt103Amount.Substring(6, 3) != "EUR")
+            throw new FormatException("Expected currency 'EUR' but found another.");
+
+        var amountString = mt103Amount.Substring(9); // Starts after "yyMMddEUR"
+        if (decimal.TryParse(amountString, out decimal result))
+        {
+            return result;
+        }
+        throw new FormatException("Invalid amount format.");
+    }
+
+
 
     public static string GenerateDateString()
     {

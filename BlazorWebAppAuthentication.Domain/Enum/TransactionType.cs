@@ -4,8 +4,6 @@ namespace BlazorWebAppAuthentication.Domain.Enum;
 
 public enum TransactionType
     {
-        [EnumMember(Value = "SWIFT")]
-        SWIFT,
-        [EnumMember(Value = "ISO")]
-        ISO
+        SWIFT =1,
+        ISO=2
     }

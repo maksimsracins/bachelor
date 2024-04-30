@@ -1,3 +1,5 @@
+using BlazorWebAppAuthentication.Domain.Enum;
+
 namespace BlazorWebAppAuthentication.Domain.Entities;
 
 public class Account
@@ -8,5 +10,6 @@ public class Account
     public decimal Balance { get; set; }
     public AccountType AccountType { get; set; }
     public int CustomerId { get; set; }
+    public AccountSupportType AccountSupportType { get; set; }
 
 }

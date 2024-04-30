@@ -2,6 +2,6 @@ namespace BlazorWebAppAuthentication.Domain;
 
 public enum Role
 {
-    Administrator,
-    User
+    Administrator =1,
+    User =2
 }

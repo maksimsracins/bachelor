@@ -2,7 +2,7 @@ namespace BlazorWebAppAuthentication.Domain;
 
 public enum Gender
 {
-    Male,
-    Female,
-    Potato
+    Male = 1,
+    Female =2 ,
+    Potato = 3
 }

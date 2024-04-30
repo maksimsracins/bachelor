@@ -14,8 +14,7 @@ public partial class TransferMoney
 {
     [Inject]
     public required IHttpContextAccessor HttpContextAccessor { get; set; }
-
-    [SupplyParameterFromForm] 
+    
     public TransferModel Model { get; set; } = new();
     
     [Inject]
@@ -56,19 +55,6 @@ public partial class TransferMoney
         
         
         senderAccounts = ApplicationContext.Accounts.Where(a => a.CustomerId == customer.CustomerId).ToList();
-    }
-
-    private async Task ConfirmTransfer()
-    {
-        var confirmed = await JSRuntime.InvokeAsync<bool>("confirm", "Do you really want to send the payment?");
-        if (confirmed)
-        {
-            await HandleTransfer();
-        }
-        else
-        {
-            transactionStatusMessage = "Transfer cancelled by user.";
-        }
     }
     
     private async Task HandleTransfer()
@@ -113,9 +99,6 @@ public partial class TransferMoney
             }
             else
             {
-                // Process transaction
-                senderAccount.Balance -= @Model.Amount;
-                beneficiaryAccount.Balance += @Model.Amount;
                 var transaction = new Transaction
                 {
                     SenderId = senderCustomer.CustomerId,
@@ -127,25 +110,157 @@ public partial class TransferMoney
                     TransactionType = @Model.TransactionType,
                     RemittanceInfo = @Model.RemittenceInfo
                 };
-                TransactionService.AddTransaction(transaction);
-                transactionStatusMessage = "Transaction completed successfully.";
-                if (senderCustomer != null){
-                    if (receiveCopy)
+
+                switch (transaction.TransactionType)
+                {
+                    case TransactionType.ISO:
+                        switch (senderAccount.AccountSupportType) 
                         {
-                            if (Model.TransactionType == TransactionType.SWIFT)
-                            {
-                                await DonwloadMT103File(senderCustomer, beneficiaryCustomer);
-                            }
-                            else
-                            {
-                                await DonwloadPacs008File(senderCustomer, beneficiaryCustomer);
-                            }
-                        }
+                            case AccountSupportType.MTMX:
+                                if (beneficiaryAccount.AccountSupportType == AccountSupportType.MT)
+                                {
+                                    senderAccount.Balance -= @Model.Amount;
+                                    beneficiaryAccount.Balance += @Model.Amount;
+                                    TransactionService.AddTransaction(transaction);
+                                    transactionStatusMessage = "Transaction completed successfully.";
+                                    await DonwloadConvertedToMT103File(senderCustomer, beneficiaryCustomer);
+                                } else if (beneficiaryAccount.AccountSupportType == AccountSupportType.MX)
+                                {
+                                    
+                                    senderAccount.Balance -= @Model.Amount;
+                                    beneficiaryAccount.Balance += @Model.Amount;
+                                    TransactionService.AddTransaction(transaction);
+                                    transactionStatusMessage = "Transaction completed successfully.";
+                                    await DonwloadPacs008File(senderCustomer, beneficiaryCustomer);
+                                }
+                                else 
+                                {
+                                    senderAccount.Balance -= @Model.Amount;
+                                    beneficiaryAccount.Balance += @Model.Amount;
+                                    TransactionService.AddTransaction(transaction);
+                                    transactionStatusMessage = "Transaction completed successfully.";
+                                    await DonwloadPacs008File(senderCustomer, beneficiaryCustomer);
+                                }
+                                break;
+                            case AccountSupportType.MT:
+                                if (beneficiaryAccount.AccountSupportType == AccountSupportType.MX)
+                                {
+                                    senderAccount.Balance -= @Model.Amount;
+                                    beneficiaryAccount.Balance += @Model.Amount;
+                                    TransactionService.AddTransaction(transaction);
+                                    transactionStatusMessage = "Transaction completed successfully.";
+                                    await DownloadConvertedToPacs008File(senderCustomer, beneficiaryCustomer);
+                                } else if (beneficiaryAccount.AccountSupportType == AccountSupportType.MTMX)
+                                {
+                                    senderAccount.Balance -= @Model.Amount;
+                                    beneficiaryAccount.Balance += @Model.Amount;
+                                    TransactionService.AddTransaction(transaction);
+                                    transactionStatusMessage = "Transaction completed successfully.";
+                                    await DownloadConvertedToPacs008File(senderCustomer, beneficiaryCustomer);
+                                }
+                                else
+                                {
+                                    transactionStatusMessage = "Transaction rejected.";
+                                }
+                                break;
+                            case AccountSupportType.MX:
+                                if (beneficiaryAccount.AccountSupportType == AccountSupportType.MT)
+                                {
+                                    senderAccount.Balance -= @Model.Amount;
+                                    beneficiaryAccount.Balance += @Model.Amount;
+                                    TransactionService.AddTransaction(transaction);
+                                    transactionStatusMessage = "Transaction completed successfully.";
+                                    await DonwloadConvertedToMT103File(senderCustomer, beneficiaryCustomer);
+                                } else if (beneficiaryAccount.AccountSupportType == AccountSupportType.MTMX)
+                                {
+                                    senderAccount.Balance -= @Model.Amount;
+                                    beneficiaryAccount.Balance += @Model.Amount;
+                                    TransactionService.AddTransaction(transaction);
+                                    transactionStatusMessage = "Transaction completed successfully.";
+                                    await DonwloadPacs008File(senderCustomer, beneficiaryCustomer);
+                                }
+                                else
+                                {
+                                    senderAccount.Balance -= @Model.Amount;
+                                    beneficiaryAccount.Balance += @Model.Amount;
+                                    TransactionService.AddTransaction(transaction);
+                                    transactionStatusMessage = "Transaction completed successfully.";
+                                    await DonwloadPacs008File(senderCustomer, beneficiaryCustomer);
+                                }
+                                break; 
+                        } 
+                        break;
+                    case TransactionType.SWIFT: 
+                        switch (senderAccount.AccountSupportType) 
+                        {
+                            case AccountSupportType.MTMX:
+                                if (beneficiaryAccount.AccountSupportType == AccountSupportType.MT) {
+                                    senderAccount.Balance -= @Model.Amount;
+                                    beneficiaryAccount.Balance += @Model.Amount;
+                                    TransactionService.AddTransaction(transaction);
+                                    transactionStatusMessage = "Transaction completed successfully.";
+                                    await DonwloadMT103File(senderCustomer, beneficiaryCustomer);
+                                } else if (beneficiaryAccount.AccountSupportType == AccountSupportType.MX) {
+                                    senderAccount.Balance -= @Model.Amount;
+                                    beneficiaryAccount.Balance += @Model.Amount;
+                                    TransactionService.AddTransaction(transaction);
+                                    transactionStatusMessage = "Transaction completed successfully.";
+                                    await DonwloadPacs008File(senderCustomer, beneficiaryCustomer);
+                                } else {
+                                        senderAccount.Balance -= @Model.Amount;
+                                        beneficiaryAccount.Balance += @Model.Amount;
+                                        TransactionService.AddTransaction(transaction);
+                                        transactionStatusMessage = "Transaction completed successfully.";
+                                        await DonwloadMT103File(senderCustomer, beneficiaryCustomer); 
+                                }
+                                break;
+                            case AccountSupportType.MT:
+                                if (beneficiaryAccount.AccountSupportType == AccountSupportType.MX) {
+                                    senderAccount.Balance -= @Model.Amount;
+                                    beneficiaryAccount.Balance += @Model.Amount;
+                                    TransactionService.AddTransaction(transaction);
+                                    transactionStatusMessage = "Transaction completed successfully.";
+                                    await DownloadConvertedToPacs008File(senderCustomer, beneficiaryCustomer);
+                                } else if (beneficiaryAccount.AccountSupportType == AccountSupportType.MTMX) {
+                                        senderAccount.Balance -= @Model.Amount;
+                                        beneficiaryAccount.Balance += @Model.Amount;
+                                        TransactionService.AddTransaction(transaction);
+                                        transactionStatusMessage = "Transaction completed successfully.";
+                                        await DonwloadMT103File(senderCustomer, beneficiaryCustomer);
+                                } else {
+                                        senderAccount.Balance -= @Model.Amount;
+                                        beneficiaryAccount.Balance += @Model.Amount;
+                                        TransactionService.AddTransaction(transaction);
+                                        transactionStatusMessage = "Transaction completed successfully.";
+                                        await DonwloadMT103File(senderCustomer, beneficiaryCustomer);
+                                }
+                                break;
+                            case AccountSupportType.MX:
+                                if (beneficiaryAccount.AccountSupportType == AccountSupportType.MT) {
+                                    senderAccount.Balance -= @Model.Amount;
+                                    beneficiaryAccount.Balance += @Model.Amount;
+                                    TransactionService.AddTransaction(transaction);
+                                    transactionStatusMessage = "Transaction completed successfully.";
+                                    await DonwloadConvertedToMT103File(senderCustomer, beneficiaryCustomer);
+                                } else if (beneficiaryAccount.AccountSupportType == AccountSupportType.MTMX) {
+                                    senderAccount.Balance -= @Model.Amount;
+                                    beneficiaryAccount.Balance += @Model.Amount;
+                                    TransactionService.AddTransaction(transaction);
+                                    transactionStatusMessage = "Transaction completed successfully.";
+                                    await DonwloadConvertedToMT103File(senderCustomer, beneficiaryCustomer);
+                                } else {
+                                    transactionStatusMessage = "Payment cannot be processed.";
+                                }
+                                break; 
+                        } 
+                        break;
                 }
             }
         }
+        this.StateHasChanged();
         //navigationManager.NavigateTo("/transactionhistory");
     }
+    
     public UserAccount GetUserAccount()
     {
         string? loggedUserEmail = HttpContextAccessor.HttpContext.User.Claims.FirstOrDefault().Value;
@@ -157,12 +272,38 @@ public partial class TransferMoney
         return userAccount;
     }
 
+    private async Task DonwloadConvertedToMT103File(Customer sender, Customer beneficiary)
+    {
+        var pacs008Payment = PaymentService.EnrichPacs008Payment(sender, beneficiary, Model);
+        var generatedISO = PaymentService.GeneratePacs008Xml(pacs008Payment);
+
+        var pacs008ConvertedToMT103 = PaymentService.ConvertPacs008ToMT103(generatedISO);
+        
+        var filename = $"ConvertedMT103_{DateTime.Now.ToString("yyyyMMddHHmmss")}.txt";
+        refreshModel();
+        await JSRuntime.InvokeVoidAsync("downloadPayment", filename, "text/plain",
+            Convert.ToBase64String(Encoding.UTF8.GetBytes(pacs008ConvertedToMT103)));
+    }
+
+    private async Task DownloadConvertedToPacs008File(Customer sender, Customer beneficiary)
+    {
+        var mt103Payment = PaymentService.EnrichMT103Payment(sender, beneficiary, Model);
+        var mt103ConvertedToPacs008 = PaymentService.ConvertMT103ToPacs008(mt103Payment);
+        var mt103ConvertedToPacs008File = PaymentService.GeneratePacs008Xml(mt103ConvertedToPacs008);
+
+        var filename = $"ConvertedPacs008_{DateTime.Now.ToString("yyyyMMddHHmmss")}.txt";
+        refreshModel();
+        await JSRuntime.InvokeVoidAsync("downloadPayment", filename, "text/plain",
+            Convert.ToBase64String(Encoding.UTF8.GetBytes(mt103ConvertedToPacs008File)));
+    }
+
     private async Task DonwloadPacs008File(Customer sender, Customer beneficiary)
     {
         var pacs008Payment = PaymentService.EnrichPacs008Payment(sender, beneficiary, Model);
         var generatedISO = PaymentService.GeneratePacs008Xml(pacs008Payment);
 
         var filename = $"Pacs008_{DateTime.Now.ToString("yyyyMMddHHmmss")}.txt";
+        refreshModel();
         await JSRuntime.InvokeVoidAsync("downloadPayment", filename, "text/plain",
             Convert.ToBase64String(Encoding.UTF8.GetBytes(generatedISO)));
     }
@@ -173,7 +314,13 @@ public partial class TransferMoney
         var generatedSWIFT = PaymentService.GenerateMT103TextFile(mt103Payment);
         
         var filename = $"MT103_{DateTime.Now.ToString("yyyyMMddHHmmss")}.txt";
+        refreshModel();
         await JSRuntime.InvokeVoidAsync("downloadPayment", filename, "text/plain",
             Convert.ToBase64String(Encoding.UTF8.GetBytes(generatedSWIFT)));
+    }
+
+    public void refreshModel()
+    {
+        Transaction model = new Transaction();
     }
 }

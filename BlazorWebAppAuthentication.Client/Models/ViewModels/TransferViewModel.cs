@@ -1,12 +1,17 @@
 using System.ComponentModel.DataAnnotations;
-using BlazorWebAppAuthentication.Client.Components.Pages;
+using BlazorWebAppAuthentication.Client.Services;
 using BlazorWebAppAuthentication.Database;
 using BlazorWebAppAuthentication.Domain.Enum;
+using Microsoft.AspNetCore.Components;
 
 namespace BlazorWebAppAuthentication.Client.Models.ViewModels;
 
 public class TransferModel
 {
+    
+    [Inject] 
+    private AccountService AccountService { get; set; }
+    
     public TransactionType TransactionType { get; set; }
     
     public int SenderAccountId { get; set; }
@@ -26,13 +31,14 @@ public class TransferModel
     
     public string RemittenceInfo { get; set; }
     
+    
     public static ValidationResult ValidateBeneficiaryAccountExists(string beneficiaryAccountName, ValidationContext context) 
     {
         if (beneficiaryAccountName == "")
         {
             return new ValidationResult("Beneficiary account is empty.");
         }
-        var dbContext = (ApplicationContext)context.GetService(typeof(ApplicationContext));
+        var dbContext = (ApplicationContext)context.GetService(typeof(ApplicationContext))!;
         var accountExists = dbContext.Accounts.Any(a => a.AccountName == beneficiaryAccountName);
         
         if (!accountExists)

@@ -51,13 +51,6 @@
     public LoginViewModel Model { get; set; } = new();
 
     private string? errorMessage;
-    private string? render_mode;
-
-    protected override void OnInitialized()
-    {
-        render_mode = "prerender";
-        base.OnInitialized();
-    }
 
     private async Task Authenticate()
     {
