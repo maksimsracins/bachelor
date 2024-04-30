@@ -1,6 +1,4 @@
-using BlazorWebAppAuthentication;
 using BlazorWebAppAuthentication.Client.Components;
-using BlazorWebAppAuthentication.Client.Components.Layout;
 using BlazorWebAppAuthentication.Client.Configurations;
 using BlazorWebAppAuthentication.Client.Payment;
 using BlazorWebAppAuthentication.Client.Services;
@@ -50,7 +48,6 @@ builder.Services.AddScoped<ICountryService, CountryService>();
 builder.Services.AddScoped<ITransactionService, TransactionService>();
 builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<PaymentService>();
-builder.Services.AddScoped<NavMenu>();
 
 var configuration = new ConfigurationBuilder()
     .SetBasePath(Directory.GetCurrentDirectory())

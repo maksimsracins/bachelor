@@ -1,5 +1,5 @@
 using System.Text;
-using BlazorWebAppAuthentication.Client.Components.Pages;
+using System.Xml.Linq;
 using BlazorWebAppAuthentication.Client.Models.ViewModels;
 using BlazorWebAppAuthentication.Domain.Entities;
 using Microsoft.Extensions.Options;
@@ -16,6 +16,62 @@ public class PaymentService
     }
     
     public static readonly Random random = new Random();
+
+
+    public Pacs008Payment EnrichPacs008Payment(Customer sender, Customer beneficiary, TransferModel model)
+    {
+        var pacs008 = new Pacs008Payment()
+        {
+            ControlSum = model.Amount,
+            Currency = "EUR",
+            Amount = model.Amount,
+            DebtorAgentBIC = "BANKBEBBA",
+            CreditorAgentBIC = "BANKBEBBA",
+            CreditorName = $"{sender.FirstName}{sender.LastName}",
+            CreditorAddressLine = $"{sender.Country}, {sender.City}, {sender.Street}, {sender.Zip}",
+            CreditorAccountIBAN = model.BeneficiaryAccountName
+        };
+        return pacs008;
+    }
+    
+    
+    public string GeneratePacs008Xml(Pacs008Payment payment)
+    {
+        var xmlDoc = new XDocument(
+            new XElement("Document",
+                new XAttribute(XNamespace.Xmlns + "urn", "iso:std:iso:20022:tech:xsd:pacs.008.001.02"),
+                new XElement("FIToFICstmrCdtTrf",
+                    new XElement("GrpHdr",
+                        new XElement("MsgId", payment.MessageId),
+                        new XElement("CreDtTm", payment.CreationDateTime.ToString("yyyy-MM-ddTHH:mm:ssZ")),
+                        new XElement("NbOfTxs", payment.NumberOfTransactions),
+                        new XElement("CtrlSum", payment.ControlSum),
+                        new XElement("InstgAgt",
+                            new XElement("FinInstnId",
+                                new XElement("BICFI", payment.DebtorAgentBIC))),
+                        new XElement("InstdAgt",
+                            new XElement("FinInstnId",
+                                new XElement("BICFI", payment.CreditorAgentBIC)))),
+                    new XElement("CdtTrfTxInf",
+                        new XElement("PmtId",
+                            new XElement("InstrId", payment.InstructionId),
+                            new XElement("EndToEndId", payment.EndToEndId)),
+                        new XElement("Amt",
+                            new XElement("InstdAmt", payment.Amount,
+                                new XAttribute("Ccy", payment.Currency))),
+                        new XElement("CdtrAgt",
+                            new XElement("FinInstnId",
+                                new XElement("BICFI", payment.CreditorAgentBIC))),
+                        new XElement("Cdtr",
+                            new XElement("Nm", payment.CreditorName),
+                            new XElement("PstlAdr",
+                                new XElement("AdrLine", payment.CreditorAddressLine))),
+                        new XElement("CdtrAcct",
+                            new XElement("Id",
+                                new XElement("IBAN", payment.CreditorAccountIBAN)))))));
+    
+        return xmlDoc.ToString();
+    }
     
     public string GenerateMT103TextFile(MT103Payment payment)
     {

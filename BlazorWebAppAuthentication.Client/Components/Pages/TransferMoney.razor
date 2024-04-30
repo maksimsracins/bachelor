@@ -2,6 +2,7 @@
 
 @using Microsoft.AspNetCore.Authorization
 @using BlazorWebAppAuthentication.Database
+@using BlazorWebAppAuthentication.Domain.Enum
 
 @inject ApplicationContext ApplicationContext
 @attribute [Authorize(Roles = "User")]
@@ -31,9 +32,9 @@
 
             <div class="form-group m-3">
                 <label for="paymentType" class="form-label">Payment Type:</label>
-                <select @bind="Model.TransactionType" class="form-select">
-                    <option value="SWIFT">SWIFT</option>
-                    <option value="ISO">ISO</option>
+                <select @bind="@Model.TransactionType" class="form-select">
+                    <option value="SWIFT">@TransactionType.SWIFT</option>
+                    <option value="ISO">@TransactionType.ISO</option>
                 </select>
             </div>
 

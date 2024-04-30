@@ -30,16 +30,16 @@ public class DbInitializer
 
         if (!context.Transactions.Any())
         {
-            context.AddRange(
-                    new Transaction{TransactionId = 1, SenderId = 1, SenderAccountId = 1, BeneficiaryId = 2, BeneficiaryAccountId = "1", Amount = 10, TransactionStatus = TransactionStatus.Processed, TransactionType = "MT103"},
-                                new Transaction{TransactionId = 2, SenderId = 1, SenderAccountId = 1, BeneficiaryId = 2, BeneficiaryAccountId = "1", Amount = 11, TransactionStatus = TransactionStatus.Processed, TransactionType = "pacs008"},
-                                new Transaction{TransactionId = 3, SenderId = 1, SenderAccountId = 1, BeneficiaryId = 2, BeneficiaryAccountId = "1", Amount = 12, TransactionStatus = TransactionStatus.Processed, TransactionType = "pacs008"},
-                                new Transaction{TransactionId = 4, SenderId = 1, SenderAccountId = 1, BeneficiaryId = 2, BeneficiaryAccountId = "1", Amount = 13, TransactionStatus = TransactionStatus.Processed, TransactionType = "MT103"},
-                                new Transaction{TransactionId = 5, SenderId = 1, SenderAccountId = 1, BeneficiaryId = 2, BeneficiaryAccountId = "1", Amount = 14, TransactionStatus = TransactionStatus.Processed, TransactionType = "MT103"},
-                                new Transaction{TransactionId = 6, SenderId = 1, SenderAccountId = 1, BeneficiaryId = 2, BeneficiaryAccountId = "1", Amount = 15, TransactionStatus = TransactionStatus.Processed, TransactionType = "MT103"},
-                                new Transaction{TransactionId = 7, SenderId = 1, SenderAccountId = 1, BeneficiaryId = 2, BeneficiaryAccountId = "1", Amount = 16, TransactionStatus = TransactionStatus.Processed, TransactionType = "MT103"},
-                                new Transaction{TransactionId = 8, SenderId = 1, SenderAccountId = 1, BeneficiaryId = 2, BeneficiaryAccountId = "1", Amount = 17, TransactionStatus = TransactionStatus.Processed, TransactionType = "MT103"}
-                );
+            // context.AddRange(
+            //         new Transaction{TransactionId = 1, SenderId = 1, SenderAccountId = 1, BeneficiaryId = 2, BeneficiaryAccountId = "1", Amount = 10, TransactionStatus = TransactionStatus.Processed, TransactionType = "MT103"},
+            //                     new Transaction{TransactionId = 2, SenderId = 1, SenderAccountId = 1, BeneficiaryId = 2, BeneficiaryAccountId = "1", Amount = 11, TransactionStatus = TransactionStatus.Processed, TransactionType = "pacs008"},
+            //                     new Transaction{TransactionId = 3, SenderId = 1, SenderAccountId = 1, BeneficiaryId = 2, BeneficiaryAccountId = "1", Amount = 12, TransactionStatus = TransactionStatus.Processed, TransactionType = "pacs008"},
+            //                     new Transaction{TransactionId = 4, SenderId = 1, SenderAccountId = 1, BeneficiaryId = 2, BeneficiaryAccountId = "1", Amount = 13, TransactionStatus = TransactionStatus.Processed, TransactionType = "MT103"},
+            //                     new Transaction{TransactionId = 5, SenderId = 1, SenderAccountId = 1, BeneficiaryId = 2, BeneficiaryAccountId = "1", Amount = 14, TransactionStatus = TransactionStatus.Processed, TransactionType = "MT103"},
+            //                     new Transaction{TransactionId = 6, SenderId = 1, SenderAccountId = 1, BeneficiaryId = 2, BeneficiaryAccountId = "1", Amount = 15, TransactionStatus = TransactionStatus.Processed, TransactionType = "MT103"},
+            //                     new Transaction{TransactionId = 7, SenderId = 1, SenderAccountId = 1, BeneficiaryId = 2, BeneficiaryAccountId = "1", Amount = 16, TransactionStatus = TransactionStatus.Processed, TransactionType = "MT103"},
+            //                     new Transaction{TransactionId = 8, SenderId = 1, SenderAccountId = 1, BeneficiaryId = 2, BeneficiaryAccountId = "1", Amount = 17, TransactionStatus = TransactionStatus.Processed, TransactionType = "MT103"}
+            //     );
         }
 
         if (!context.Countries.Any())

@@ -5,7 +5,6 @@ using BlazorWebAppAuthentication.Client.Services;
 using BlazorWebAppAuthentication.Database;
 using BlazorWebAppAuthentication.Domain.Entities;
 using BlazorWebAppAuthentication.Domain.Enum;
-using Google.Protobuf.WellKnownTypes;
 using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 
@@ -27,6 +26,9 @@ public partial class TransferMoney
     
     [Inject]
     public UserAccountRepository UserAccountRepository { get; set; }
+    
+    [Inject]
+    public ITransactionService TransactionService { get; set; }
     
     [Inject]
     public PaymentService PaymentService { get; set; }
@@ -122,17 +124,24 @@ public partial class TransferMoney
                     BeneficiaryId = beneficiaryCustomerId,
                     Amount = @Model.Amount,
                     TransactionStatus = TransactionStatus.Processed, // Assuming instant completion
-                    TransactionType = "MT103",
+                    TransactionType = @Model.TransactionType,
                     RemittanceInfo = @Model.RemittenceInfo
                 };
-            
-                ApplicationContext.Transactions.Add(transaction);
-                await ApplicationContext.SaveChangesAsync();
-                if (receiveCopy)
-                {
-                    if (senderCustomer != null) await DonwloadMT103File(senderCustomer, beneficiaryCustomer);
-                }
+                TransactionService.AddTransaction(transaction);
                 transactionStatusMessage = "Transaction completed successfully.";
+                if (senderCustomer != null){
+                    if (receiveCopy)
+                        {
+                            if (Model.TransactionType == TransactionType.SWIFT)
+                            {
+                                await DonwloadMT103File(senderCustomer, beneficiaryCustomer);
+                            }
+                            else
+                            {
+                                await DonwloadPacs008File(senderCustomer, beneficiaryCustomer);
+                            }
+                        }
+                }
             }
         }
         //navigationManager.NavigateTo("/transactionhistory");
@@ -148,9 +157,19 @@ public partial class TransferMoney
         return userAccount;
     }
 
-    private async Task DonwloadMT103File(Customer senderCustomer, Customer beneficiaryCustomer )
+    private async Task DonwloadPacs008File(Customer sender, Customer beneficiary)
     {
-        var mt103Payment = PaymentService.EnrichMT103Payment(senderCustomer, beneficiaryCustomer, Model);
+        var pacs008Payment = PaymentService.EnrichPacs008Payment(sender, beneficiary, Model);
+        var generatedISO = PaymentService.GeneratePacs008Xml(pacs008Payment);
+
+        var filename = $"Pacs008_{DateTime.Now.ToString("yyyyMMddHHmmss")}.txt";
+        await JSRuntime.InvokeVoidAsync("downloadPayment", filename, "text/plain",
+            Convert.ToBase64String(Encoding.UTF8.GetBytes(generatedISO)));
+    }
+
+    private async Task DonwloadMT103File(Customer sender, Customer beneficiary )
+    {
+        var mt103Payment = PaymentService.EnrichMT103Payment(sender, beneficiary, Model);
         var generatedSWIFT = PaymentService.GenerateMT103TextFile(mt103Payment);
         
         var filename = $"MT103_{DateTime.Now.ToString("yyyyMMddHHmmss")}.txt";

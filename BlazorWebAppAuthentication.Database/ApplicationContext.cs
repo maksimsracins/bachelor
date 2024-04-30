@@ -11,7 +11,6 @@ public class ApplicationContext : DbContext
     public DbSet<Customer> Customers { get; set; }
     public DbSet<Transaction> Transactions { get; set; }
     public DbSet<UserAccount> UserAccount { get; set; }
-    
     public DbSet<Country> Countries { get; set; }
     
 }

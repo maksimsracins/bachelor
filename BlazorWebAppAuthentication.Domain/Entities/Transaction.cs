@@ -11,6 +11,6 @@ public class Transaction
     public string BeneficiaryAccountId { get; set; }
     public decimal Amount { get; set; }
     public TransactionStatus TransactionStatus { get; set; }
-    public string TransactionType { get; set; }
+    public TransactionType TransactionType { get; set; }
     public string RemittanceInfo { get; set; }
 }

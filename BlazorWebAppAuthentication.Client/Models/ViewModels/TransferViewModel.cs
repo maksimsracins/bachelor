@@ -1,12 +1,13 @@
 using System.ComponentModel.DataAnnotations;
 using BlazorWebAppAuthentication.Client.Components.Pages;
 using BlazorWebAppAuthentication.Database;
+using BlazorWebAppAuthentication.Domain.Enum;
 
 namespace BlazorWebAppAuthentication.Client.Models.ViewModels;
 
 public class TransferModel
 {
-    public string TransactionType { get; set; }
+    public TransactionType TransactionType { get; set; }
     
     public int SenderAccountId { get; set; }
     
