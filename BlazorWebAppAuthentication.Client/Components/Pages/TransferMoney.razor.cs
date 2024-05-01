@@ -1,4 +1,5 @@
 using System.Text;
+using BlazorWebAppAuthentication.Client.FraudPrevention;
 using BlazorWebAppAuthentication.Client.Models.ViewModels;
 using BlazorWebAppAuthentication.Client.Payment;
 using BlazorWebAppAuthentication.Client.Services;
@@ -31,6 +32,9 @@ public partial class TransferMoney
     
     [Inject]
     public PaymentService PaymentService { get; set; }
+    
+    [Inject]
+    public FraudPreventionService FraudPreventionService { get; set; }
     
     [Inject]
     public IJSRuntime JSRuntime { get; set; }
@@ -312,6 +316,8 @@ public partial class TransferMoney
     {
         var mt103Payment = PaymentService.EnrichMT103Payment(sender, beneficiary, Model);
         var generatedSWIFT = PaymentService.GenerateMT103TextFile(mt103Payment);
+
+        //var sanctionCheck = FraudPreventionService.ScanMt103(generatedSWIFT);
         
         var filename = $"MT103_{DateTime.Now.ToString("yyyyMMddHHmmss")}.txt";
         refreshModel();

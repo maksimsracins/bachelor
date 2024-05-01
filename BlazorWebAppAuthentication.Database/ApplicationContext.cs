@@ -12,5 +12,7 @@ public class ApplicationContext : DbContext
     public DbSet<Transaction> Transactions { get; set; }
     public DbSet<UserAccount> UserAccount { get; set; }
     public DbSet<Country> Countries { get; set; }
+    public DbSet<CustomersSanctionStatus> CustomersSanctionStatus { get; set; }
+    public DbSet<FraudulentNames> FraudulentNames { get; set; }
     
 }

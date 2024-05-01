@@ -8,12 +8,14 @@
 @inject UserAccountRepository UserAccountRepository
 @inject ITransactionService TransactionService
 
-<IgbDataGrid Height="800px"
-             Width="100%"
+<IgbDataGrid 
+    Height="800px"
+    Width="100%"
     DataSource="_dataSource"
     AutoGenerateColumns="true"
     DefaultColumnMinWidth="100"
     SummaryScope="SummaryScope.Root"
+    DisplayDensity="DisplayDensity.Cosy"
     IsColumnOptionsEnabled="true"
     IsGroupCollapsable="true"
     GroupSummaryDisplayMode="GroupSummaryDisplayMode.RowBottom"
