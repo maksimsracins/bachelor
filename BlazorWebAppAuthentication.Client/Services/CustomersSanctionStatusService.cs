@@ -1,4 +1,4 @@
-using BlazorWebAppAuthentication.Database;
+using BlazorWebAppAuthentication.Client.Services.Interfaces;
 using BlazorWebAppAuthentication.Database.Interfaces;
 using BlazorWebAppAuthentication.Domain.Entities;
 
@@ -8,7 +8,7 @@ public class CustomersSanctionStatusService : ICustomersSanctionStatusService
 {
     private readonly ICustomersSanctionStatusRepository _customersSanctionStatusRepository;
 
-    public CustomersSanctionStatusService(CustomersSanctionStatusRepository customersSanctionStatusRepository)
+    public CustomersSanctionStatusService(ICustomersSanctionStatusRepository customersSanctionStatusRepository)
     {
         _customersSanctionStatusRepository = customersSanctionStatusRepository;
     }

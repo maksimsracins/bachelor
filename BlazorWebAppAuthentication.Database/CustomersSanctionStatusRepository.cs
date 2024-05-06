@@ -5,7 +5,6 @@ namespace BlazorWebAppAuthentication.Database;
 
 public class CustomersSanctionStatusRepository : ICustomersSanctionStatusRepository
 {
-    
     private readonly ApplicationContext _context;
 
     public CustomersSanctionStatusRepository(ApplicationContext context)

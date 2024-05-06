@@ -1,7 +1,6 @@
 using BlazorWebAppAuthentication.Database.Interfaces;
 using BlazorWebAppAuthentication.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace BlazorWebAppAuthentication.Database
 {
@@ -46,7 +45,6 @@ namespace BlazorWebAppAuthentication.Database
                 var result = _context.Customers.Remove(data);
                 _context.SaveChangesAsync();
                 return result.Entity;
-
         }
     }
 }

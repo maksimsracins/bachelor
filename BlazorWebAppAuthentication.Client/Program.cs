@@ -1,13 +1,15 @@
 using BlazorWebAppAuthentication.Client.Components;
 using BlazorWebAppAuthentication.Client.Configurations;
+using BlazorWebAppAuthentication.Client.FraudPrevention;
 using BlazorWebAppAuthentication.Client.Payment;
 using BlazorWebAppAuthentication.Client.Services;
+using BlazorWebAppAuthentication.Client.Services.Interfaces;
 using BlazorWebAppAuthentication.Database;
 using BlazorWebAppAuthentication.Database.Interfaces;
 using IgniteUI.Blazor.Controls;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
-using ICustomersSanctionStatusService = BlazorWebAppAuthentication.Client.Services.ICustomersSanctionStatusService;
+using ICustomersSanctionStatusService = BlazorWebAppAuthentication.Client.Services.Interfaces.ICustomersSanctionStatusService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -43,8 +45,9 @@ builder.Services.AddScoped<IUserAccountRepository, UserAccountRepository>();
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
 builder.Services.AddScoped<UserAccountRepository, UserAccountRepository>();
-builder.Services.AddScoped<ICustomersSanctionStatusRepository, CustomersSanctionStatusRepository>();
 builder.Services.AddScoped<IFradulentNamesRepository, FraudulentNamesRepository>();
+builder.Services.AddScoped<ICustomersSanctionStatusRepository, CustomersSanctionStatusRepository>();
+
 
 builder.Services.AddScoped<ICustomerService, CustomerService>();
 builder.Services.AddScoped<ICountryService, CountryService>();
@@ -53,6 +56,8 @@ builder.Services.AddScoped<IAccountService, AccountService>();
 builder.Services.AddScoped<IFraudulentNamesService, FraudulentNamesService>();
 builder.Services.AddScoped<ICustomersSanctionStatusService, CustomersSanctionStatusService>();
 builder.Services.AddScoped<PaymentService>();
+builder.Services.AddScoped<FraudPreventionService>();
+
 
 builder.Services.AddIgniteUIBlazor();
 

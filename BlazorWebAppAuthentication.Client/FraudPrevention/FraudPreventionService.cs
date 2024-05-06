@@ -1,5 +1,6 @@
 using BlazorWebAppAuthentication.Client.Payment;
 using BlazorWebAppAuthentication.Client.Services;
+using BlazorWebAppAuthentication.Client.Services.Interfaces;
 using BlazorWebAppAuthentication.Domain.Entities;
 
 namespace BlazorWebAppAuthentication.Client.FraudPrevention;

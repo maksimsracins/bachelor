@@ -1,3 +1,4 @@
+using BlazorWebAppAuthentication.Client.Services.Interfaces;
 using BlazorWebAppAuthentication.Database.Interfaces;
 using BlazorWebAppAuthentication.Domain.Entities;
 

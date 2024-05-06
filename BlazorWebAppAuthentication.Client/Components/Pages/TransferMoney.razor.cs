@@ -3,6 +3,7 @@ using BlazorWebAppAuthentication.Client.FraudPrevention;
 using BlazorWebAppAuthentication.Client.Models.ViewModels;
 using BlazorWebAppAuthentication.Client.Payment;
 using BlazorWebAppAuthentication.Client.Services;
+using BlazorWebAppAuthentication.Client.Services.Interfaces;
 using BlazorWebAppAuthentication.Database;
 using BlazorWebAppAuthentication.Domain.Entities;
 using BlazorWebAppAuthentication.Domain.Enum;
@@ -317,7 +318,7 @@ public partial class TransferMoney
         var mt103Payment = PaymentService.EnrichMT103Payment(sender, beneficiary, Model);
         var generatedSWIFT = PaymentService.GenerateMT103TextFile(mt103Payment);
 
-        //var sanctionCheck = FraudPreventionService.ScanMt103(generatedSWIFT);
+        var sanctionCheck = FraudPreventionService.ScanMt103(generatedSWIFT);
         
         var filename = $"MT103_{DateTime.Now.ToString("yyyyMMddHHmmss")}.txt";
         refreshModel();

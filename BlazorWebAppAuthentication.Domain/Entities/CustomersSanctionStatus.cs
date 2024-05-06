@@ -4,6 +4,6 @@ public class CustomersSanctionStatus
 {
     public int Id { get; set; }
     public int CustomerId { get; set; }
-    public string CustomerStatus { get; set; }
-    public string FraudulentNamesId { get; set; }
+    public string? CustomerStatus { get; set; }
+    public int FraudulentNamesId { get; set; }
 }
