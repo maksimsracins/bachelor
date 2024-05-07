@@ -32,4 +32,9 @@ public class CustomersSanctionStatusRepository : ICustomersSanctionStatusReposit
     {
         return _context.CustomersSanctionStatus.ToList();
     }
+
+    public void AddFraudulentCustomer(CustomersSanctionStatus fraudCustomer)
+    {
+        _context.Add(fraudCustomer);
+    }
 }

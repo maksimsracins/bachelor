@@ -1,3 +1,4 @@
+using BlazorWebAppAuthentication.Client.Models.ViewModels;
 using BlazorWebAppAuthentication.Domain.Entities;
 
 namespace BlazorWebAppAuthentication.Client.Services.Interfaces;
@@ -8,4 +9,5 @@ public interface ICustomersSanctionStatusService
     int GetCustomerId(int id);
     int GetFraudulentNamesId(int id);
     List<CustomersSanctionStatus> GetAllCustomersSanctionStatusList();
+    void AddFraudulentCustomer(CustomersSanctionStatus customer);
 }

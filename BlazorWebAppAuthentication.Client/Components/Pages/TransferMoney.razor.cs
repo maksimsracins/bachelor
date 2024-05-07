@@ -38,6 +38,9 @@ public partial class TransferMoney
     public FraudPreventionService FraudPreventionService { get; set; }
     
     [Inject]
+    public ICustomersSanctionStatusService CustomersSanctionStatusService { get; set; }
+    
+    [Inject]
     public IJSRuntime JSRuntime { get; set; }
     
     public MT103Payment Mt103Payment { get; set; } = new MT103Payment();
@@ -317,8 +320,29 @@ public partial class TransferMoney
     {
         var mt103Payment = PaymentService.EnrichMT103Payment(sender, beneficiary, Model);
         var generatedSWIFT = PaymentService.GenerateMT103TextFile(mt103Payment);
-
+        
+        
         var sanctionCheck = FraudPreventionService.ScanMt103(generatedSWIFT);
+
+        if (sanctionCheck)
+        {
+            transactionStatusMessage = "Payment has been stopped for further investigations.";
+            //need to add to the db that customer is fraudulent.
+
+            var fraudCustomer = FraudPreventionService._fraudulentWordFound;
+
+
+            var victim = new CustomersSanctionStatus()
+            {
+                CustomerId = sender.CustomerId,
+                CustomerStatus = "TO BE REVIEWED",
+                FraudulentNamesId = fraudCustomer.Id
+            };
+            
+            
+            CustomersSanctionStatusService.AddFraudulentCustomer(victim);
+            return;
+        }
         
         var filename = $"MT103_{DateTime.Now.ToString("yyyyMMddHHmmss")}.txt";
         refreshModel();

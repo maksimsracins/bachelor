@@ -8,5 +8,5 @@ public interface ICustomersSanctionStatusRepository
     int GetCustomerId(int id);
     int GetFraudulentNamesId(int id);
     List<CustomersSanctionStatus> GetAllCustomersSanctionStatusList();
-
+    void AddFraudulentCustomer(CustomersSanctionStatus customer);
 }

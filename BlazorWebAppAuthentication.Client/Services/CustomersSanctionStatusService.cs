@@ -1,3 +1,4 @@
+using BlazorWebAppAuthentication.Client.Models.ViewModels;
 using BlazorWebAppAuthentication.Client.Services.Interfaces;
 using BlazorWebAppAuthentication.Database.Interfaces;
 using BlazorWebAppAuthentication.Domain.Entities;
@@ -31,5 +32,10 @@ public class CustomersSanctionStatusService : ICustomersSanctionStatusService
     public List<CustomersSanctionStatus> GetAllCustomersSanctionStatusList()
     {
         throw new NotImplementedException();
+    }
+
+    public void AddFraudulentCustomer(CustomersSanctionStatus customer)
+    {
+        _customersSanctionStatusRepository.AddFraudulentCustomer(customer);
     }
 }
