@@ -52,6 +52,8 @@ public partial class TransferMoney
     private Account selectedSenderAccount;
     private bool showTransferForm = true;
     
+    public bool isPaymentFraudulent { get; set; }
+    
     private string? transactionStatusMessage;
     public List<Account> senderAccounts { get; set; } = new List<Account>();
 
@@ -127,44 +129,58 @@ public partial class TransferMoney
                             case AccountSupportType.MTMX:
                                 if (beneficiaryAccount.AccountSupportType == AccountSupportType.MT)
                                 {
-                                    senderAccount.Balance -= @Model.Amount;
+                                    var isFraudulent = await DonwloadConvertedToMT103File(senderCustomer, beneficiaryCustomer);
+                                    if (!isFraudulent)
+                                    {
+                                                                            senderAccount.Balance -= @Model.Amount;
                                     beneficiaryAccount.Balance += @Model.Amount;
                                     TransactionService.AddTransaction(transaction);
                                     transactionStatusMessage = "Transaction completed successfully.";
-                                    await DonwloadConvertedToMT103File(senderCustomer, beneficiaryCustomer);
+                                    }
                                 } else if (beneficiaryAccount.AccountSupportType == AccountSupportType.MX)
                                 {
-                                    
-                                    senderAccount.Balance -= @Model.Amount;
-                                    beneficiaryAccount.Balance += @Model.Amount;
-                                    TransactionService.AddTransaction(transaction);
-                                    transactionStatusMessage = "Transaction completed successfully.";
-                                    await DonwloadPacs008File(senderCustomer, beneficiaryCustomer);
+                                    var isFraudulent = await DonwloadPacs008File(senderCustomer, beneficiaryCustomer);
+                                    if (!isFraudulent)
+                                    {
+                                        senderAccount.Balance -= @Model.Amount;
+                                        beneficiaryAccount.Balance += @Model.Amount;
+                                        TransactionService.AddTransaction(transaction);
+                                        transactionStatusMessage = "Transaction completed successfully.";
+                                    }
                                 }
                                 else 
                                 {
-                                    senderAccount.Balance -= @Model.Amount;
-                                    beneficiaryAccount.Balance += @Model.Amount;
-                                    TransactionService.AddTransaction(transaction);
-                                    transactionStatusMessage = "Transaction completed successfully.";
-                                    await DonwloadPacs008File(senderCustomer, beneficiaryCustomer);
+                                    var isFraudulent = await DonwloadPacs008File(senderCustomer, beneficiaryCustomer);
+                                    if (!isFraudulent)
+                                    {
+                                        senderAccount.Balance -= @Model.Amount;
+                                        beneficiaryAccount.Balance += @Model.Amount;
+                                        TransactionService.AddTransaction(transaction);
+                                        transactionStatusMessage = "Transaction completed successfully.";
+                                    }
                                 }
                                 break;
                             case AccountSupportType.MT:
                                 if (beneficiaryAccount.AccountSupportType == AccountSupportType.MX)
                                 {
-                                    senderAccount.Balance -= @Model.Amount;
-                                    beneficiaryAccount.Balance += @Model.Amount;
-                                    TransactionService.AddTransaction(transaction);
-                                    transactionStatusMessage = "Transaction completed successfully.";
-                                    await DownloadConvertedToPacs008File(senderCustomer, beneficiaryCustomer);
+                                    var isFraudulent = await DownloadConvertedToPacs008File(senderCustomer, beneficiaryCustomer);
+                                    if (!isFraudulent)
+                                    {
+                                        senderAccount.Balance -= @Model.Amount;
+                                        beneficiaryAccount.Balance += @Model.Amount;
+                                        TransactionService.AddTransaction(transaction);
+                                        transactionStatusMessage = "Transaction completed successfully.";
+                                    }
                                 } else if (beneficiaryAccount.AccountSupportType == AccountSupportType.MTMX)
                                 {
-                                    senderAccount.Balance -= @Model.Amount;
-                                    beneficiaryAccount.Balance += @Model.Amount;
-                                    TransactionService.AddTransaction(transaction);
-                                    transactionStatusMessage = "Transaction completed successfully.";
-                                    await DownloadConvertedToPacs008File(senderCustomer, beneficiaryCustomer);
+                                    var isFraudulent = await DownloadConvertedToPacs008File(senderCustomer, beneficiaryCustomer);
+                                    if (!isFraudulent)
+                                    {
+                                        senderAccount.Balance -= @Model.Amount;
+                                        beneficiaryAccount.Balance += @Model.Amount;
+                                        TransactionService.AddTransaction(transaction);
+                                        transactionStatusMessage = "Transaction completed successfully.";
+                                    }
                                 }
                                 else
                                 {
@@ -174,26 +190,35 @@ public partial class TransferMoney
                             case AccountSupportType.MX:
                                 if (beneficiaryAccount.AccountSupportType == AccountSupportType.MT)
                                 {
-                                    senderAccount.Balance -= @Model.Amount;
-                                    beneficiaryAccount.Balance += @Model.Amount;
-                                    TransactionService.AddTransaction(transaction);
-                                    transactionStatusMessage = "Transaction completed successfully.";
-                                    await DonwloadConvertedToMT103File(senderCustomer, beneficiaryCustomer);
+                                    var isFraudulent = await DonwloadConvertedToMT103File(senderCustomer, beneficiaryCustomer);
+                                    if (!isFraudulent)
+                                    {
+                                        senderAccount.Balance -= @Model.Amount;
+                                        beneficiaryAccount.Balance += @Model.Amount;
+                                        TransactionService.AddTransaction(transaction);
+                                        transactionStatusMessage = "Transaction completed successfully.";
+                                    }
                                 } else if (beneficiaryAccount.AccountSupportType == AccountSupportType.MTMX)
                                 {
-                                    senderAccount.Balance -= @Model.Amount;
-                                    beneficiaryAccount.Balance += @Model.Amount;
-                                    TransactionService.AddTransaction(transaction);
-                                    transactionStatusMessage = "Transaction completed successfully.";
-                                    await DonwloadPacs008File(senderCustomer, beneficiaryCustomer);
+                                    var isFraudulent = await DonwloadPacs008File(senderCustomer, beneficiaryCustomer);
+                                    if (!isFraudulent)
+                                    {
+                                        senderAccount.Balance -= @Model.Amount;
+                                        beneficiaryAccount.Balance += @Model.Amount;
+                                        TransactionService.AddTransaction(transaction);
+                                        transactionStatusMessage = "Transaction completed successfully.";
+                                    }
                                 }
                                 else
                                 {
-                                    senderAccount.Balance -= @Model.Amount;
-                                    beneficiaryAccount.Balance += @Model.Amount;
-                                    TransactionService.AddTransaction(transaction);
-                                    transactionStatusMessage = "Transaction completed successfully.";
-                                    await DonwloadPacs008File(senderCustomer, beneficiaryCustomer);
+                                    var isFraudulent = await DonwloadPacs008File(senderCustomer, beneficiaryCustomer);
+                                    if (!isFraudulent)
+                                    {
+                                        senderAccount.Balance -= @Model.Amount;
+                                        beneficiaryAccount.Balance += @Model.Amount;
+                                        TransactionService.AddTransaction(transaction);
+                                        transactionStatusMessage = "Transaction completed successfully.";
+                                    }
                                 }
                                 break; 
                         } 
@@ -203,59 +228,84 @@ public partial class TransferMoney
                         {
                             case AccountSupportType.MTMX:
                                 if (beneficiaryAccount.AccountSupportType == AccountSupportType.MT) {
-                                    senderAccount.Balance -= @Model.Amount;
-                                    beneficiaryAccount.Balance += @Model.Amount;
-                                    TransactionService.AddTransaction(transaction);
-                                    transactionStatusMessage = "Transaction completed successfully.";
-                                    await DonwloadMT103File(senderCustomer, beneficiaryCustomer);
-                                } else if (beneficiaryAccount.AccountSupportType == AccountSupportType.MX) {
-                                    senderAccount.Balance -= @Model.Amount;
-                                    beneficiaryAccount.Balance += @Model.Amount;
-                                    TransactionService.AddTransaction(transaction);
-                                    transactionStatusMessage = "Transaction completed successfully.";
-                                    await DonwloadPacs008File(senderCustomer, beneficiaryCustomer);
-                                } else {
+                                    var isFraudulent = await DonwloadMT103File(senderCustomer, beneficiaryCustomer);
+                                    if (!isFraudulent)
+                                    {
                                         senderAccount.Balance -= @Model.Amount;
                                         beneficiaryAccount.Balance += @Model.Amount;
                                         TransactionService.AddTransaction(transaction);
                                         transactionStatusMessage = "Transaction completed successfully.";
-                                        await DonwloadMT103File(senderCustomer, beneficiaryCustomer); 
+                                    }
+                                } else if (beneficiaryAccount.AccountSupportType == AccountSupportType.MX) {
+                                    var isFraudulent = await DownloadConvertedToPacs008File(senderCustomer, beneficiaryCustomer);
+                                    if (!isFraudulent)
+                                    {
+                                        senderAccount.Balance -= @Model.Amount;
+                                        beneficiaryAccount.Balance += @Model.Amount;
+                                        TransactionService.AddTransaction(transaction);
+                                        transactionStatusMessage = "Transaction completed successfully.";
+                                    }
+
+                                } else {
+                                        var isFraudulent = await DonwloadMT103File(senderCustomer, beneficiaryCustomer);
+                                        if (!isFraudulent)
+                                        {
+                                            senderAccount.Balance -= @Model.Amount;
+                                            beneficiaryAccount.Balance += @Model.Amount;
+                                            TransactionService.AddTransaction(transaction);
+                                            transactionStatusMessage = "Transaction completed successfully.";
+                                        }
                                 }
                                 break;
                             case AccountSupportType.MT:
                                 if (beneficiaryAccount.AccountSupportType == AccountSupportType.MX) {
-                                    senderAccount.Balance -= @Model.Amount;
-                                    beneficiaryAccount.Balance += @Model.Amount;
-                                    TransactionService.AddTransaction(transaction);
-                                    transactionStatusMessage = "Transaction completed successfully.";
-                                    await DownloadConvertedToPacs008File(senderCustomer, beneficiaryCustomer);
+                                    var isFraudulent = await DownloadConvertedToPacs008File(senderCustomer, beneficiaryCustomer);
+                                    if (!isFraudulent)
+                                    {
+                                        senderAccount.Balance -= @Model.Amount;
+                                        beneficiaryAccount.Balance += @Model.Amount;
+                                        TransactionService.AddTransaction(transaction);
+                                        transactionStatusMessage = "Transaction completed successfully.";
+                                    }
                                 } else if (beneficiaryAccount.AccountSupportType == AccountSupportType.MTMX) {
-                                        senderAccount.Balance -= @Model.Amount;
-                                        beneficiaryAccount.Balance += @Model.Amount;
-                                        TransactionService.AddTransaction(transaction);
-                                        transactionStatusMessage = "Transaction completed successfully.";
-                                        await DonwloadMT103File(senderCustomer, beneficiaryCustomer);
+                                        var isFraudulent = await DonwloadMT103File(senderCustomer, beneficiaryCustomer);
+                                        if (!isFraudulent)
+                                        {
+                                            senderAccount.Balance -= @Model.Amount;
+                                            beneficiaryAccount.Balance += @Model.Amount;
+                                            TransactionService.AddTransaction(transaction);
+                                            transactionStatusMessage = "Transaction completed successfully.";
+                                        }
                                 } else {
-                                        senderAccount.Balance -= @Model.Amount;
-                                        beneficiaryAccount.Balance += @Model.Amount;
-                                        TransactionService.AddTransaction(transaction);
-                                        transactionStatusMessage = "Transaction completed successfully.";
-                                        await DonwloadMT103File(senderCustomer, beneficiaryCustomer);
+                                        var isFraudulent = await DonwloadMT103File(senderCustomer, beneficiaryCustomer);
+                                        if (!isFraudulent)
+                                        {
+                                            senderAccount.Balance -= @Model.Amount;
+                                            beneficiaryAccount.Balance += @Model.Amount;
+                                            TransactionService.AddTransaction(transaction);
+                                            transactionStatusMessage = "Transaction completed successfully.";
+                                        }
                                 }
                                 break;
                             case AccountSupportType.MX:
                                 if (beneficiaryAccount.AccountSupportType == AccountSupportType.MT) {
-                                    senderAccount.Balance -= @Model.Amount;
-                                    beneficiaryAccount.Balance += @Model.Amount;
-                                    TransactionService.AddTransaction(transaction);
-                                    transactionStatusMessage = "Transaction completed successfully.";
-                                    await DonwloadConvertedToMT103File(senderCustomer, beneficiaryCustomer);
+                                    var isFraudulent = await DonwloadConvertedToMT103File(senderCustomer, beneficiaryCustomer);
+                                    if (!isFraudulent)
+                                    {
+                                        senderAccount.Balance -= @Model.Amount;
+                                        beneficiaryAccount.Balance += @Model.Amount;
+                                        TransactionService.AddTransaction(transaction);
+                                        transactionStatusMessage = "Transaction completed successfully.";
+                                    }
                                 } else if (beneficiaryAccount.AccountSupportType == AccountSupportType.MTMX) {
-                                    senderAccount.Balance -= @Model.Amount;
-                                    beneficiaryAccount.Balance += @Model.Amount;
-                                    TransactionService.AddTransaction(transaction);
-                                    transactionStatusMessage = "Transaction completed successfully.";
-                                    await DonwloadConvertedToMT103File(senderCustomer, beneficiaryCustomer);
+                                    var isFraudulent = await DonwloadConvertedToMT103File(senderCustomer, beneficiaryCustomer);
+                                    if (!isFraudulent)
+                                    {
+                                        senderAccount.Balance -= @Model.Amount;
+                                        beneficiaryAccount.Balance += @Model.Amount;
+                                        TransactionService.AddTransaction(transaction);
+                                        transactionStatusMessage = "Transaction completed successfully.";
+                                    }
                                 } else {
                                     transactionStatusMessage = "Payment cannot be processed.";
                                 }
@@ -280,32 +330,80 @@ public partial class TransferMoney
         return userAccount;
     }
 
-    private async Task DonwloadConvertedToMT103File(Customer sender, Customer beneficiary)
+    private async Task<bool> DonwloadConvertedToMT103File(Customer sender, Customer beneficiary)
     {
         var pacs008Payment = PaymentService.EnrichPacs008Payment(sender, beneficiary, Model);
         var generatedISO = PaymentService.GeneratePacs008Xml(pacs008Payment);
 
         var pacs008ConvertedToMT103 = PaymentService.ConvertPacs008ToMT103(generatedISO);
         
+        var sanctionCheck = FraudPreventionService.ScanMt103(pacs008ConvertedToMT103);
+
+        if (sanctionCheck)
+        {
+            transactionStatusMessage = "Payment has been stopped for further investigations.";
+            //need to add to the db that customer is fraudulent.
+
+            var fraudCustomer = FraudPreventionService._fraudulentWordFound;
+
+
+            var victim = new CustomersSanctionStatus()
+            {
+                CustomerId = sender.CustomerId,
+                CustomerStatus = "TO BE REVIEWED",
+                FraudulentNamesId = fraudCustomer.Id
+            };
+            
+            
+            CustomersSanctionStatusService.AddFraudulentCustomer(victim);
+            return sanctionCheck;
+        }
+        
         var filename = $"ConvertedMT103_{DateTime.Now.ToString("yyyyMMddHHmmss")}.txt";
         refreshModel();
         await JSRuntime.InvokeVoidAsync("downloadPayment", filename, "text/plain",
             Convert.ToBase64String(Encoding.UTF8.GetBytes(pacs008ConvertedToMT103)));
+
+        return sanctionCheck;
     }
 
-    private async Task DownloadConvertedToPacs008File(Customer sender, Customer beneficiary)
+    private async Task<bool> DownloadConvertedToPacs008File(Customer sender, Customer beneficiary)
     {
         var mt103Payment = PaymentService.EnrichMT103Payment(sender, beneficiary, Model);
         var mt103ConvertedToPacs008 = PaymentService.ConvertMT103ToPacs008(mt103Payment);
         var mt103ConvertedToPacs008File = PaymentService.GeneratePacs008Xml(mt103ConvertedToPacs008);
+        
+        Pacs008Payment pacs008 = FraudPreventionService.ParsePacs008(mt103ConvertedToPacs008File);
+        var sanctionCheck = FraudPreventionService.ScanPacs008(pacs008);
+
+        if (sanctionCheck)
+        {
+            transactionStatusMessage = "Payment has been stopped for further investigations.";
+            //need to add to the db that customer is fraudulent.
+
+            var fraudCustomer = FraudPreventionService._fraudulentWordFound;
+
+
+            var victim = new CustomersSanctionStatus()
+            {
+                CustomerId = sender.CustomerId,
+                CustomerStatus = "TO BE REVIEWED",
+                FraudulentNamesId = fraudCustomer.Id
+            };
+
+
+            CustomersSanctionStatusService.AddFraudulentCustomer(victim);
+            return sanctionCheck;
+        }
 
         var filename = $"ConvertedPacs008_{DateTime.Now.ToString("yyyyMMddHHmmss")}.txt";
         refreshModel();
         await JSRuntime.InvokeVoidAsync("downloadPayment", filename, "text/plain",
             Convert.ToBase64String(Encoding.UTF8.GetBytes(mt103ConvertedToPacs008File)));
+        return sanctionCheck;
     }
 
-    private async Task DonwloadPacs008File(Customer sender, Customer beneficiary)
+    private async Task<bool> DonwloadPacs008File(Customer sender, Customer beneficiary)
     {
         var pacs008Payment = PaymentService.EnrichPacs008Payment(sender, beneficiary, Model);
         var generatedISO = PaymentService.GeneratePacs008Xml(pacs008Payment);
@@ -330,16 +428,17 @@ public partial class TransferMoney
 
 
             CustomersSanctionStatusService.AddFraudulentCustomer(victim);
-            return;
+            return sanctionCheck;
         }
 
         var filename = $"Pacs008_{DateTime.Now.ToString("yyyyMMddHHmmss")}.txt";
         refreshModel();
         await JSRuntime.InvokeVoidAsync("downloadPayment", filename, "text/plain",
             Convert.ToBase64String(Encoding.UTF8.GetBytes(generatedISO)));
+        return sanctionCheck;
     }
 
-    private async Task DonwloadMT103File(Customer sender, Customer beneficiary )
+    private async Task<bool> DonwloadMT103File(Customer sender, Customer beneficiary )
     {
         var mt103Payment = PaymentService.EnrichMT103Payment(sender, beneficiary, Model);
         var generatedSWIFT = PaymentService.GenerateMT103TextFile(mt103Payment);
@@ -364,13 +463,14 @@ public partial class TransferMoney
             
             
             CustomersSanctionStatusService.AddFraudulentCustomer(victim);
-            return;
+            return sanctionCheck;
         }
         
         var filename = $"MT103_{DateTime.Now.ToString("yyyyMMddHHmmss")}.txt";
         refreshModel();
         await JSRuntime.InvokeVoidAsync("downloadPayment", filename, "text/plain",
             Convert.ToBase64String(Encoding.UTF8.GetBytes(generatedSWIFT)));
+        return sanctionCheck;
     }
 
     public void refreshModel()

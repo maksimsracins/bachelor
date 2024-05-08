@@ -40,17 +40,16 @@ public class FraudPreventionService
         //then payment can go through.
         
         var payment = new MT103Payment();
-        
+
         var regexPattern = new Regex(
-            @":20:(?<SenderReference>[\S\s]+?)\n" + // Non-greedy match up to the first newline
-            @":23B:(?<BankOperationCode>\w+)\n" +
-            @":32A:(?<ValueDateCurrencyAmount>\d{6}[A-Z]{3}\d+,\d*|[\S\s]+?)\n" + // Allow for optional decimal
-            @":50A:(?<OrderingCustomer>[\S\s]+?)\n" + // Non-greedy match, captures until the next field
-            @"(?<OrderingCustomerName>[\S\s]+?)\n" + // Captures multiple lines until the next field
-            @":59:(?<BeneficiaryCustomer>\/[\S\s]+?)\n" + // Non-greedy, captures multiple lines
-            @"(?<BeneficiaryCustomerName>[\S\s]+?)\n" + // Captures the name up to the next field
-            @":70:(?<RemittanceInformation>[\S\s]+?)\n" + // Specifically designed to capture field 70 correctly
-            @":71A:(?<Charges>\w+)",
+            @":20:(?<SenderReference>.+?)\r?\n" + // Non-greedy match up to the first new line
+            @":23B:(?<BankOperationCode>\w+)\r?\n" +
+            @":32A:(?<ValueDateCurrencyAmount>\d{6}[A-Z]{3}\d+)\r?\n" + // Adjusted to match digits directly without comma for simplicity
+            @":50A:(?<OrderingCustomer>.+?)\r?\n" +
+            @"(?<OrderingCustomerName>.+?)\r?\n" +
+            @":59:(?<BeneficiaryCustomer>/.+?)\r?\n" +
+            @":70:(?<RemittanceInformation>.+?)\r?\n" +
+            @":71A:(?<Charges>\w+)\r?\n",
             RegexOptions.Singleline);
         
         var match = regexPattern.Match(mt103Payment);
