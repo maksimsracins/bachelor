@@ -310,6 +310,29 @@ public partial class TransferMoney
         var pacs008Payment = PaymentService.EnrichPacs008Payment(sender, beneficiary, Model);
         var generatedISO = PaymentService.GeneratePacs008Xml(pacs008Payment);
 
+        Pacs008Payment pacs008 = FraudPreventionService.ParsePacs008(generatedISO);
+        var sanctionCheck = FraudPreventionService.ScanPacs008(pacs008);
+
+        if (sanctionCheck)
+        {
+            transactionStatusMessage = "Payment has been stopped for further investigations.";
+            //need to add to the db that customer is fraudulent.
+
+            var fraudCustomer = FraudPreventionService._fraudulentWordFound;
+
+
+            var victim = new CustomersSanctionStatus()
+            {
+                CustomerId = sender.CustomerId,
+                CustomerStatus = "TO BE REVIEWED",
+                FraudulentNamesId = fraudCustomer.Id
+            };
+
+
+            CustomersSanctionStatusService.AddFraudulentCustomer(victim);
+            return;
+        }
+
         var filename = $"Pacs008_{DateTime.Now.ToString("yyyyMMddHHmmss")}.txt";
         refreshModel();
         await JSRuntime.InvokeVoidAsync("downloadPayment", filename, "text/plain",

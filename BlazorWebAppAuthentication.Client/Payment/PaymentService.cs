@@ -63,7 +63,6 @@ public string ConvertPacs008ToMT103(string xmlPacs008)
     return mt103Content.ToString();
 }
 
-
     public Pacs008Payment ConvertMT103ToPacs008(MT103Payment mt103Payment)
     {
       var pacs008 = new Pacs008Payment()

@@ -94,25 +94,40 @@ public class FraudPreventionService
 
         var pacs008Payment = new Pacs008Payment
         {
-            MessageId = xmlDoc.Descendants(ns + "MsgId").FirstOrDefault()?.Value,
-            CreationDateTime = Convert.ToDateTime(xmlDoc.Descendants(ns + "CreDtTm").FirstOrDefault()?.Value),
-            NumberOfTransactions = xmlDoc.Descendants(ns + "NbOfTxs").FirstOrDefault()?.Value ?? "0",
-            ControlSum = decimal.Parse(xmlDoc.Descendants(ns + "CtrlSum").FirstOrDefault()?.Value ?? "0"),
-            InstructionId = xmlDoc.Descendants(ns + "InstrId").FirstOrDefault()?.Value,
-            EndToEndId = xmlDoc.Descendants(ns + "EndToEndId").FirstOrDefault()?.Value,
-            Amount = decimal.Parse(xmlDoc.Descendants(ns + "InstdAmt").FirstOrDefault()?.Attribute("Ccy")?.Parent?.Value ?? "0"),
-            Currency = xmlDoc.Descendants(ns + "InstdAmt").FirstOrDefault()?.Attribute("Ccy")?.Value,
-            CreditorName = xmlDoc.Descendants(ns + "Nm").FirstOrDefault()?.Value,
-            CreditorAccountIBAN = xmlDoc.Descendants(ns + "IBAN").FirstOrDefault()?.Value
+            MessageId = xmlDoc.Descendants("MsgId").FirstOrDefault()?.Value,
+            CreationDateTime = Convert.ToDateTime(xmlDoc.Descendants("CreDtTm").FirstOrDefault()?.Value),
+            NumberOfTransactions = xmlDoc.Descendants("NbOfTxs").FirstOrDefault()?.Value ?? "0",
+            ControlSum = decimal.Parse(xmlDoc.Descendants("CtrlSum").FirstOrDefault()?.Value ?? "0"),
+            InstructionId = xmlDoc.Descendants("InstrId").FirstOrDefault()?.Value,
+            EndToEndId = xmlDoc.Descendants("EndToEndId").FirstOrDefault()?.Value,
+            Amount = decimal.Parse(xmlDoc.Descendants("InstdAmt").FirstOrDefault()?.Attribute("Ccy")?.Parent?.Value ?? "0"),
+            Currency = xmlDoc.Descendants("InstdAmt").FirstOrDefault()?.Attribute("Ccy")?.Value,
+            CreditorName = xmlDoc.Descendants("Nm").FirstOrDefault()?.Value,
+            CreditorAccountIBAN = xmlDoc.Descendants("IBAN").FirstOrDefault()?.Value,
+            RemittenceInfo = xmlDoc.Descendants("RmtInf").Elements("Ustrd").FirstOrDefault()?.Value
         };
 
         return pacs008Payment;
     }
 
-    public void ScanPacs008(Pacs008Payment pacs008Payment)
+    public bool ScanPacs008(Pacs008Payment pacs008Payment)
     {
         fraudulentNamesList = GetFradulentNames();
-        
+
+        var result = fraudulentNamesList.Exists(f => f.Name.Contains(
+            pacs008Payment.RemittenceInfo
+        ));
+
+        if (result)
+        {
+            var wordId = fraudulentNamesList.FirstOrDefault(f => f.Name.Contains(
+                pacs008Payment.RemittenceInfo)).Id;
+            var word = fraudulentNamesList.FirstOrDefault(f => f.Id == wordId).Name;
+
+            _fraudulentWordFound.Id = wordId;
+            _fraudulentWordFound.Word = word;
+        }
+        return result;
     }
 }
 public class FraudulentWordFound
