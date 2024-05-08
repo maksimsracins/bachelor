@@ -41,6 +41,8 @@ public string ConvertPacs008ToMT103(string xmlPacs008)
         // Handling missing critical elements by throwing an informative exception
         throw new InvalidOperationException("Required XML elements GrpHdr or CdtTrfTxInf are missing.");
     }
+    
+    string remittanceInformation = GetRemittanceInformation(cdtTrfTxInf);
 
     // Building the MT103 string
     var mt103Content = new StringBuilder();
@@ -54,7 +56,7 @@ public string ConvertPacs008ToMT103(string xmlPacs008)
     mt103Content.AppendLine($":50A:{cdtTrfTxInf.Element(ns + "CdtrAgt").Element(ns + "FinInstnId").Element(ns + "BICFI").Value}");
     mt103Content.AppendLine($"{cdtTrfTxInf.Element(ns + "Cdtr").Element(ns + "Nm").Value}");
     mt103Content.AppendLine($":59:/{cdtTrfTxInf.Element(ns + "CdtrAcct").Element(ns + "Id").Element(ns + "IBAN").Value}{cdtTrfTxInf.Element(ns + "Cdtr").Element(ns + "Nm").Value}");
-    mt103Content.AppendLine($":70:Payment for services");
+    mt103Content.AppendLine($":70:{remittanceInformation}");
     mt103Content.AppendLine($":71A:SHA");
     mt103Content.AppendLine("-}");
 
@@ -74,6 +76,7 @@ public string ConvertPacs008ToMT103(string xmlPacs008)
             CreditorName = mt103Payment.BeneficiaryCustomer,
             CreditorAddressLine = mt103Payment.BeneficiaryCustomer,
             CreditorAccountIBAN = mt103Payment.BeneficiaryCustomerName,
+            RemittenceInfo = mt103Payment.RemittanceInformation
         };
       return pacs008;
     }
@@ -89,7 +92,8 @@ public string ConvertPacs008ToMT103(string xmlPacs008)
             CreditorAgentBIC = "BANKBEBBA",
             CreditorName = $"{sender.FirstName}{sender.LastName}",
             CreditorAddressLine = $"{sender.Country}, {sender.City}, {sender.Street}, {sender.Zip}",
-            CreditorAccountIBAN = model.BeneficiaryAccountName
+            CreditorAccountIBAN = model.BeneficiaryAccountName,
+            RemittenceInfo = model.RemittenceInfo
         };
         return pacs008;
     }
@@ -127,9 +131,29 @@ public string ConvertPacs008ToMT103(string xmlPacs008)
                                 new XElement("AdrLine", payment.CreditorAddressLine))),
                         new XElement("CdtrAcct",
                             new XElement("Id",
-                                new XElement("IBAN", payment.CreditorAccountIBAN)))))));
+                                new XElement("IBAN", payment.CreditorAccountIBAN))),
+                        new XElement("RmtInf",
+                            new XElement("Ustrd", payment.RemittenceInfo)
+                        )
+                    )
+                )
+            )
+        );
     
         return xmlDoc.ToString();
+    }
+    public string GetRemittanceInformation(XElement cdtTrfTxInf)
+    {
+        // Attempt to retrieve the <Ustrd> value from the <RmtInf> block
+        var remittanceInfoElement = cdtTrfTxInf.Element("RmtInf")?.Element("Ustrd");
+        if (remittanceInfoElement != null)
+        {
+            return remittanceInfoElement.Value;
+        }
+        else
+        {
+            return "No remittance information available"; // Default or error handling case
+        }
     }
     
     public string GenerateMT103TextFile(MT103Payment payment)

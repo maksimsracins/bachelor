@@ -15,6 +15,7 @@ public class Pacs008Payment
     public string EndToEndId { get; set; } = GeneratedReference;
     public string Currency { get; set; }
     public decimal Amount { get; set; }
+    public string RemittenceInfo { get; set; }
     public string DebtorAgentBIC { get; set; }
     public string CreditorAgentBIC { get; set; }
     public string CreditorName { get; set; }

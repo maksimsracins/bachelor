@@ -1,4 +1,5 @@
 using System.Text.RegularExpressions;
+using System.Xml.Linq;
 using BlazorWebAppAuthentication.Client.Payment;
 using BlazorWebAppAuthentication.Client.Services;
 using BlazorWebAppAuthentication.Client.Services.Interfaces;
@@ -86,11 +87,32 @@ public class FraudPreventionService
         }
         return result;
     }
+    public static Pacs008Payment ParsePacs008(string xmlText)
+    {
+        XDocument xmlDoc = XDocument.Parse(xmlText);
+        XNamespace ns = "urn:iso:std:iso:20022:tech:xsd:pacs.008.001.02";
+
+        var pacs008Payment = new Pacs008Payment
+        {
+            MessageId = xmlDoc.Descendants(ns + "MsgId").FirstOrDefault()?.Value,
+            CreationDateTime = Convert.ToDateTime(xmlDoc.Descendants(ns + "CreDtTm").FirstOrDefault()?.Value),
+            NumberOfTransactions = xmlDoc.Descendants(ns + "NbOfTxs").FirstOrDefault()?.Value ?? "0",
+            ControlSum = decimal.Parse(xmlDoc.Descendants(ns + "CtrlSum").FirstOrDefault()?.Value ?? "0"),
+            InstructionId = xmlDoc.Descendants(ns + "InstrId").FirstOrDefault()?.Value,
+            EndToEndId = xmlDoc.Descendants(ns + "EndToEndId").FirstOrDefault()?.Value,
+            Amount = decimal.Parse(xmlDoc.Descendants(ns + "InstdAmt").FirstOrDefault()?.Attribute("Ccy")?.Parent?.Value ?? "0"),
+            Currency = xmlDoc.Descendants(ns + "InstdAmt").FirstOrDefault()?.Attribute("Ccy")?.Value,
+            CreditorName = xmlDoc.Descendants(ns + "Nm").FirstOrDefault()?.Value,
+            CreditorAccountIBAN = xmlDoc.Descendants(ns + "IBAN").FirstOrDefault()?.Value
+        };
+
+        return pacs008Payment;
+    }
 
     public void ScanPacs008(Pacs008Payment pacs008Payment)
     {
         fraudulentNamesList = GetFradulentNames();
-        customersSanctionStatusList = GetAllCustomersSanctionStatusList();
+        
     }
 }
 public class FraudulentWordFound
