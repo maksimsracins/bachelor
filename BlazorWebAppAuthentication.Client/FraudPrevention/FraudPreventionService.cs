@@ -70,10 +70,12 @@ public class FraudPreventionService
             throw new InvalidOperationException("MT103 format not recognized.");
         }
         
-
-        var result = fraudulentNamesList.Exists(f => f.Name.Contains(
-            payment.RemittanceInformation
-        ));
+        var result = fraudulentNamesList.Exists(f => payment.RemittanceInformation.Contains(f.Name));
+        
+        //
+        // var result = fraudulentNamesList.Exists(f => f.Name.Contains(
+        //     payment.RemittanceInformation
+        // ));
 
         if (result)
         {
@@ -113,9 +115,7 @@ public class FraudPreventionService
     {
         fraudulentNamesList = GetFradulentNames();
 
-        var result = fraudulentNamesList.Exists(f => f.Name.Contains(
-            pacs008Payment.RemittenceInfo
-        ));
+        var result = fraudulentNamesList.Exists(f => pacs008Payment.RemittenceInfo.Contains(f.Name));
 
         if (result)
         {
