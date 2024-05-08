@@ -109,6 +109,9 @@ public partial class TransferMoney
             }
             else
             {
+                @Model.RemittenceInfo =
+                    (string.IsNullOrEmpty(@Model.RemittenceInfo) ? "Transaction" : @Model.RemittenceInfo);
+                
                 var transaction = new Transaction
                 {
                     SenderId = senderCustomer.CustomerId,
