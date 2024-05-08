@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BlazorWebAppAuthentication.Client")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+32305e224a9fb7877f46c17ee1a62ffa83e20f2d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2fb556c0216f362de2dbb5993241cf79e70c8733")]
 [assembly: System.Reflection.AssemblyProductAttribute("BlazorWebAppAuthentication.Client")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BlazorWebAppAuthentication.Client")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "nHaspqJOjca+mW0DGaRlE/ouXyBsX/l4kA1CzCs8m1aeVFNqRpm4Tu6El6LIf0KZxOJToBxlV2DEj5T0+axTKA==",
+  "dgSpecHash": "LM5B8AHfp+YhTfIkb1bwR83yXe9FmSjvhajHPovN9RZqyA5RLZ4OgLvh5Utnp299+DHYWwMUMBbDTjz3fcLzfA==",
   "success": true,
   "projectFilePath": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Database/BlazorWebAppAuthentication.Database.csproj",
   "expectedPackageFiles": [
@@ -16,6 +16,7 @@
     "/Users/maksimsracins/.nuget/packages/microsoft.aspnetcore.components.forms/8.0.4/microsoft.aspnetcore.components.forms.8.0.4.nupkg.sha512",
     "/Users/maksimsracins/.nuget/packages/microsoft.aspnetcore.components.web/8.0.4/microsoft.aspnetcore.components.web.8.0.4.nupkg.sha512",
     "/Users/maksimsracins/.nuget/packages/microsoft.aspnetcore.metadata/8.0.4/microsoft.aspnetcore.metadata.8.0.4.nupkg.sha512",
+    "/Users/maksimsracins/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/maksimsracins/.nuget/packages/microsoft.entityframeworkcore/7.0.10/microsoft.entityframeworkcore.7.0.10.nupkg.sha512",
     "/Users/maksimsracins/.nuget/packages/microsoft.entityframeworkcore.abstractions/7.0.10/microsoft.entityframeworkcore.abstractions.7.0.10.nupkg.sha512",
     "/Users/maksimsracins/.nuget/packages/microsoft.entityframeworkcore.analyzers/7.0.10/microsoft.entityframeworkcore.analyzers.7.0.10.nupkg.sha512",
@@ -35,6 +36,8 @@
     "/Users/maksimsracins/.nuget/packages/microsoft.win32.systemevents/4.7.0/microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "/Users/maksimsracins/.nuget/packages/mysql.data/8.2.0/mysql.data.8.2.0.nupkg.sha512",
     "/Users/maksimsracins/.nuget/packages/mysql.entityframeworkcore/7.0.10/mysql.entityframeworkcore.7.0.10.nupkg.sha512",
+    "/Users/maksimsracins/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512",
+    "/Users/maksimsracins/.nuget/packages/smart.blazor/19.0.5/smart.blazor.19.0.5.nupkg.sha512",
     "/Users/maksimsracins/.nuget/packages/system.buffers/4.5.1/system.buffers.4.5.1.nupkg.sha512",
     "/Users/maksimsracins/.nuget/packages/system.configuration.configurationmanager/4.4.1/system.configuration.configurationmanager.4.4.1.nupkg.sha512",
     "/Users/maksimsracins/.nuget/packages/system.diagnostics.diagnosticsource/7.0.2/system.diagnostics.diagnosticsource.7.0.2.nupkg.sha512",

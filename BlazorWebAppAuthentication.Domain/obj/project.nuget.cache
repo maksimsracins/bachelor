@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "eovA123pDekF96pSR09QLT3P7TX8mECHZsDC4GR049bqaupG0Fmdg+l7ba0PMbHtWLPj5Pg1wjRh+jOLshIrYA==",
+  "dgSpecHash": "C9TJSh6Y0Pmh2Y/79b1LfCYGH/H3RBryMHCPRrJU7mv1ZGHmgz6bt/y5Z4Qltj240jFM1o1uHjvGxn2pzFAO5Q==",
   "success": true,
   "projectFilePath": "/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Domain/BlazorWebAppAuthentication.Domain.csproj",
   "expectedPackageFiles": [
@@ -11,12 +11,15 @@
     "/Users/maksimsracins/.nuget/packages/microsoft.aspnetcore.components.forms/8.0.4/microsoft.aspnetcore.components.forms.8.0.4.nupkg.sha512",
     "/Users/maksimsracins/.nuget/packages/microsoft.aspnetcore.components.web/8.0.4/microsoft.aspnetcore.components.web.8.0.4.nupkg.sha512",
     "/Users/maksimsracins/.nuget/packages/microsoft.aspnetcore.metadata/8.0.4/microsoft.aspnetcore.metadata.8.0.4.nupkg.sha512",
+    "/Users/maksimsracins/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/maksimsracins/.nuget/packages/microsoft.extensions.dependencyinjection/8.0.0/microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
     "/Users/maksimsracins/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.1/microsoft.extensions.dependencyinjection.abstractions.8.0.1.nupkg.sha512",
     "/Users/maksimsracins/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.1/microsoft.extensions.logging.abstractions.8.0.1.nupkg.sha512",
     "/Users/maksimsracins/.nuget/packages/microsoft.extensions.options/8.0.2/microsoft.extensions.options.8.0.2.nupkg.sha512",
     "/Users/maksimsracins/.nuget/packages/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg.sha512",
     "/Users/maksimsracins/.nuget/packages/microsoft.jsinterop/8.0.4/microsoft.jsinterop.8.0.4.nupkg.sha512",
+    "/Users/maksimsracins/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512",
+    "/Users/maksimsracins/.nuget/packages/smart.blazor/19.0.5/smart.blazor.19.0.5.nupkg.sha512",
     "/Users/maksimsracins/.nuget/packages/system.io.pipelines/8.0.0/system.io.pipelines.8.0.0.nupkg.sha512"
   ],
   "logs": []

@@ -9,6 +9,7 @@ using BlazorWebAppAuthentication.Database.Interfaces;
 using IgniteUI.Blazor.Controls;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
+using Config = BlazorWebAppAuthentication.Client.Configurations.Config;
 using ICustomersSanctionStatusService = BlazorWebAppAuthentication.Client.Services.Interfaces.ICustomersSanctionStatusService;
 
 var builder = WebApplication.CreateBuilder(args);

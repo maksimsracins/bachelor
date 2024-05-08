@@ -12,7 +12,8 @@
           "BlazorWebAppAuthentication.Domain": "1.0.0",
           "IgniteUI": "23.2.50",
           "MySql.Data": "8.2.0",
-          "MySql.EntityFrameworkCore": "7.0.10"
+          "MySql.EntityFrameworkCore": "7.0.10",
+          "Smart.Blazor": "19.0.5"
         },
         "runtime": {
           "BlazorWebAppAuthentication.Client.dll": {}
@@ -36,7 +37,7 @@
       },
       "IgniteUI/23.2.50": {
         "dependencies": {
-          "Newtonsoft.Json": "4.5.8",
+          "Newtonsoft.Json": "12.0.3",
           "jQuery": "3.0.0",
           "jQuery.UI.Combined": "1.12.0"
         }
@@ -148,6 +149,7 @@
           }
         }
       },
+      "Microsoft.CSharp/4.7.0": {},
       "Microsoft.EntityFrameworkCore/7.0.10": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Abstractions": "7.0.10",
@@ -340,11 +342,25 @@
           }
         }
       },
-      "Newtonsoft.Json/4.5.8": {
+      "Newtonsoft.Json/12.0.3": {
         "runtime": {
-          "lib/net40/Newtonsoft.Json.dll": {
-            "assemblyVersion": "4.5.0.0",
-            "fileVersion": "4.5.8.15203"
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "12.0.0.0",
+            "fileVersion": "12.0.3.23909"
+          }
+        }
+      },
+      "Smart.Blazor/19.0.5": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "8.0.4",
+          "Microsoft.AspNetCore.Components.Web": "8.0.4",
+          "Microsoft.CSharp": "4.7.0",
+          "Newtonsoft.Json": "12.0.3"
+        },
+        "runtime": {
+          "lib/net8.0/Smart.Blazor.dll": {
+            "assemblyVersion": "18.0.0.0",
+            "fileVersion": "18.0.0.0"
           }
         }
       },
@@ -520,7 +536,8 @@
           "BlazorWebAppAuthentication.Domain": "1.0.0",
           "IgniteUI.Blazor.Trial": "23.2.204",
           "MySql.Data": "8.2.0",
-          "MySql.EntityFrameworkCore": "7.0.10"
+          "MySql.EntityFrameworkCore": "7.0.10",
+          "Smart.Blazor": "19.0.5"
         },
         "runtime": {
           "BlazorWebAppAuthentication.Database.dll": {}
@@ -529,7 +546,8 @@
       "BlazorWebAppAuthentication.Domain/1.0.0": {
         "dependencies": {
           "IgniteUI.Blazor.Trial": "23.2.204",
-          "Microsoft.AspNetCore.Components.Web": "8.0.4"
+          "Microsoft.AspNetCore.Components.Web": "8.0.4",
+          "Smart.Blazor": "19.0.5"
         },
         "runtime": {
           "BlazorWebAppAuthentication.Domain.dll": {}
@@ -647,6 +665,13 @@
       "sha512": "sha512-TG3JhI7dkDCIoxZ3TL/5yptLYLg56w1f4jE8GSYnZXSso1xY5JKKCxObK+xKQJU5kZir30+QUGX1WpbC1kDcow==",
       "path": "microsoft.aspnetcore.metadata/8.0.4",
       "hashPath": "microsoft.aspnetcore.metadata.8.0.4.nupkg.sha512"
+    },
+    "Microsoft.CSharp/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
+      "path": "microsoft.csharp/4.7.0",
+      "hashPath": "microsoft.csharp.4.7.0.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore/7.0.10": {
       "type": "package",
@@ -781,12 +806,19 @@
       "path": "mysql.entityframeworkcore/7.0.10",
       "hashPath": "mysql.entityframeworkcore.7.0.10.nupkg.sha512"
     },
-    "Newtonsoft.Json/4.5.8": {
+    "Newtonsoft.Json/12.0.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-o5x2tEL+tvr+34l8U4iXMz0GDt68qarWMoAenvWQtrmfa/2IQyna46nXhcXhmLUGDEBTrsCcR8uP60Wqw40kBg==",
-      "path": "newtonsoft.json/4.5.8",
-      "hashPath": "newtonsoft.json.4.5.8.nupkg.sha512"
+      "sha512": "sha512-6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
+      "path": "newtonsoft.json/12.0.3",
+      "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
+    },
+    "Smart.Blazor/19.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-k13g6z10tr6BH2glDd7MVZvLbfwUvpKjlpsGHTkiRZEnQxQcSfelEvKliHHAec6UQbUhKifgjql8jQ9Bik2pNg==",
+      "path": "smart.blazor/19.0.5",
+      "hashPath": "smart.blazor.19.0.5.nupkg.sha512"
     },
     "System.Buffers/4.5.1": {
       "type": "package",

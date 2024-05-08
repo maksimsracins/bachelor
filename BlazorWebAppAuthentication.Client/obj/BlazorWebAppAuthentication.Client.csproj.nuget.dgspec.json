@@ -62,6 +62,10 @@
             "MySql.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.10, )"
+            },
+            "Smart.Blazor": {
+              "target": "Package",
+              "version": "[19.0.5, )"
             }
           },
           "imports": [
@@ -142,6 +146,10 @@
             "MySql.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.10, )"
+            },
+            "Smart.Blazor": {
+              "target": "Package",
+              "version": "[19.0.5, )"
             }
           },
           "imports": [
@@ -214,6 +222,10 @@
             "Microsoft.AspNetCore.Components.Web": {
               "target": "Package",
               "version": "[8.0.4, )"
+            },
+            "Smart.Blazor": {
+              "target": "Package",
+              "version": "[19.0.5, )"
             }
           },
           "imports": [

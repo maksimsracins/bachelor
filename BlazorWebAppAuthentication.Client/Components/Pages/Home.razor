@@ -1,6 +1,6 @@
 ﻿@page "/"
 
-<PageTitle>Home</PageTitle>
+<PageTitle>Dashboard</PageTitle>
 
 <div class="row">
     <div class="col-12">
@@ -14,12 +14,49 @@
                         <span>You are not logged in. Please <a class="fw-bolder" href="/login">click here</a> to login.</span>
                     </NotAuthorized>
                     <Authorized>
-                        <span>Logged in as <b>@HttpContextAccessor.HttpContext.User.Identity.Name</b>. <a class="fw-bolder" href="/logout">Click here</a> to logout.</span>
+                        <span>Logged in as <b>@HttpContextAccessor.HttpContext.User.Identity.Name</b>. <a class="fw-bolder" href="/logout">Click here</a> to logout.</span><br/>
                     </Authorized>
                 </AuthorizeView>
             </div>
         </div>
     </div>
+</div>
+<div class="row mt-3">
+    <AuthorizeView Roles="User">
+        <div class="col-3">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fa fa-user-cog"></i> Update Profile
+                </div>
+                <div class="card-body">
+                    <p>Ensure your contact information is current.</p>
+                    @* <a href="/profile-update" class="btn btn-primary">Update Profile</a> *@
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fa fa-user-cog"></i> Total balance
+                </div>
+                <div class="card-body">
+                    <p>Get all accounts balances and sum up!</p>
+                    @* <a href="/profile-update" class="btn btn-primary">Update Profile</a> *@
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card">
+                <div class="card-header">
+                    <i class="fa fa-user-cog"></i> Last transaction
+                </div>
+                <div class="card-body">
+                    <p>Get last transaction information</p>
+                    @* <a href="/profile-update" class="btn btn-primary">Update Profile</a> *@
+                </div>
+            </div>
+        </div>
+    </AuthorizeView>
 </div>
 
 @code{
