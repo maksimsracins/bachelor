@@ -1,7 +1,6 @@
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using BlazorWebAppAuthentication.Client.Payment;
-using BlazorWebAppAuthentication.Client.Services;
 using BlazorWebAppAuthentication.Client.Services.Interfaces;
 using BlazorWebAppAuthentication.Domain.Entities;
 

@@ -30,6 +30,8 @@
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/bin/Debug/net8.0/Microsoft.Win32.SystemEvents.dll
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/bin/Debug/net8.0/MySql.Data.dll
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/bin/Debug/net8.0/MySql.EntityFrameworkCore.dll
+/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/bin/Debug/net8.0/Newtonsoft.Json.dll
+/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/bin/Debug/net8.0/Smart.Blazor.dll
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/bin/Debug/net8.0/System.Configuration.ConfigurationManager.dll
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/bin/Debug/net8.0/System.Drawing.Common.dll
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/bin/Debug/net8.0/System.Security.Cryptography.ProtectedData.dll
@@ -75,5 +77,3 @@
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/obj/Debug/net8.0/BlazorWebAppAuthentication.Client.pdb
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/obj/Debug/net8.0/BlazorWebAppAuthentication.Client.genruntimeconfig.cache
 /Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/obj/Debug/net8.0/ref/BlazorWebAppAuthentication.Client.dll
-/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/bin/Debug/net8.0/Newtonsoft.Json.dll
-/Users/maksimsracins/bachelor/BlazorWebAppAuthentication.Client/bin/Debug/net8.0/Smart.Blazor.dll

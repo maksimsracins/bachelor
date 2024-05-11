@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWebAppAuthentication.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWebAppAuthentication.Domain", "..\BlazorWebAppAuthentication.Domain\BlazorWebAppAuthentication.Domain.csproj", "{66082298-A15C-4968-94D4-D3C460D17D35}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWebAppAuthentication.Tests", "BlazorWebAppAuthentication.Tests\BlazorWebAppAuthentication.Tests.csproj", "{31F71B73-37CF-480B-820B-7DDC58CD1204}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{66082298-A15C-4968-94D4-D3C460D17D35}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66082298-A15C-4968-94D4-D3C460D17D35}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66082298-A15C-4968-94D4-D3C460D17D35}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31F71B73-37CF-480B-820B-7DDC58CD1204}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31F71B73-37CF-480B-820B-7DDC58CD1204}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31F71B73-37CF-480B-820B-7DDC58CD1204}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31F71B73-37CF-480B-820B-7DDC58CD1204}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
